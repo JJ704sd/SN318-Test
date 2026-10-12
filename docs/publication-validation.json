@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-12",
+  "frontend_files": 127,
+  "recipe_files": 49,
+  "people_anonymized": 5,
+  "workbooks": [
+    {
+      "path": "artifacts/checklist/SN318_分批提测检查表.xlsx",
+      "formulas": 155,
+      "images_removed": 0,
+      "changed_xml_parts": 2,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/checklist/SN318_分批提测检查表_边界异常复核.xlsx",
+      "formulas": 175,
+      "images_removed": 0,
+      "changed_xml_parts": 3,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/checklist/SN318_分批提测检查表_需求重核完善.xlsx",
+      "formulas": 175,
+      "images_removed": 0,
+      "changed_xml_parts": 3,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_冒烟与UI用例_飞书五色及实际页面复核.xlsx",
+      "formulas": 1168,
+      "images_removed": 0,
+      "changed_xml_parts": 6,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_功能冒烟与界面交互验证_策略调整.xlsx",
+      "formulas": 751,
+      "images_removed": 0,
+      "changed_xml_parts": 5,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_功能冒烟与界面交互验证_覆盖复核.xlsx",
+      "formulas": 1147,
+      "images_removed": 0,
+      "changed_xml_parts": 6,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_提测前冒烟与UI规范_二次复核修正.xlsx",
+      "formulas": 321,
+      "images_removed": 0,
+      "changed_xml_parts": 3,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_提测前冒烟与UI规范_用例复核.xlsx",
+      "formulas": 320,
+      "images_removed": 0,
+      "changed_xml_parts": 3,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_提测前冒烟与UI规范_网站对照修订.xlsx",
+      "formulas": 333,
+      "images_removed": 0,
+      "changed_xml_parts": 4,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_提测前冒烟与UI规范_颜色层级对应.xlsx",
+      "formulas": 338,
+      "images_removed": 0,
+      "changed_xml_parts": 4,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_提测前冒烟与UI规范_颜色层级对应_复查修正.xlsx",
+      "formulas": 338,
+      "images_removed": 0,
+      "changed_xml_parts": 4,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/ui-audit/SN318_UI规范审查_测试建议与修改清单.xlsx",
+      "formulas": 25,
+      "images_removed": 0,
+      "changed_xml_parts": 3,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/ui-audit/SN318_基础配置前端UI走查_修改清单及截图证据.xlsx",
+      "formulas": 2,
+      "images_removed": 48,
+      "changed_xml_parts": 6,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/ui-audit/W2/SN318_W2前端UI规范审查_修改清单.xlsx",
+      "formulas": 5,
+      "images_removed": 22,
+      "changed_xml_parts": 6,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/frontend-audit/ui-spec-audit/SN318_前端UI规范审查与修改清单.xlsx",
+      "formulas": 4,
+      "images_removed": 8,
+      "changed_xml_parts": 7,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/w2-tasks/SN318_W2测试用例修订与本周任务.xlsx",
+      "formulas": 1184,
+      "images_removed": 7,
+      "changed_xml_parts": 12,
+      "structure_preserved": true
+    }
+  ],
+  "originals_modified": false,
+  "verification": {
+    "staged_files": 201,
+    "known_private_values_found": 0,
+    "python_syntax_checked": 33,
+    "javascript_syntax_checked": 22,
+    "frontend_build": "passed with existing local dependencies",
+    "bff_build": "passed with existing local dependencies",
+    "private_frontend_files_changed": 0,
+    "original_workbooks_changed": 0,
+    "concurrent_work_directory_updates": 4,
+    "workbook_preview_imports": 16
+  }
+}

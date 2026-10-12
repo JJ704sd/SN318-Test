@@ -1,0 +1,5 @@
+/* 权限指令隐藏工具类：无权限时隐藏元素但保留在 DOM（可被权限加载后恢复） */
+.is-hidden {
+    /* Positioning */
+    display: none !important;
+}

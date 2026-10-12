@@ -1,0 +1,44 @@
+# Private inputs, runtime data and credential files
+.work/
+outputs/
+.publish/
+private-*.json
+*.local
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+*.db
+*.sqlite*
+*.log
+*.zip
+
+# Dependencies and generated files
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.codegraph/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+.eslintcache
+pcs-front/public/env.js
+
+# Raw screenshots remain local. The intentional source asset is reviewed.
+*.png
+*.jpg
+*.jpeg
+*.webp
+!pcs-front/src/assets/login_page.png
+
+# Editor/OS artifacts
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store

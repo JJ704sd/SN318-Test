@@ -1,0 +1,3 @@
+# Configure a real private registry in your USER-level .npmrc.
+@baiyun:registry=https://registry.example.invalid/
+//registry.example.invalid/:_authToken=${NPM_TOKEN}
