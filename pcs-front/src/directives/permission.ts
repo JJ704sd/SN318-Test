@@ -1,6 +1,6 @@
 import type { Directive, DirectiveBinding } from 'vue'
 import { watch } from 'vue'
-import { usePermissionStore } from '@baiyun/template-core/stores'
+import { usePermissionStore } from '@core/stores'
 import './permission.css'
 
 /**

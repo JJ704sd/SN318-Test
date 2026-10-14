@@ -14,12 +14,12 @@ const mocks = vi.hoisted(() => {
   }
 })
 
-vi.mock('@baiyun/template-core/config', () => ({
+vi.mock('@core/config', () => ({
   env: mocks.env,
   getConfig: mocks.getConfig,
 }))
 
-vi.mock('@baiyun/template-core/ai', () => ({
+vi.mock('@core/ai', () => ({
   configureAiStatusTiming: mocks.configureAiStatusTiming,
   MockAiAdapter: mocks.MockAiAdapter,
   registerAiService: mocks.registerAiService,

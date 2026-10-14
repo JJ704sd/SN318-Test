@@ -115,10 +115,10 @@
 import { computed, defineAsyncComponent, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import PageHeader from '@/layout/components/PageHeader.vue'
-import { ByCard, successMsg, ByStatusTag, ByBizTag, ByEmpty, DetailField } from '@baiyun/template-core/components'
-import { useDetail } from '@baiyun/template-core/composables'
-import { env } from '@baiyun/template-core/config'
-import { formatMoney, formatWeight, formatVolume, formatDateTime, EMPTY_TEXT } from '@baiyun/template-core/utils'
+import { ByCard, successMsg, ByStatusTag, ByBizTag, ByEmpty, DetailField } from '@core/components'
+import { useDetail } from '@core/composables'
+import { env } from '@core/config'
+import { formatMoney, formatWeight, formatVolume, formatDateTime, EMPTY_TEXT } from '@core/utils'
 import { getDetail, type WaybillDetail } from '@/api/demo'
 import { STATUS_LABEL, STATUS_TYPE_MAP, BIZ_TYPE_LABEL } from '../config/detailConfig'
 
@@ -153,7 +153,7 @@ const summaryContext = computed<Record<string, string>>(() => {
 const aiEmbeddedOn = env.aiEnabled && env.aiEmbeddedEnabled
 const AiSummaryCard = aiEmbeddedOn
   ? defineAsyncComponent(() =>
-      import('@baiyun/template-core/ai/embedded').then((m) => m.AiSummaryCard),
+      import('@core/ai/embedded').then((m) => m.AiSummaryCard),
     )
   : null
 

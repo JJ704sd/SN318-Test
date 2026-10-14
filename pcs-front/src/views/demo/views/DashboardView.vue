@@ -90,10 +90,10 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent, onMounted, ref, watch } from 'vue'
 import PageHeader from '@/layout/components/PageHeader.vue'
-import { ByCard, ByTable, ByBizTag } from '@baiyun/template-core/components'
-import { useDevice } from '@baiyun/template-core/composables'
-import { formatCount, formatMoney } from '@baiyun/template-core/utils'
-import { env } from '@baiyun/template-core/config'
+import { ByCard, ByTable, ByBizTag } from '@core/components'
+import { useDevice } from '@core/composables'
+import { formatCount, formatMoney } from '@core/utils'
+import { env } from '@core/config'
 import ByChart from '@/components/biz/ByChart.vue'
 import { getDashboardStats, type DashboardDetailRow, type DashboardStats } from '@/api/demo'
 import {
@@ -128,7 +128,7 @@ const chartGutter = computed<[number, number]>(() => {
 const aiEmbeddedOn = env.aiEnabled && env.aiEmbeddedEnabled
 const AiSummaryCard = aiEmbeddedOn
   ? defineAsyncComponent(() =>
-      import('@baiyun/template-core/ai/embedded').then((m) => m.AiSummaryCard),
+      import('@core/ai/embedded').then((m) => m.AiSummaryCard),
     )
   : null
 

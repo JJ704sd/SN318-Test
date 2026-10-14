@@ -80,8 +80,8 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import type { FieldRule, FileItem } from '@arco-design/web-vue'
-import { ByUpload } from '@baiyun/template-core/components'
-import type { BizType } from '@baiyun/template-core/tokens'
+import { ByUpload } from '@core/components'
+import type { BizType } from '@core/styles/tokens'
 import type { WaybillFormData } from '@/api/demo'
 
 const props = withDefaults(

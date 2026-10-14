@@ -40,8 +40,8 @@
 
 <script setup lang="ts">
 import type { WaybillStatus } from '@/api/demo'
-import { ByCard } from '@baiyun/template-core/components'
-import type { BizType } from '@baiyun/template-core/tokens'
+import { ByCard } from '@core/components'
+import type { BizType } from '@core/styles/tokens'
 import { BIZ_TYPE_OPTIONS, STATUS_OPTIONS } from '../config/listConfig'
 
 interface FilterQuery {

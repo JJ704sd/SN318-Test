@@ -43,9 +43,10 @@ export default {
   ignoreFiles: [
     '**/dist/**',
     '**/coverage/**',
-    // Token 与主题定义处：允许原始色值与动效时长 Token 定义
-    'src/styles/tokens.css',
-    'src/styles/arco-theme.less',
+    // Token 与主题定义处：允许原始色值与动效时长 Token 定义（核心层内联后位于 src/core/styles）
+    'src/core/styles/tokens.css',
+    'src/core/styles/arco-theme.less',
+    'src/core/styles/arco-theme/**',
     // Vue 脚手架自带演示样式（含调色板与欢迎页布局），阶段 1 由 src/styles/ 下
     // tokens.css / reset.css 替换，非模板真实样式，暂放行以免为 throwaway 代码做无意义修复
     'src/assets/base.css',

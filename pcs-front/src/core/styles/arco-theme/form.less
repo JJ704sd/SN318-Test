@@ -1,0 +1,1069 @@
+@import (once) './base.less';
+
+/* ============================================================
+ * 二、按钮：对齐规范 §05（背景色 / 边框 / 尺寸 / 状态）
+ *   Primary #046EFC；Default 白底描边；Text 无背景仅改字色；
+ *   medium padding 16 / min-width 80 / 图标间距 4；禁用 opacity 0.4。
+ *   Primary/Secondary/Text 选择器带 [type] 与 Arco 同级，否则覆盖不生效。
+ *   status-danger 双类规则置于 Primary 之后，保住危险色。
+ * ============================================================ */
+.arco-btn {
+  gap: var(--spacing-xs); /* 4px，图标与文字间距 */
+
+  transition:
+    color var(--duration-state) var(--ease-state),
+    background-color var(--duration-state) var(--ease-state),
+    border-color var(--duration-state) var(--ease-state),
+    box-shadow var(--duration-state) var(--ease-state);
+}
+
+.arco-btn-size-medium:not(.arco-btn-only-icon):not(.arco-btn-text) {
+  min-width: 80px; /* 规范 §05 最小宽度 */
+  padding: 0 var(--spacing-md); /* 0 16px，覆盖 Arco 15px */
+}
+
+.arco-btn-size-medium:not(.arco-btn-only-icon) .arco-btn-icon {
+  margin-right: 0; /* 改由 gap 控制 */
+}
+
+.arco-btn-primary,
+.arco-btn-primary[type='button'],
+.arco-btn-primary[type='submit'] {
+  color: var(--color-text-on-overlay); /* #FFFFFF */
+  background-color: var(--color-primary); /* #046EFC */
+  border-color: transparent;
+}
+
+.arco-btn-primary:hover,
+.arco-btn-primary[type='button']:hover,
+.arco-btn-primary[type='submit']:hover {
+  color: var(--color-text-on-overlay);
+  background-color: var(--color-primary-hover); /* #035ED4 */
+  border-color: transparent;
+}
+
+.arco-btn-primary:active,
+.arco-btn-primary[type='button']:active,
+.arco-btn-primary[type='submit']:active {
+  color: var(--color-text-on-overlay);
+  background-color: var(--color-primary-active); /* #0242A8 */
+  border-color: transparent;
+}
+
+.arco-btn-primary.arco-btn-status-danger {
+  color: var(--color-text-on-overlay); /* #FFFFFF */
+  background-color: var(--color-error); /* #E24B4A */
+  border-color: transparent;
+}
+
+.arco-btn-primary.arco-btn-status-danger:hover {
+  color: var(--color-text-on-overlay);
+  background-color: var(--color-error-hover); /* #D43F3E */
+  border-color: transparent;
+}
+
+.arco-btn-primary.arco-btn-status-danger:active {
+  color: var(--color-text-on-overlay);
+  background-color: var(--color-error-active); /* #BE3838 */
+  border-color: transparent;
+}
+
+/* Default：白底 + #DDDDDD 描边；文字 #1A2130；hover 底 #F7F7F7 */
+.arco-btn-secondary,
+.arco-btn-secondary[type='button'],
+.arco-btn-secondary[type='submit'] {
+  color: var(--color-text-title); /* #1A2130 */
+  background-color: var(--color-bg-card); /* #FFFFFF */
+  border: var(--border-default); /* #DDDDDD */
+}
+
+.arco-btn-secondary:hover,
+.arco-btn-secondary[type='button']:hover,
+.arco-btn-secondary[type='submit']:hover {
+  color: var(--color-text-title);
+  background-color: var(--color-btn-secondary-hover); /* #F7F7F7 */
+  border: var(--border-hover); /* #9DA3AE */
+}
+
+.arco-btn-secondary:active,
+.arco-btn-secondary[type='button']:active,
+.arco-btn-secondary[type='submit']:active {
+  color: var(--color-text-title);
+  background-color: var(--color-bg-active); /* #DDDDDD */
+  border: var(--border-hover); /* #9DA3AE */
+}
+
+/* 图标按钮（only-icon + secondary）：点击底明确为 #DDDDDD（与 ByIconButton 一致）*/
+.arco-btn-secondary.arco-btn-only-icon:not(.arco-btn-disabled):active,
+.arco-btn-secondary[type='button'].arco-btn-only-icon:not(.arco-btn-disabled):active,
+.arco-btn-secondary[type='submit'].arco-btn-only-icon:not(.arco-btn-disabled):active {
+  background-color: var(--color-bg-active); /* #DDDDDD */
+  border-color: transparent;
+}
+
+/* Secondary + danger：白底红描边 / 红字（轻量危险操作触发） */
+.arco-btn-secondary.arco-btn-status-danger,
+.arco-btn-secondary[type='button'].arco-btn-status-danger,
+.arco-btn-secondary[type='submit'].arco-btn-status-danger {
+  color: var(--color-error); /* #E24B4A */
+  background-color: var(--color-bg-card); /* #FFFFFF */
+  border: var(--border-error);
+}
+
+.arco-btn-secondary.arco-btn-status-danger:hover,
+.arco-btn-secondary[type='button'].arco-btn-status-danger:hover,
+.arco-btn-secondary[type='submit'].arco-btn-status-danger:hover {
+  color: var(--color-error-hover); /* #D43F3E */
+  background-color: var(--color-error-bg); /* 浅红底 */
+  border-color: var(--color-error-hover);
+}
+
+.arco-btn-secondary.arco-btn-status-danger:active,
+.arco-btn-secondary[type='button'].arco-btn-status-danger:active,
+.arco-btn-secondary[type='submit'].arco-btn-status-danger:active {
+  color: var(--color-error-active); /* #BE3838 */
+  background-color: var(--color-error-bg);
+  border-color: var(--color-error-active);
+}
+
+/* Text：透明底，仅字色变化 */
+.arco-btn-text,
+.arco-btn-text[type='button'],
+.arco-btn-text[type='submit'] {
+  min-width: auto;
+  padding: 0 var(--spacing-sm);
+
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.arco-btn-text:hover,
+.arco-btn-text[type='button']:hover,
+.arco-btn-text[type='submit']:hover {
+  color: var(--color-primary-hover);
+  background-color: transparent;
+}
+
+.arco-btn-text:active,
+.arco-btn-text[type='button']:active,
+.arco-btn-text[type='submit']:active {
+  color: var(--color-primary-active);
+  background-color: transparent;
+}
+
+/* Text + 危险：表格操作列「删除」等，字色 #E24B4A */
+.arco-btn-text.arco-btn-status-danger,
+.arco-btn-text[type='button'].arco-btn-status-danger,
+.arco-btn-text[type='submit'].arco-btn-status-danger {
+  color: var(--color-error); /* #E24B4A */
+  background-color: transparent;
+}
+
+.arco-btn-text.arco-btn-status-danger:hover,
+.arco-btn-text[type='button'].arco-btn-status-danger:hover,
+.arco-btn-text[type='submit'].arco-btn-status-danger:hover {
+  color: var(--color-error-hover); /* #D43F3E */
+  background-color: transparent;
+}
+
+.arco-btn-text.arco-btn-status-danger:active,
+.arco-btn-text[type='button'].arco-btn-status-danger:active,
+.arco-btn-text[type='submit'].arco-btn-status-danger:active {
+  color: var(--color-error-active); /* #BE3838 */
+  background-color: transparent;
+}
+
+/* 禁用 / 加载：opacity 0.4，保留类型原色。
+ *   关闭 Arco .arco-btn-loading::before 白遮罩（向外扩 1px 会盖住次要按钮 #DDDDDD 描边）。 */
+.arco-btn-loading::before {
+  display: none;
+}
+
+.arco-btn-primary.arco-btn-disabled,
+.arco-btn-primary[type='button'].arco-btn-disabled,
+.arco-btn-primary[type='submit'].arco-btn-disabled,
+.arco-btn-primary.arco-btn-loading,
+.arco-btn-primary[type='button'].arco-btn-loading,
+.arco-btn-primary[type='submit'].arco-btn-loading {
+  color: var(--color-text-on-overlay);
+  background-color: var(--color-primary);
+  border-color: transparent;
+  opacity: 0.4;
+}
+
+.arco-btn-primary.arco-btn-status-danger.arco-btn-disabled,
+.arco-btn-primary.arco-btn-status-danger.arco-btn-loading {
+  background-color: var(--color-error);
+  opacity: 0.4;
+}
+
+.arco-btn-secondary.arco-btn-disabled,
+.arco-btn-secondary[type='button'].arco-btn-disabled,
+.arco-btn-secondary[type='submit'].arco-btn-disabled,
+.arco-btn-secondary.arco-btn-loading,
+.arco-btn-secondary[type='button'].arco-btn-loading,
+.arco-btn-secondary[type='submit'].arco-btn-loading {
+  color: var(--color-text-title);
+  background-color: var(--color-bg-card);
+  border: var(--border-default);
+  opacity: 0.4;
+}
+
+.arco-btn-text.arco-btn-disabled,
+.arco-btn-text[type='button'].arco-btn-disabled,
+.arco-btn-text[type='submit'].arco-btn-disabled,
+.arco-btn-text.arco-btn-loading,
+.arco-btn-text[type='button'].arco-btn-loading,
+.arco-btn-text[type='submit'].arco-btn-loading {
+  color: var(--color-primary);
+  background-color: transparent;
+  opacity: 0.4;
+}
+
+/* 禁用危险文字按钮：保持红色语义，hover / active / focus 不改变视觉状态。 */
+.arco-btn-text.arco-btn-status-danger.arco-btn-disabled,
+.arco-btn-text[type='button'].arco-btn-status-danger.arco-btn-disabled,
+.arco-btn-text[type='submit'].arco-btn-status-danger.arco-btn-disabled,
+.arco-btn-text.arco-btn-status-danger.arco-btn-disabled:hover,
+.arco-btn-text[type='button'].arco-btn-status-danger.arco-btn-disabled:hover,
+.arco-btn-text[type='submit'].arco-btn-status-danger.arco-btn-disabled:hover,
+.arco-btn-text.arco-btn-status-danger.arco-btn-disabled:active,
+.arco-btn-text[type='button'].arco-btn-status-danger.arco-btn-disabled:active,
+.arco-btn-text[type='submit'].arco-btn-status-danger.arco-btn-disabled:active,
+.arco-btn-text.arco-btn-status-danger.arco-btn-disabled:focus-visible,
+.arco-btn-text[type='button'].arco-btn-status-danger.arco-btn-disabled:focus-visible,
+.arco-btn-text[type='submit'].arco-btn-status-danger.arco-btn-disabled:focus-visible {
+  color: var(--color-error);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  opacity: 0.4;
+}
+
+/* 按钮三档尺寸（规范 §05）：Desktop 24 / 32 / 40。显式覆盖 Arco，
+ * 后续 Tablet / Mobile 媒体查询仅在此处降档，文字、图标、圆形按钮保持同一视觉尺寸。 */
+.arco-btn-size-mini {
+  height: 24px;
+}
+
+.arco-btn-size-mini.arco-btn-only-icon,
+.arco-btn-size-mini.arco-btn-shape-circle {
+  width: 24px;
+  height: 24px;
+}
+
+.arco-btn-size-mini.arco-btn-shape-round {
+  border-radius: calc(24px * 0.5);
+}
+
+.arco-btn-size-medium {
+  height: 32px;
+}
+
+.arco-btn-size-medium.arco-btn-only-icon,
+.arco-btn-size-medium.arco-btn-shape-circle {
+  width: 32px;
+  height: 32px;
+}
+
+.arco-btn-size-medium.arco-btn-shape-round {
+  border-radius: calc(32px * 0.5);
+}
+
+.arco-btn-size-large {
+  height: 40px;
+}
+
+.arco-btn-size-large.arco-btn-only-icon,
+.arco-btn-size-large.arco-btn-shape-circle {
+  width: 40px;
+  height: 40px;
+}
+
+.arco-btn-size-large.arco-btn-shape-round {
+  border-radius: calc(40px * 0.5);
+}
+
+/* ============================================================
+ * 三、输入类组件：改为"白底 + 描边式 + focus 光晕"
+ *   Arco 默认：灰底填充(--color-fill-2) + 透明边框 + focus 无 glow；
+ *     error 浅红底；disabled 走 fill-2；Select 选中项无主色高亮。
+ *   规范：default/hover/focus/filled/error/disabled 与 Input 触发器一致；
+ *     Select filled 文字 #4B5564；disabled 底 #F7F7F7；
+ *     弹层选中项底 #EBF3FD / 字 #046EFC / 右侧勾；多选 Tag 同色。
+ *   作用域：a-input / a-textarea / a-select / a-date-picker 的 wrapper。
+ * ============================================================ */
+.arco-input-wrapper,
+.arco-textarea-wrapper,
+.arco-select-view,
+.arco-picker {
+  background-color: var(--color-bg-card); /* 白底 */
+  border: var(--border-default); /* #DDDDDD 描边 */
+  border-radius: var(--border-radius-default); /* 8px */
+  transition:
+    color var(--duration-state) var(--ease-state),
+    background-color var(--duration-state) var(--ease-state),
+    border-color var(--duration-state) var(--ease-state),
+    box-shadow var(--duration-state) var(--ease-state);
+}
+
+/* Input / Textarea / Picker：filled 文字 #1A2130（输入框规范）*/
+.arco-input-wrapper,
+.arco-textarea-wrapper,
+.arco-picker {
+  color: var(--color-text-title);
+}
+
+/* Select：filled 已选值文字 #4B5564（Select 单选规范，区别于 Input）*/
+.arco-select-view {
+  color: var(--color-text-body);
+}
+
+/* hover：仅描边加深，无光晕（禁用 / 错误态不受 hover 影响）*/
+.arco-input-wrapper:not(.arco-input-disabled):not(.arco-input-error):hover,
+.arco-textarea-wrapper:not(.arco-textarea-disabled):not(.arco-textarea-error):hover,
+.arco-select-view:not(:disabled):not(.arco-select-view-disabled):hover,
+.arco-picker:not(.arco-picker-disabled):not(.arco-picker-error):hover {
+  background-color: var(--color-bg-card);
+  border: var(--border-hover); /* #9DA3AE 描边加深 */
+  box-shadow: none;
+}
+
+/* focus：主色描边 + 光晕（错误态走下方 error 规则，不抢主色光晕）*/
+.arco-input-wrapper.arco-input-focus:not(.arco-input-error),
+.arco-input-wrapper:focus-within:not(.arco-input-error),
+.arco-textarea-wrapper.arco-textarea-focus:not(.arco-textarea-error),
+.arco-textarea-wrapper:focus-within:not(.arco-textarea-error),
+.arco-select-view.arco-select-view-focus,
+.arco-picker.arco-picker-focused:not(.arco-picker-error) {
+  background-color: var(--color-bg-card);
+  border: var(--border-focus) !important; /* #046EFC 主色描边 */
+  box-shadow: var(--shadow-focus) !important; /* 0 0 0 3px rgba(4,110,252,.15) 光晕 */
+}
+
+/* error：白底 + 错误色描边（覆盖 Arco 浅红底 + 透明边；需 !important 压过组件 CSS 后加载顺序）*/
+.arco-input-wrapper.arco-input-error,
+.arco-input-wrapper.arco-input-error:hover,
+.arco-textarea-wrapper.arco-textarea-error,
+.arco-textarea-wrapper.arco-textarea-error:hover,
+.arco-picker.arco-picker-error,
+.arco-picker.arco-picker-error:hover,
+.arco-form-item-status-error .arco-picker:not(.arco-picker-disabled),
+.arco-form-item-status-error .arco-picker:not(.arco-picker-disabled):hover {
+  background-color: var(--color-bg-card) !important; /* #FFFFFF */
+  border: var(--border-error) !important; /* 1px solid #E24B4A */
+  box-shadow: none !important;
+}
+
+.arco-input-wrapper.arco-input-error.arco-input-focus,
+.arco-input-wrapper.arco-input-error:focus-within,
+.arco-textarea-wrapper.arco-textarea-error.arco-textarea-focus,
+.arco-textarea-wrapper.arco-textarea-error:focus-within,
+.arco-picker.arco-picker-focused.arco-picker-error,
+.arco-picker.arco-picker-focused.arco-picker-error:hover,
+.arco-form-item-status-error .arco-picker-focused:not(.arco-picker-disabled),
+.arco-form-item-status-error .arco-picker-focused:not(.arco-picker-disabled):hover {
+  background-color: var(--color-bg-card) !important;
+  border: var(--border-error) !important;
+  box-shadow: none !important;
+}
+
+/* disabled：底 color-bg-surface #F7F7F7 + 描边 #DDDDDD + 文字 #9DA3AE（覆盖 Arco fill-2 / 透明边）*/
+.arco-input-wrapper.arco-input-disabled,
+.arco-input-wrapper.arco-input-disabled:hover,
+.arco-textarea-wrapper.arco-textarea-disabled,
+.arco-textarea-wrapper.arco-textarea-disabled:hover,
+.arco-select-view.arco-select-view-disabled,
+.arco-select-view.arco-select-view-disabled:hover,
+.arco-select-view:disabled,
+.arco-select-view:disabled:hover,
+.arco-picker.arco-picker-disabled,
+.arco-picker.arco-picker-disabled:hover {
+  color: var(--color-text-secondary); /* #9DA3AE */
+  background-color: var(--color-bg-surface); /* #F7F7F7，与 --color-bg-disabled 同值 */
+  border: var(--border-default); /* #DDDDDD */
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Select 聚焦 / 展开：箭头变主色（规范 focus 态箭头 #046EFC）*/
+.arco-select-view-focus .arco-select-view-icon,
+.arco-select-view-opened .arco-select-view-arrow-icon {
+  color: var(--color-primary);
+}
+
+/* Select 弹层：描边 #DDDDDD；弹层上下左右内边距 4px；选中底 #EBF3FD + 字 #046EFC + 右侧勾 */
+.arco-select-dropdown {
+  padding: var(--spacing-xs); /* 4px，整框内边距（选项之间无额外上下间距）*/
+  border: var(--border-default);
+  border-radius: var(--border-radius-default);
+}
+
+.arco-select-dropdown .arco-select-option {
+  padding: 0 10px; /* 选中/选项高亮区内边距 */
+  border-radius: var(--border-radius-select-option); /* 6px，高亮圆角 */
+  line-height: 32px;
+}
+
+.arco-select-dropdown .arco-select-option.arco-select-option-selected,
+.arco-select-dropdown .arco-select-option.arco-select-option-selected .arco-select-option-content {
+  color: var(--color-primary); /* #046EFC */
+}
+
+.arco-select-dropdown .arco-select-option.arco-select-option-selected {
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-primary-50); /* #EBF3FD */
+}
+
+.arco-select-dropdown .arco-select-option.arco-select-option-selected:not(.arco-select-option-disabled):hover,
+.arco-select-dropdown .arco-select-option.arco-select-option-selected.arco-select-option-active {
+  color: var(--color-primary); /* #046EFC */
+  background-color: var(--color-primary-50); /* #EBF3FD */
+}
+
+.arco-select-dropdown
+  .arco-select-option.arco-select-option-selected:not(.arco-select-option-disabled):hover
+  .arco-select-option-content,
+.arco-select-dropdown
+  .arco-select-option.arco-select-option-selected.arco-select-option-active
+  .arco-select-option-content {
+  color: var(--color-primary); /* #046EFC */
+}
+
+/* 单选选中勾（多选走 Checkbox，不加伪元素勾）*/
+.arco-select-option-selected:not(:has(.arco-checkbox))::after {
+  display: block;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  margin-left: auto;
+
+  background-color: var(--color-primary);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6.2l2.5 2.5L10 3.2' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6.2l2.5 2.5L10 3.2' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  content: '';
+}
+
+.arco-select-option-selected:not(:has(.arco-checkbox)) .arco-select-option-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 多选触发器：高度固定 32px，Tag 单行不换行；超出由 max-tag-count 收敛为 +N */
+.arco-select-view-multiple {
+  height: 32px;
+  min-height: 32px;
+  max-height: 32px;
+  overflow: hidden;
+}
+
+.arco-select-view-multiple .arco-select-view-inner,
+.arco-select-view-multiple .arco-select-view-inner.arco-select-view-nowrap {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  overflow: hidden;
+}
+
+/*
+ * 多选 Tag：底 #EBF3FD / 字 #046EFC
+ * Arco Tag 根节点同时带 .arco-tag.arco-tag-checked，须压过其默认灰底/深字
+ */
+.arco-select-view-multiple .arco-tag.arco-select-view-tag,
+.arco-select-view-multiple.arco-select-view-focus .arco-tag.arco-select-view-tag,
+.arco-select-view-multiple.arco-select-view-disabled .arco-tag.arco-select-view-tag,
+.arco-select-view-multiple:disabled .arco-tag.arco-select-view-tag {
+  flex-shrink: 0;
+  min-width: 40px;
+  overflow: hidden;
+
+  color: var(--color-primary) !important; /* #046EFC */
+  white-space: nowrap !important;
+  word-break: keep-all;
+
+  background-color: var(--color-primary-50) !important; /* #EBF3FD */
+  border-color: transparent !important;
+}
+
+.arco-select-view-multiple .arco-tag.arco-select-view-tag .arco-icon-hover,
+.arco-select-view-multiple .arco-tag.arco-select-view-tag .arco-tag-close-btn,
+.arco-select-view-multiple .arco-tag.arco-select-view-tag .arco-icon {
+  color: var(--color-primary) !important;
+}
+
+/* 多选弹层：选中行 Checkbox 文字随主色（勾选框本身走 Checkbox 主题）*/
+.arco-select-dropdown .arco-select-option-selected .arco-checkbox-label {
+  color: var(--color-primary);
+}
+
+/* placeholder：占位字符色 #C0C4CC（Arco 走 --color-text-3，已在上方重映射，此处显式兜底）*/
+.arco-input::placeholder,
+.arco-textarea::placeholder,
+.arco-select-view-input::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+/* ============================================================
+ * 表单 Form（规范 §5.7）
+ *   上下排；字段名 #4B5564/14px/400；标签↔输入 8px；项间距 24px；
+ *   必填左侧红 *；校验失败 12px/#E24B4A 位于输入框下方（绝对定位，不撑高）。
+ * ============================================================ */
+
+/* 上下排：字段名在上、左对齐；标签与输入框间距 8px */
+.arco-form-item-layout-vertical > .arco-form-item-label-col {
+  justify-content: flex-start;
+  margin-bottom: var(--spacing-sm); /* 8px */
+  padding: 0;
+  line-height: var(--line-height-base);
+}
+
+/* 字段名：#4B5564 / 14px / 400 */
+.arco-form-item-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  color: var(--color-text-body); /* #4B5564 */
+  font-size: var(--font-size-base); /* 14px */
+  font-weight: var(--font-weight-regular); /* 400 */
+  line-height: var(--line-height-base);
+}
+
+/* 必填标识：红色 * 位于字段名左侧（覆盖 Arco SVG 星标）*/
+.arco-form-item-label-required-symbol {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 2px;
+  color: var(--color-error);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+}
+
+.arco-form-item-label-required-symbol svg {
+  display: none;
+}
+
+.arco-form-item-label-required-symbol::before {
+  content: '*';
+}
+
+/* 上下排表单项间距恒为 24px（error 也不取消，错误文案绝对定位不占流）*/
+.arco-form-layout-vertical > .arco-form-item,
+.arco-form-layout-vertical > .arco-form-item-error,
+.arco-form-layout-vertical > .arco-form-item-has-help {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 覆盖 Arco 默认：error/has-help 时 margin-bottom:0 改由 message 撑开 */
+.arco-form-item.arco-form-item-error,
+.arco-form-item.arco-form-item-has-help {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 校验区相对定位：错误文案绝对叠在输入框下方空隙，不撑大高度 */
+.arco-form-item-wrapper-col {
+  position: relative;
+}
+
+/* 校验提示：输入框下方 / 12px / #E24B4A；绝对定位，不挤开后续字段 */
+.arco-form-item-message,
+.arco-form-item-message-help {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+
+  min-height: 0;
+  margin-top: var(--spacing-xs); /* 4px，贴近输入框，与下一字段标题留出空隙 */
+
+  font-size: var(--font-size-xs); /* 12px */
+  line-height: var(--line-height-xs); /* 1.4 */
+  color: var(--color-error); /* #E24B4A */
+
+  pointer-events: none;
+}
+
+.arco-form-item-error .arco-form-item-message,
+.arco-form-item-status-error .arco-form-item-message,
+.arco-form-item-error .arco-form-item-message-help,
+.arco-form-item-status-error .arco-form-item-message-help {
+  color: var(--color-error);
+}
+
+/* 单行输入类 Desktop 高度 32px（规范 §5.7）*/
+.arco-input-wrapper:not(.arco-textarea-wrapper),
+.arco-select-view-single,
+.arco-picker:not(.arco-picker-range) {
+  height: 32px;
+  min-height: 32px;
+}
+
+/* ============================================================
+ * 三·补、DatePicker / RangePicker 面板
+ *   规范：双月历并排（Arco 默认）；区间底 #EBF3FD；起/止 #046EFC 实心；
+ *   hover 主色描边高亮（非灰底填充）。Arco 默认区间为 primary 透明叠色、
+ *   选中为正圆、hover 为 fill 灰底，此处仅覆盖差异项。
+ * ============================================================ */
+
+/* 区间中间日：底 #EBF3FD（覆盖 Arco rgba(primary,.2)）*/
+.arco-picker-cell-in-range .arco-picker-date,
+.arco-picker-cell-hover-in-range .arco-picker-date {
+  background-color: var(--color-primary-50); /* #EBF3FD */
+}
+
+/* 单选选中 / 区间起止：#046EFC 实心 + 白字 + 圆角方块 */
+.arco-picker-cell-selected .arco-picker-date-value,
+.arco-picker-cell-range-start .arco-picker-date-value,
+.arco-picker-cell-range-end .arco-picker-date-value {
+  color: var(--color-text-on-overlay); /* #FFFFFF */
+  background-color: var(--color-primary); /* #046EFC */
+  border-radius: var(--border-radius-select-option); /* 6px，非正圆 */
+}
+
+/* hover：主色描边高亮，白底（覆盖 Arco 灰底填充）*/
+.arco-picker-cell-in-view:not(.arco-picker-cell-selected):not(.arco-picker-cell-range-start):not(
+    .arco-picker-cell-range-end
+  ):not(.arco-picker-cell-disabled):not(.arco-picker-cell-week)
+  .arco-picker-date-value:hover {
+  color: var(--color-text-title);
+  background-color: transparent;
+  border-radius: var(--border-radius-select-option);
+  box-shadow: inset 0 0 0 1px var(--color-primary); /* 描边，不撑破 24px 盒 */
+}
+
+/* 今日：主色描边 + 蓝字（替代 Arco 底部圆点；今日被选为起/止时仍用描边）*/
+.arco-picker-cell-today::after {
+  display: none;
+}
+
+.arco-picker-cell-today .arco-picker-date-value {
+  color: var(--color-primary);
+  background-color: transparent;
+  border-radius: var(--border-radius-select-option);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+}
+
+.arco-picker-cell-today.arco-picker-cell-selected .arco-picker-date-value,
+.arco-picker-cell-today.arco-picker-cell-range-start .arco-picker-date-value,
+.arco-picker-cell-today.arco-picker-cell-range-end .arco-picker-date-value {
+  color: var(--color-primary);
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+}
+
+/* RangePicker 触发器：设计稿布局 Padding 0 10px；仅「开始日期 → 结束日期」、无后缀图标 */
+.arco-picker.arco-picker-range {
+  box-sizing: border-box;
+  width: fit-content;
+  height: 32px;
+  padding: 0 10px; /* 设计稿：Padding 0px 10px */
+}
+
+.arco-picker-range .arco-picker-suffix {
+  display: none; /* 设计稿无日历/清除图标 */
+}
+
+.arco-picker-range .arco-picker-input {
+  flex: 0 0 auto;
+}
+
+.arco-picker-range .arco-picker-input > input {
+  width: 10ch; /* 贴合 YYYY-MM-DD /「开始日期」*/
+  padding-left: 0; /* 左右边距由外层 10px 统一控制，避免 Arco 默认 8px 叠宽 */
+
+  color: var(--color-text-title); /* 已选日期 #1A2130 */
+  line-height: 32px;
+  text-align: center; /* 开始/结束日期居中 */
+  background: transparent; /* 覆盖 Arco 选中侧灰底 */
+}
+
+/* 可交互的日期选择器悬停时使用手型光标 */
+.arco-picker:not(.arco-picker-disabled),
+.arco-picker:not(.arco-picker-disabled) .arco-picker-input > input {
+  cursor: pointer;
+}
+
+/* 聚焦编辑某一侧时，取消 Arco 默认 fill-2 灰底高亮 */
+.arco-picker-range.arco-picker-focused .arco-picker-input-active input,
+.arco-picker-range.arco-picker-focused:hover .arco-picker-input-active input {
+  background: transparent;
+}
+
+.arco-picker-range .arco-picker-input > input::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+.arco-picker-range .arco-picker-separator {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 0; /* 紧贴两侧日期，不额外撑宽 */
+
+  color: transparent; /* 隐藏 Arco 默认 "-" 文本 */
+  font-size: 0;
+}
+
+.arco-picker-range .arco-picker-separator::before {
+  font-size: var(--font-size-base);
+  line-height: 32px;
+  color: var(--color-text-placeholder); /* #C0C4CC，与占位同色 */
+  content: ' → '; /* 与设计稿「日期 → 日期」两侧留白一致 */
+}
+
+/* 三端控件尺寸：Tablet 按触控密度升至 28 / 36 / 40（按钮）与 36（输入），
+ * Mobile 升至 36 / 44 / 48（按钮）与 44（输入）。多选与 RangePicker 同步，
+ * 避免同一表单内的输入控件高度不一致。 */
+@media (width <= 1279px) {
+  .arco-btn-size-mini {
+    height: 28px;
+  }
+
+  .arco-btn-size-mini.arco-btn-only-icon,
+  .arco-btn-size-mini.arco-btn-shape-circle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .arco-btn-size-mini.arco-btn-shape-round {
+    border-radius: calc(28px * 0.5);
+  }
+
+  .arco-btn-size-medium {
+    height: 36px;
+  }
+
+  .arco-btn-size-medium.arco-btn-only-icon,
+  .arco-btn-size-medium.arco-btn-shape-circle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .arco-btn-size-medium.arco-btn-shape-round {
+    border-radius: calc(36px * 0.5);
+  }
+
+  .arco-input-wrapper:not(.arco-textarea-wrapper),
+  .arco-select-view-single,
+  .arco-picker:not(.arco-picker-range),
+  .arco-select-view-multiple {
+    height: 36px;
+    min-height: 36px;
+  }
+
+  .arco-select-view-multiple {
+    max-height: 36px;
+  }
+
+  .arco-picker.arco-picker-range {
+    height: 36px;
+  }
+
+  .arco-picker-range .arco-picker-input > input,
+  .arco-picker-range .arco-picker-separator::before {
+    line-height: 36px;
+  }
+}
+
+@media (width <= 767px) {
+  /* 移动端按钮独占一行并占满容器；使用 !important 覆盖固定尺寸规则。 */
+  .arco-btn {
+    display: flex;
+    width: 100% !important;
+  }
+
+  /* a-space 的 item 是按钮的直接 Flex 父级；移动端改为纵向并让每项铺满。 */
+  .arco-space-horizontal:has(> .arco-space-item > .arco-btn) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .arco-space-horizontal:has(> .arco-space-item > .arco-btn) > .arco-space-item {
+    width: 100%;
+  }
+
+  .arco-btn-size-mini {
+    height: 36px;
+  }
+
+  .arco-btn-size-mini.arco-btn-only-icon,
+  .arco-btn-size-mini.arco-btn-shape-circle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .arco-btn-size-mini.arco-btn-shape-round {
+    border-radius: calc(36px * 0.5);
+  }
+
+  .arco-btn-size-medium {
+    height: 44px;
+  }
+
+  .arco-btn-size-medium.arco-btn-only-icon,
+  .arco-btn-size-medium.arco-btn-shape-circle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .arco-btn-size-medium.arco-btn-shape-round {
+    border-radius: calc(44px * 0.5);
+  }
+
+  .arco-btn-size-large {
+    height: 48px;
+  }
+
+  .arco-btn-size-large.arco-btn-only-icon,
+  .arco-btn-size-large.arco-btn-shape-circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .arco-btn-size-large.arco-btn-shape-round {
+    border-radius: calc(48px * 0.5);
+  }
+
+  .arco-input-wrapper:not(.arco-textarea-wrapper),
+  .arco-select-view-single,
+  .arco-picker:not(.arco-picker-range),
+  .arco-select-view-multiple {
+    height: 44px;
+    min-height: 44px;
+  }
+
+  .arco-select-view-multiple {
+    max-height: 44px;
+  }
+
+  .arco-picker.arco-picker-range {
+    height: 44px;
+  }
+
+  .arco-picker-range .arco-picker-input > input,
+  .arco-picker-range .arco-picker-separator::before {
+    line-height: 44px;
+  }
+}
+
+/* ============================================================
+ * 四、状态过渡统一：其余交互组件切到 100ms / linear
+ *   覆盖 Arco 默认 0.1s~0.2s 混用，统一节奏。
+ *   仅过渡 color/border/background/box-shadow，不过渡布局尺寸。
+ * ============================================================ */
+.arco-select-view,
+.arco-picker,
+.arco-tag,
+.arco-checkbox-icon,
+.arco-radio-icon,
+.arco-radio .arco-radio-icon {
+  transition:
+    color var(--duration-state) var(--ease-state),
+    background-color var(--duration-state) var(--ease-state),
+    border-color var(--duration-state) var(--ease-state),
+    box-shadow var(--duration-state) var(--ease-state);
+}
+
+/* ============================================================
+ * 四·补丁、多选框 Checkbox：对齐规范 §多选框 Checkbox
+ *   Arco 默认与规范差异：图标 14px(需16)、圆角走 --border-radius-small(8px，需4)、
+ *     边框 2px 灰(需 1px #DDDDDD)、hover 未选中变灰(需变主色)、hover 已选中无变深、
+ *     禁用已选中用浅蓝底(需灰底)、文字默认 #1A2130、横排 16px(需24)。
+ *   仅补齐上述差异项，其余（图标↔文字 8px、半选中样式）沿用 Arco 默认。
+ * ============================================================ */
+
+/* 图标：16×16、1px #DDDDDD 描边、4px 圆角（默认未选中态）*/
+.arco-checkbox-icon {
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+
+  border: var(--border-default); /* 1px solid #DDDDDD */
+  border-radius: var(--border-radius-checkbox); /* 4px */
+}
+
+/* 文字色：#1A2130 / 14px / 400（规范 §Checkbox；覆盖旧版误用的正文色 #4B5564）*/
+.arco-checkbox-label {
+  font-size: var(--font-size-base); /* 14px */
+  color: var(--color-text-title); /* #1A2130 */
+}
+
+/* 已选中：1px #046EFC 边框 + #046EFC 底（规范要求保留同色描边，非 transparent）*/
+.arco-checkbox-checked .arco-checkbox-icon {
+  background-color: var(--color-primary); /* #046EFC */
+  border-color: var(--color-primary);
+}
+
+/* 半选中：#046EFC 底 + 同色描边 + 白色横线（Arco 默认描边 transparent）*/
+.arco-checkbox-indeterminate .arco-checkbox-icon {
+  background-color: var(--color-primary); /* #046EFC */
+  border-color: var(--color-primary);
+}
+
+/* 悬浮未选中：边框变主色 #046EFC（覆盖 Arco 变灰的 --color-fill-4）*/
+.arco-checkbox:not(.arco-checkbox-checked):not(.arco-checkbox-indeterminate):not(
+    .arco-checkbox-disabled
+  ):hover
+  .arco-checkbox-icon {
+  border-color: var(--color-primary); /* #046EFC */
+}
+
+/* 悬浮已选中 / 半选中：#035ED4 变深（Arco 默认无颜色变化）*/
+.arco-checkbox-checked:hover .arco-checkbox-icon,
+.arco-checkbox-indeterminate:hover .arco-checkbox-icon {
+  background-color: var(--color-primary-hover); /* #035ED4 */
+  border-color: var(--color-primary-hover);
+}
+
+/* 禁用未选中：底 color-bg-surface #F7F7F7 + 1px #DDDDDD 描边；字 #9DA3AE
+ * 不用 var(--color-border)：Arco 在 body 可能重写该变量为 #E5E6EB */
+.arco-checkbox-disabled .arco-checkbox-icon,
+.arco-checkbox-disabled:hover .arco-checkbox-icon {
+  background-color: var(--color-bg-surface); /* #F7F7F7 */
+  border: var(--border-default); /* 1px solid #DDDDDD */
+}
+
+/* 禁用已选中：同上灰底描边 + ✓ #9DA3AE（覆盖 Arco 浅蓝底 primary-light-3）*/
+.arco-checkbox-disabled.arco-checkbox-checked .arco-checkbox-icon,
+.arco-checkbox-disabled.arco-checkbox-checked:hover .arco-checkbox-icon {
+  background-color: var(--color-bg-surface); /* #F7F7F7 */
+  border: var(--border-default);
+}
+
+.arco-checkbox-disabled .arco-checkbox-label {
+  color: var(--color-text-secondary); /* #9DA3AE */
+}
+
+.arco-checkbox-disabled .arco-checkbox-icon-check {
+  color: var(--color-text-secondary); /* #9DA3AE 勾选图标 */
+}
+
+/* 横排选项间距 24px（覆盖 Arco 默认 16px）*/
+.arco-checkbox-group .arco-checkbox {
+  margin-right: 24px;
+}
+
+/* 竖排选项间距 12px（Arco 默认靠 line-height:32px，改为精确 12px）*/
+.arco-checkbox-group-direction-vertical .arco-checkbox {
+  margin-right: 0;
+
+  line-height: normal;
+}
+
+.arco-checkbox-group-direction-vertical .arco-checkbox:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+/* ============================================================
+ * 四·补丁二、单选框 Radio：对齐规范 §Radio 图形/状态规格
+ *   Arco 默认与规范差异：图标 14px(需16)、描边 2px neutral-3(#E5E6EB，需 1px #DDDDDD)、
+ *     选中态为"实心主色圆 + 白色小点(scale .4)"(需"白底 + 1px 主色描边环 + 8px 主色内点")、
+ *     hover 未选中不变色(需变主色 #046EFC)、hover 已选中无变深(需 #035ED4)、
+ *     禁用已选中用浅蓝底(需灰 #DDDDDD 内圈)、横排 20px(需24)、竖排仅 line-height 撑开(需 12px)。
+ *   ::after 居中：其定位块为 icon 的 padding-box，左右对称，top/left:50% +
+ *     translate(-50%,-50%) 恒落在外框正中，与 1px 边框无关；未选中 scale(0) 隐藏。
+ *   文字色沿用 Arco --color-text-1(#1A2130，已在 §一重映射)，符合规范，不覆盖。
+ * ============================================================ */
+
+/* 外圈：16×16、1px #DDDDDD 描边、白底（覆盖 Arco 14px/2px/neutral-3）*/
+.arco-radio-icon {
+  width: var(--icon-size-inline); /* 16px */
+  height: var(--icon-size-inline);
+
+  border: var(--border-default); /* 1px solid #DDDDDD */
+
+  background-color: var(--color-bg-card);
+}
+
+/* 内点：居中 8px 主色圆点，未选中 scale(0) 隐藏（覆盖 Arco 占满内部的白点）*/
+.arco-radio-icon::after {
+  top: 50%;
+  left: 50%;
+
+  width: 8px; /* 选中内点直径，规范几何值，无对应间距 Token */
+  height: 8px;
+
+  background-color: var(--color-primary); /* #046EFC */
+
+  transform: translate(-50%, -50%) scale(0);
+}
+
+/* 默认已选中：白底 + 1px 主色描边环 + 8px 主色内点（覆盖 Arco 实心主色填充）*/
+.arco-radio-checked .arco-radio-icon {
+  border-color: var(--color-primary); /* #046EFC 描边环 */
+
+  background-color: var(--color-bg-card);
+}
+
+.arco-radio-checked .arco-radio-icon::after {
+  /* 必须在此重申主色：Arco 自带 .arco-radio-checked .arco-radio-icon::after
+   * 把内点设为白色(specificity 0,2,1)，高于基础 ::after 规则的 0,1,1，
+   * 仅靠基础规则会被压成白点(白底上不可见)。此规则同为 0,2,1 且后加载，夺回主色。*/
+  background-color: var(--color-primary); /* #046EFC */
+
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 悬浮未选中：描边变主色 #046EFC（Arco 默认保持 neutral-3 不变）*/
+.arco-radio:not(.arco-radio-checked):not(.arco-radio-disabled):hover .arco-radio-icon {
+  border-color: var(--color-primary); /* #046EFC */
+}
+
+/* 规范无外围灰晕，关掉 Arco icon-hover 底色 */
+.arco-radio:hover .arco-radio-icon-hover::before,
+.arco-radio > input[type='radio']:focus + .arco-radio-icon-hover::before {
+  display: none;
+}
+
+/* 悬浮已选中：描边 + 内点加深 #035ED4（Arco 默认无颜色变化）*/
+.arco-radio-checked:not(.arco-radio-disabled):hover .arco-radio-icon {
+  border-color: var(--color-primary-hover); /* #035ED4 */
+}
+
+.arco-radio-checked:not(.arco-radio-disabled):hover .arco-radio-icon::after {
+  background-color: var(--color-primary-hover); /* #035ED4 */
+}
+
+/* 禁用未选中：1px #DDDDDD 描边 + 白底（hover 不变），内点由通用规则保持隐藏
+ * 不用 var(--color-border)：Arco 在 body 重写该变量为 neutral-3(#E5E6EB) */
+.arco-radio-disabled .arco-radio-icon,
+.arco-radio-disabled:hover .arco-radio-icon {
+  border: var(--border-default); /* 1px solid #DDDDDD */
+
+  background-color: var(--color-bg-card);
+}
+
+/* 禁用已选中：1px #DDDDDD 描边 + 8px #DDDDDD 内点（覆盖 Arco 浅蓝底 primary-light-3）*/
+.arco-radio-checked.arco-radio-disabled .arco-radio-icon,
+.arco-radio-checked.arco-radio-disabled:hover .arco-radio-icon {
+  border: var(--border-default);
+
+  background-color: var(--color-bg-card);
+}
+
+.arco-radio-checked.arco-radio-disabled .arco-radio-icon::after {
+  background-color: var(--color-bg-active); /* #DDDDDD 灰内点 */
+
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 横排选项间距 24px（覆盖 Arco 默认 20px；竖排走下方规则不受影响）*/
+.arco-radio-group:not(.arco-radio-group-direction-vertical) .arco-radio {
+  margin-right: 24px;
+}
+
+/* 竖排选项间距 12px（Arco 默认靠 line-height:32px，改为精确 12px）*/
+.arco-radio-group-direction-vertical .arco-radio {
+  margin-right: 0;
+
+  line-height: normal;
+}
+
+.arco-radio-group-direction-vertical .arco-radio:not(:last-child) {
+  margin-bottom: 12px;
+}

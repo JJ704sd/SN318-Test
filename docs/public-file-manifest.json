@@ -1,0 +1,2129 @@
+{
+  "date": "2026-10-14",
+  "repository": "JJ704sd/SN318-Test",
+  "branch": "main",
+  "file_count": 530,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "git_blob": "7c1981000d3c0a76665581eb2d70269b6adab578"
+    },
+    {
+      "path": ".gitignore",
+      "git_blob": "288121b2d9814cd82819c8972069a94a9790a85e"
+    },
+    {
+      "path": "README.md",
+      "git_blob": "15f0f32d16342d06834b852ca3bd3ad8c11dca73"
+    },
+    {
+      "path": "artifacts/checklist/SN318_分批提测检查表.xlsx",
+      "git_blob": "14415d7a4481f31dcfd185ff87104ff3fdd9f335"
+    },
+    {
+      "path": "artifacts/checklist/SN318_分批提测检查表_边界异常复核.xlsx",
+      "git_blob": "fca13e1ce4d98cc81457413dc224fb4a144647de"
+    },
+    {
+      "path": "artifacts/checklist/SN318_分批提测检查表_需求重核完善.xlsx",
+      "git_blob": "755acf766f881626ac8d757a4a7e8e6de73524bf"
+    },
+    {
+      "path": "artifacts/frontend-audit/ui-spec-audit/SN318_前端UI规范审查与修改清单.xlsx",
+      "git_blob": "e1a18edd7290eb94ff6a4488ea2cad9bff7160c1"
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_冒烟与UI用例_飞书五色及实际页面复核.xlsx",
+      "git_blob": "10e2c404e4b30d03816c4fcf882b3498b5b954a6"
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_功能冒烟与界面交互验证_策略调整.xlsx",
+      "git_blob": "b43d4c2440a23d65887674d78bc1ebba92a9a29c"
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_功能冒烟与界面交互验证_覆盖复核.xlsx",
+      "git_blob": "7a133553db5b7699a35aad08c1bcb61bd133d445"
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_提测前冒烟与UI规范_二次复核修正.xlsx",
+      "git_blob": "67665c0cd6a14002796376a1f2201370c2057a28"
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_提测前冒烟与UI规范_用例复核.xlsx",
+      "git_blob": "3e3649bdc6130da88c504967416297fa03aa1c50"
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_提测前冒烟与UI规范_网站对照修订.xlsx",
+      "git_blob": "254f98a68ca582d5962275c95058ff7458e00967"
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_提测前冒烟与UI规范_颜色层级对应.xlsx",
+      "git_blob": "3379139a1035b11619e5b392c7824599de476d1e"
+    },
+    {
+      "path": "artifacts/smoke-ui/SN318_提测前冒烟与UI规范_颜色层级对应_复查修正.xlsx",
+      "git_blob": "7ab7ca265e43a9b237d84b7ff31d563425db7e35"
+    },
+    {
+      "path": "artifacts/template-reaudit/SN318_W2_UI与交互测试用例_40条实测复核修订_20261014.xlsx",
+      "git_blob": "b59aff14c2bbf270db7caba64f40713524e46a4f"
+    },
+    {
+      "path": "artifacts/template-reaudit/二次复核/SN318_W2_UI与交互测试用例_40条二次复核修正版_20261014.xlsx",
+      "git_blob": "2c2d3a876377064f3c2430bf1ac965db5fe8ffbc"
+    },
+    {
+      "path": "artifacts/template-reaudit/受阻16条核实/SN318_W2_UI与交互测试用例_16条受阻核实_含人工二次复核.xlsx",
+      "git_blob": "fec628040c41ba4f2dbca1ff8a2af4a4fca2dec8"
+    },
+    {
+      "path": "artifacts/ui-audit-20261014/20261014-master-data-reaudit/SN318_W2_主数据用例复核_20261014_dev_fd786de_dirty-8cdf1453.xlsx",
+      "git_blob": "16d1d75c3a618b9f3da050438b04192888c218fe"
+    },
+    {
+      "path": "artifacts/ui-audit-20261014/20261014-ui-audit/SN318_W2_UI与交互_20261014_dev_b2efcdb_dirty-5c6bc530.xlsx",
+      "git_blob": "a87ff3be9ce3d4ab081b1ddc194cec080cc2132f"
+    },
+    {
+      "path": "artifacts/ui-audit-20261014/20261014-ui-cases-revised/SN318_W2_UI与交互测试用例_20261014_fd786de_整改跟进版.xlsx",
+      "git_blob": "3a23a583095b6e38b501efef4b68c4c9717c928d"
+    },
+    {
+      "path": "artifacts/ui-audit/SN318_UI规范审查_测试建议与修改清单.xlsx",
+      "git_blob": "11616064b7e96d23205eddc89b2226cae918bac3"
+    },
+    {
+      "path": "artifacts/ui-audit/SN318_基础配置前端UI走查_修改清单及截图证据.xlsx",
+      "git_blob": "19b1d4ccc1f897fbdf9cf3e2bfc685c5f221fab0"
+    },
+    {
+      "path": "artifacts/ui-audit/W2/SN318_W2前端UI规范审查_修改清单.xlsx",
+      "git_blob": "c67d66cc98423f6d16135b19b61b21773d998b58"
+    },
+    {
+      "path": "artifacts/w2-tasks/20261013/PCS_W2前端测试用例_按任务节奏细化.xlsx",
+      "git_blob": "b9680947f93241280d673d40c0ac9cc1fef4cc7e"
+    },
+    {
+      "path": "artifacts/w2-tasks/20261013/PCS_W2前端测试用例_飞书与页面复核修订.xlsx",
+      "git_blob": "9507003dfc02fba7e4169fc55c147992e78e8952"
+    },
+    {
+      "path": "artifacts/w2-tasks/SN318_W2测试用例修订与本周任务.xlsx",
+      "git_blob": "ec64376c8511cf7e5b7f93782f7dee807e1fff19"
+    },
+    {
+      "path": "artifacts/weekly-ui/PCS_W2前端测试用例_飞书与页面复核修订.xlsx",
+      "git_blob": "b3039b9e7c281053a7a0b2775895f32608e8e8a6"
+    },
+    {
+      "path": "artifacts/weekly-ui/SN318_W2_UI与交互测试用例_按工单用例风格重写.xlsx",
+      "git_blob": "680a8bd008d1275c933a846b20b1947ce8b28e56"
+    },
+    {
+      "path": "artifacts/weekly-ui/SN318_W2_UI与交互用例及修改清单.xlsx",
+      "git_blob": "0b56d4880a084963d9d282966ac608c8c1f492ab"
+    },
+    {
+      "path": "docs/public-file-manifest.json",
+      "git_blob": null,
+      "note": "self; blob hash excluded to avoid circularity"
+    },
+    {
+      "path": "docs/publication-validation.json",
+      "git_blob": "5a69f822b8ab50b85d79a9bacdf3114ab19e2c4f"
+    },
+    {
+      "path": "docs/publication.md",
+      "git_blob": "94cf216425e5d0c6bb3790ed80ea077cf3618f7d"
+    },
+    {
+      "path": "pcs-front/.editorconfig",
+      "git_blob": "3b510aa687ba5d3dbaec1b9c6989327f84261a21"
+    },
+    {
+      "path": "pcs-front/.gitattributes",
+      "git_blob": "6313b56c57848efce05faa7aa7e901ccfc2886ea"
+    },
+    {
+      "path": "pcs-front/.gitignore",
+      "git_blob": "06dee89fd2c68f8288ea8ff4d2788d021fd498be"
+    },
+    {
+      "path": "pcs-front/.npmrc.example",
+      "git_blob": "e321842c7a14605e303cf5927c67cbbac3fc8b64"
+    },
+    {
+      "path": "pcs-front/.oxlintrc.json",
+      "git_blob": "0175da05d7f56624ca8066ee8da46a8a20afb611"
+    },
+    {
+      "path": "pcs-front/.prettierrc.json",
+      "git_blob": "1b4fc6fd7245c09a90c39c4a68e2a9e54d624d51"
+    },
+    {
+      "path": "pcs-front/.stylelintrc.js",
+      "git_blob": "884147d4831bbe9a88ed170aec44f9b1da62039e"
+    },
+    {
+      "path": "pcs-front/Dockerfile",
+      "git_blob": "560813512207500e940680eb4fe998b347c7b5f3"
+    },
+    {
+      "path": "pcs-front/README.md",
+      "git_blob": "e95e87a3c963c95ec2848f3beb5d69b03c061f65"
+    },
+    {
+      "path": "pcs-front/bff/src/app.ts",
+      "git_blob": "45d7b7faf9fa3805a81d1497a6a7038797a5ba2e"
+    },
+    {
+      "path": "pcs-front/bff/src/env.ts",
+      "git_blob": "a333c002c79d323f038343ae29daec5e325ad305"
+    },
+    {
+      "path": "pcs-front/bff/src/index.ts",
+      "git_blob": "02f1a30cb24a98ae9b3c87590e19426902aa372f"
+    },
+    {
+      "path": "pcs-front/bff/src/lmd-proxy.ts",
+      "git_blob": "0f4788a201c96b54762e2c601538201f6578cd1b"
+    },
+    {
+      "path": "pcs-front/bff/src/local-dev.test.ts",
+      "git_blob": "72fa55f4673811d3f77422d743157274b1ae4aa7"
+    },
+    {
+      "path": "pcs-front/bff/src/local-dev.ts",
+      "git_blob": "fcd0ab047f067defa692c7c335e89eb0cfb969b8"
+    },
+    {
+      "path": "pcs-front/bff/src/pcs-proxy.ts",
+      "git_blob": "84a745a020d2dce263e0be895aabdb19d7fb5c49"
+    },
+    {
+      "path": "pcs-front/bff/src/upstream-proxy.test.ts",
+      "git_blob": "1d665df8dfafc150419bbe6ab9e0d2f39184bd69"
+    },
+    {
+      "path": "pcs-front/bff/src/upstream-proxy.ts",
+      "git_blob": "eb3068e62fb296ba3310e2e01fdebb4fa17ce601"
+    },
+    {
+      "path": "pcs-front/bff/tsconfig.json",
+      "git_blob": "0b9885db79a8ffd7c3d0d983bf07b79f0927a4c9"
+    },
+    {
+      "path": "pcs-front/deploy/env.js.template",
+      "git_blob": "6a66798429e575d46f16bcebdd1b68c95316356b"
+    },
+    {
+      "path": "pcs-front/docker-entrypoint.sh",
+      "git_blob": "cd32e8b669769be3813c561e9145a36a765c3028"
+    },
+    {
+      "path": "pcs-front/env.d.ts",
+      "git_blob": "11f02fe2a0061d6e6e1f271b21da95423b448b32"
+    },
+    {
+      "path": "pcs-front/eslint.config.ts",
+      "git_blob": "21188ce8e7ca00242bb80f342d966408a12c4331"
+    },
+    {
+      "path": "pcs-front/index.html",
+      "git_blob": "1e6925f71e78cf7385cc6d324b50c426de7ce39d"
+    },
+    {
+      "path": "pcs-front/nginx.conf",
+      "git_blob": "e66d92e1693b9c491a75f6b52e5b0b112654f15a"
+    },
+    {
+      "path": "pcs-front/package-lock.json",
+      "git_blob": "ec87b3a277b07bac8d21792897272dad56213ac9"
+    },
+    {
+      "path": "pcs-front/package.json",
+      "git_blob": "bf606b36c1f031aed3f6ee0f456a8634338a871b"
+    },
+    {
+      "path": "pcs-front/public/config.js",
+      "git_blob": "7e9230f543df7eee3635635cf3167bf94643849f"
+    },
+    {
+      "path": "pcs-front/public/favicon.ico",
+      "git_blob": "df36fcfb72584e00488330b560ebcf34a41c64c2"
+    },
+    {
+      "path": "pcs-front/public/local-samples/batch.pdf",
+      "git_blob": "97e05d3fe818a471d623022efa31024274c9e431"
+    },
+    {
+      "path": "pcs-front/public/local-samples/declaration.xlsx",
+      "git_blob": "89a07f31c78d1d12d4d140bae466d58abb11a599"
+    },
+    {
+      "path": "pcs-front/public/logo_tykj.svg",
+      "git_blob": "8c529366f59b02b067b76f8cbb3acac89396bbc4"
+    },
+    {
+      "path": "pcs-front/scripts/check-entrypoints.mjs",
+      "git_blob": "0f6143e6e33832614eb6db958522f84f1e2f7768"
+    },
+    {
+      "path": "pcs-front/scripts/check-file-size.mjs",
+      "git_blob": "66940d0e60c0f4eb895755422d402ab2372ae35d"
+    },
+    {
+      "path": "pcs-front/scripts/check-hardcode-color.mjs",
+      "git_blob": "743e4cca6bccb482d3d0e54d8d065bb75c4632d7"
+    },
+    {
+      "path": "pcs-front/scripts/check-imports.mjs",
+      "git_blob": "6efdc93434a797984cea0e5fc6da33dd0747cfc5"
+    },
+    {
+      "path": "pcs-front/scripts/check-secrets.mjs",
+      "git_blob": "93f8c96845fdd037711fd05449a83b65ee8f75d6"
+    },
+    {
+      "path": "pcs-front/scripts/gen-tokens.mjs",
+      "git_blob": "89e307e4a58c3eb5425bd6f4649a673af300fe0e"
+    },
+    {
+      "path": "pcs-front/scripts/set-env.mjs",
+      "git_blob": "70b51df58728703f22aeb14da6542713211779dc"
+    },
+    {
+      "path": "pcs-front/shared/api.ts",
+      "git_blob": "e57d08967fd8ecf00e06ae6a2daa111b5979b542"
+    },
+    {
+      "path": "pcs-front/src/App.vue",
+      "git_blob": "502089e36871c1f2aed9902eff40b2ff500add4d"
+    },
+    {
+      "path": "pcs-front/src/api/demo.spec.ts",
+      "git_blob": "74e9de96100fc3e1695ada69565870743fbd412c"
+    },
+    {
+      "path": "pcs-front/src/api/demo.ts",
+      "git_blob": "79fb7ba1f849650281006b3af73638b4737613bb"
+    },
+    {
+      "path": "pcs-front/src/api/lmd.spec.ts",
+      "git_blob": "4e7a7c43403414866847865c138e0c8f43cebc10"
+    },
+    {
+      "path": "pcs-front/src/api/lmd.ts",
+      "git_blob": "c7190ae8c6b8edf4e18095dd0fa87861a52bac8f"
+    },
+    {
+      "path": "pcs-front/src/api/service-unit/ordering-rule.ts",
+      "git_blob": "c12017234d853d4cc1c5117097300dc88e07e345"
+    },
+    {
+      "path": "pcs-front/src/api/service-unit/service-unit.ts",
+      "git_blob": "cef7cb5a43905fe9c2e3a3a59a8856b2fc2ce1bb"
+    },
+    {
+      "path": "pcs-front/src/api/supplier/supplier.ts",
+      "git_blob": "83861896780671d621a4e5d98f5ee8c5382d5593"
+    },
+    {
+      "path": "pcs-front/src/assets/login-qr-placeholder.svg",
+      "git_blob": "bb2ae03207f29e223771a3a860cbc3ed46d6d34c"
+    },
+    {
+      "path": "pcs-front/src/assets/login_page.png",
+      "git_blob": "041d15ef803422451d0bdbc97b5ea854f7ed498a"
+    },
+    {
+      "path": "pcs-front/src/assets/logo_login.svg",
+      "git_blob": "cc3daec32ad0ec00ba3a52d553f9dd48a8cbb8fc"
+    },
+    {
+      "path": "pcs-front/src/assets/logo_qywx.svg",
+      "git_blob": "9588a2f2b62cdf907c81606f32d75e8a6a2b7f0a"
+    },
+    {
+      "path": "pcs-front/src/assets/logo_tykj.svg",
+      "git_blob": "8c529366f59b02b067b76f8cbb3acac89396bbc4"
+    },
+    {
+      "path": "pcs-front/src/auth/auth-center.ts",
+      "git_blob": "b21c08470b40cd82155aa81fe85acf70478e4d33"
+    },
+    {
+      "path": "pcs-front/src/bootstrap/aiReady.spec.ts",
+      "git_blob": "6356afec45425c7fb7b43e28c9133d34caef7a76"
+    },
+    {
+      "path": "pcs-front/src/bootstrap/aiReady.ts",
+      "git_blob": "d2dd84c63bb68b8b05d645a7d08d85e32432559b"
+    },
+    {
+      "path": "pcs-front/src/bootstrap/auth.spec.ts",
+      "git_blob": "160f7aaac4d97926f63b18c9763a5c99d223305d"
+    },
+    {
+      "path": "pcs-front/src/bootstrap/auth.ts",
+      "git_blob": "a15cecbf1f13433222003943fb222900586e1926"
+    },
+    {
+      "path": "pcs-front/src/bootstrap/local-preview.spec.ts",
+      "git_blob": "b95d81f352602473d299c4248cf9fbaa7eff9232"
+    },
+    {
+      "path": "pcs-front/src/bootstrap/local-preview.ts",
+      "git_blob": "af1fb1b4228bcb1237bffffeae5b0197530ce3c6"
+    },
+    {
+      "path": "pcs-front/src/components/base/RichText.base.vue",
+      "git_blob": "c2e0eddecfa74529b3725c29031f9bdcecd4e5d0"
+    },
+    {
+      "path": "pcs-front/src/components/biz/ByChart.vue",
+      "git_blob": "a96f52e20d9fc305b6731166e6af1d5e5ce13c27"
+    },
+    {
+      "path": "pcs-front/src/components/biz/ListBatchBar.biz.vue",
+      "git_blob": "03539569505da595cb188145c98f4d668b80845d"
+    },
+    {
+      "path": "pcs-front/src/core/__tests__/domain-boundaries.spec.ts",
+      "git_blob": "a4d8341178b012b7176f9675bb447ac7d7a59f03"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/.gitkeep",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/AiAssistantPanel.spec.ts",
+      "git_blob": "2ca382a1a2a4bfab28a059c6cc2bc6eee840c3d7"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/AiAssistantPanel.vue",
+      "git_blob": "4fc19f8b75f62a11ad5104efdf67246e1a12e2a3"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/AiAssistantTrigger.spec.ts",
+      "git_blob": "12e1d3b09a1d9acf3594d377aae180c2c20525f2"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/AiAssistantTrigger.vue",
+      "git_blob": "32030babfc6dfb2d808193899726fbceb9114e3f"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/_internals/ChatStatusMessage.spec.ts",
+      "git_blob": "e8e02b0eb7785df3fd2fd58fd88cabe73851db9b"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/_internals/ChatStatusMessage.vue",
+      "git_blob": "96c62b2ffccafec8dd04865ac88c38a2493d673d"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/_internals/ChatSuggestionActions.spec.ts",
+      "git_blob": "3f8eee2572452b77db56ccbe8bc7d1048404a2e1"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/_internals/ChatSuggestionActions.vue",
+      "git_blob": "bb86c846c08acf6274d9f0a7c8323a870a4d8297"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/_internals/MessageItem.spec.ts",
+      "git_blob": "abf0a014af2fa38cddf395c092ce1395e95672ea"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/_internals/MessageItem.vue",
+      "git_blob": "2f3815faaba72f073b8a20c8f4234b8fdc1ff006"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/_internals/MessageList.spec.ts",
+      "git_blob": "6b2f5ba6564582464e34d6c8bf29b8df0ad0bf9e"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/_internals/MessageList.vue",
+      "git_blob": "1f83381ccc564fc43349ac4d188636b0140ff0a9"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/_internals/QuickAskBar.spec.ts",
+      "git_blob": "ae42e9c56df42dac09ef12a34f0ac9bdecbeaa2d"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/_internals/QuickAskBar.vue",
+      "git_blob": "8a21069ddc9427ed535590ea10c576cee2bf2e28"
+    },
+    {
+      "path": "pcs-front/src/core/ai/assistant/index.ts",
+      "git_blob": "257a2ec436e237c1a7080dabfe4cf7f49dd32ecc"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/.gitkeep",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiActionBar.spec.ts",
+      "git_blob": "d63ca2db75ebf30e1df79b9b5f4efa3ce6a27b59"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiActionBar.vue",
+      "git_blob": "2926824deadcbcf4aacb378a16e99dba00e3bdac"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiActiveContainer.vue",
+      "git_blob": "919d3b8283c383cf82fed16e79ca89ea72a33292"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiAvatar.spec.ts",
+      "git_blob": "7ff7f050635375b4e9a3b09a746707fb3b1db05a"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiAvatar.vue",
+      "git_blob": "20523bdfbf103d16c7191cbd0b152f9245dded79"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiPingWave.vue",
+      "git_blob": "5e2781dcade58b3c940cc77c68a75173c0738977"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiStatusIndicator.spec.ts",
+      "git_blob": "2e9efe2572ee21eacd4dbd03f88aaadb5048552f"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiStatusIndicator.vue",
+      "git_blob": "16e8f60ad7c77cdae398bd852efcf23fd04ecb73"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiStreamCursor.vue",
+      "git_blob": "44ecb472f3506f00099d06621e8e8f38eadd000d"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiTag.spec.ts",
+      "git_blob": "09849ce36dc11ac674050f139418f7eacfc7fb94"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiTag.vue",
+      "git_blob": "fa87333983f5997916fa5a066cd1567a6dbb39d5"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiThinkingDots.spec.ts",
+      "git_blob": "baed26e5393a15a90260c73ac81fd363c9b16eae"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/AiThinkingDots.vue",
+      "git_blob": "4d31270f253976d556be52ee81150021a98874c0"
+    },
+    {
+      "path": "pcs-front/src/core/ai/components/README.md",
+      "git_blob": "d57f3524441ff2409d543f2f3b509cd279b2889f"
+    },
+    {
+      "path": "pcs-front/src/core/ai/embedded/.gitkeep",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "pcs-front/src/core/ai/embedded/AiNlFilter.spec.ts",
+      "git_blob": "f774cfb53cceb4f0e8f1f1a6a3811710583ec4e4"
+    },
+    {
+      "path": "pcs-front/src/core/ai/embedded/AiNlFilter.vue",
+      "git_blob": "b490005d49ec3ebb8ffec00695d7a7175af04577"
+    },
+    {
+      "path": "pcs-front/src/core/ai/embedded/AiPrefillField.spec.ts",
+      "git_blob": "0d03f3e08dc20c949a39e9f9fe984dc740ad541e"
+    },
+    {
+      "path": "pcs-front/src/core/ai/embedded/AiPrefillField.vue",
+      "git_blob": "042fed0c4cb126d2b3eefd3d2be28f1bbc15e1df"
+    },
+    {
+      "path": "pcs-front/src/core/ai/embedded/AiRiskAlert.spec.ts",
+      "git_blob": "1f6c725e27d6b3ba0db93bc7159092d5e0a9ce39"
+    },
+    {
+      "path": "pcs-front/src/core/ai/embedded/AiRiskAlert.vue",
+      "git_blob": "79a98e785e4e1555de8bfb6048e16109968427b7"
+    },
+    {
+      "path": "pcs-front/src/core/ai/embedded/AiSuggestInput.spec.ts",
+      "git_blob": "81e0690fb58daf2ce0e144dc008d683499afaed2"
+    },
+    {
+      "path": "pcs-front/src/core/ai/embedded/AiSuggestInput.vue",
+      "git_blob": "91f3449634427e28e4ec8d5fbf849303707478f9"
+    },
+    {
+      "path": "pcs-front/src/core/ai/embedded/AiSummaryCard.vue",
+      "git_blob": "80cb08e83cb003641727587df11df5e92d1c83a3"
+    },
+    {
+      "path": "pcs-front/src/core/ai/embedded/index.ts",
+      "git_blob": "1ff53ca1749da0ef4f9d3cbcea0e34143db6371d"
+    },
+    {
+      "path": "pcs-front/src/core/ai/index.ts",
+      "git_blob": "6da957727019b9336f6e64413e0fb590ec34ff13"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/.gitkeep",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/AiAbortError.ts",
+      "git_blob": "918b721b50e97e950b862a85fda3ad68bbea4fdc"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/AiService.ts",
+      "git_blob": "990566c02ce466bf91d958f55e8719563a2f06ca"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/MockAiAdapter.spec.ts",
+      "git_blob": "c7c14adb00968fd40285af52c3630f4b84c1cefa"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/MockAiAdapter.ts",
+      "git_blob": "150f102572190bb545adb46960b844ce008ee2ff"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/README.md",
+      "git_blob": "31b68086c694fa14332c2a5582ac993fd5b5fd33"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/index.spec.ts",
+      "git_blob": "d47201cb62d045490c705b98e67eb313b4f87cb9"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/index.ts",
+      "git_blob": "a792107891832eea8291393a2fbe7ba8be541edc"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/mock-data/nl-filter.spec.ts",
+      "git_blob": "3a912533c14ce1319215e39808b1ff180c60898b"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/mock-data/nl-filter.ts",
+      "git_blob": "d5b120eaa6281384e8590b708bd0a42ec05028ed"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/mock-data/replies.ts",
+      "git_blob": "0545e5cc5364de2aa5f39755a206d5fc16fd1360"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/mock-data/suggestions.ts",
+      "git_blob": "08ca1632a4cfaed9e906bb95c6aa197198b8e36e"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/types.ts",
+      "git_blob": "388ad5632c9e99ada97bdf63f04ea365a0d097be"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/useAiService.spec.ts",
+      "git_blob": "ea65ff791bc8a6b06c383fcc9f7f8edf75acc758"
+    },
+    {
+      "path": "pcs-front/src/core/ai/service/useAiService.ts",
+      "git_blob": "fd913045494ed00d75b329a4b47155f90e8397f6"
+    },
+    {
+      "path": "pcs-front/src/core/ai/store/ai.spec.ts",
+      "git_blob": "02acdb1a188f364b84a1be904991120f204ed815"
+    },
+    {
+      "path": "pcs-front/src/core/ai/store/ai.ts",
+      "git_blob": "663f2fdcf095e23765969ff1133979c619043705"
+    },
+    {
+      "path": "pcs-front/src/core/ai/store/aiStatus.ts",
+      "git_blob": "1d0e88c7e6ea2ee30c5fcad449813954cce85b14"
+    },
+    {
+      "path": "pcs-front/src/core/ai/store/aiStatusChain.ts",
+      "git_blob": "77de0378d6df9223497a4757da43c6e9d7594dec"
+    },
+    {
+      "path": "pcs-front/src/core/ai/store/aiStatusControl.ts",
+      "git_blob": "c573c3952f272dff86d980feda2ba9f2870c2522"
+    },
+    {
+      "path": "pcs-front/src/core/ai/store/aiStatusPreview.ts",
+      "git_blob": "4e2d395fcaf3027e5b0920f1518c35d204beea3c"
+    },
+    {
+      "path": "pcs-front/src/core/ai/store/aiStreamError.ts",
+      "git_blob": "d012c7ab27ef9d0fc9df1d10e55dc9d12344672d"
+    },
+    {
+      "path": "pcs-front/src/core/ai/store/aiTaskExec.ts",
+      "git_blob": "68a6abdaa80fb3243d966b877d0baec9e6ce27a3"
+    },
+    {
+      "path": "pcs-front/src/core/ai/store/index.ts",
+      "git_blob": "da36c5b690e33df9051ccb831e770c24442db1dd"
+    },
+    {
+      "path": "pcs-front/src/core/api/__tests__/baseUrlTiming.spec.ts",
+      "git_blob": "541d8078d25529a3f713432f0d40bf088091719b"
+    },
+    {
+      "path": "pcs-front/src/core/api/__tests__/extendable.spec.ts",
+      "git_blob": "f3b5226ce575eab97b2be049e21872cf4206781f"
+    },
+    {
+      "path": "pcs-front/src/core/api/errorCode.spec.ts",
+      "git_blob": "0eeeea6e98f341615726b366c336c8c872be20a9"
+    },
+    {
+      "path": "pcs-front/src/core/api/errorCode.ts",
+      "git_blob": "ff596772f1245112f1ae1b5221cbdebcf75eb160"
+    },
+    {
+      "path": "pcs-front/src/core/api/handlers.spec.ts",
+      "git_blob": "6d94e23b425105198407a2d277ffd585fed0c3f3"
+    },
+    {
+      "path": "pcs-front/src/core/api/handlers.ts",
+      "git_blob": "28d37e68c77639ce3ec28e3a46186487dfc5ac1d"
+    },
+    {
+      "path": "pcs-front/src/core/api/http.spec.ts",
+      "git_blob": "ea423ac0c63459414c0e371fca368bded2d1f162"
+    },
+    {
+      "path": "pcs-front/src/core/api/http.ts",
+      "git_blob": "dbeed5e073a1c6368fcb242b098bb4ebe9342bf7"
+    },
+    {
+      "path": "pcs-front/src/core/api/httpError.spec.ts",
+      "git_blob": "33b24dc8c4622d7f72132b3a5762cc2d2c969b9c"
+    },
+    {
+      "path": "pcs-front/src/core/api/httpError.ts",
+      "git_blob": "6188db9060b70503b3710f5cab59935b29b2ae87"
+    },
+    {
+      "path": "pcs-front/src/core/api/httpStream.spec.ts",
+      "git_blob": "a72af06d4da123ea6fe61b2b59f31cf96615e5d8"
+    },
+    {
+      "path": "pcs-front/src/core/api/httpStream.ts",
+      "git_blob": "3789c062d5da61f8fcf782d05203f5505b3bf5b9"
+    },
+    {
+      "path": "pcs-front/src/core/api/index.ts",
+      "git_blob": "d98ccc03e23524adbd00ea47d7d866a10a9a7be5"
+    },
+    {
+      "path": "pcs-front/src/core/api/request.spec.ts",
+      "git_blob": "1c131af5f2650ca8830989a1d217b124d6bc858e"
+    },
+    {
+      "path": "pcs-front/src/core/api/request.ts",
+      "git_blob": "e898f25888d2eaf5edf0e745b8da4ca78aa064d0"
+    },
+    {
+      "path": "pcs-front/src/core/api/streamError.spec.ts",
+      "git_blob": "918cb8aab90d7751c0d93af3ec1895d8babfb66b"
+    },
+    {
+      "path": "pcs-front/src/core/api/streamError.ts",
+      "git_blob": "42110026fee2c5b30405ad98106ea8e1a0b452f3"
+    },
+    {
+      "path": "pcs-front/src/core/api/streamParser.spec.ts",
+      "git_blob": "25003e244aa2889d6725cc6e946087aa20e29cc1"
+    },
+    {
+      "path": "pcs-front/src/core/api/streamParser.ts",
+      "git_blob": "8a23958779e784304be57284767cdd195d53e578"
+    },
+    {
+      "path": "pcs-front/src/core/assets/bg_ai.png",
+      "git_blob": "c088c7a9fbc733b75f4579922c3430bc0d333bdb"
+    },
+    {
+      "path": "pcs-front/src/core/assets/icons/ai-sparkle.svg",
+      "git_blob": "ebafb8c5bf25d3dba4897c41ca7b9c8c6a73ec6c"
+    },
+    {
+      "path": "pcs-front/src/core/assets/icons/empty-auth.svg",
+      "git_blob": "94b3d3a3da9c78d294ecb2a70daaa729a248179a"
+    },
+    {
+      "path": "pcs-front/src/core/assets/icons/empty-data.svg",
+      "git_blob": "fdb2709f9cd8537d6b48d80ca19ffeb02db8bda8"
+    },
+    {
+      "path": "pcs-front/src/core/assets/icons/empty-error.svg",
+      "git_blob": "4c834d4240e739944e3367eb4cf44106e3b07366"
+    },
+    {
+      "path": "pcs-front/src/core/assets/icons/empty-search.svg",
+      "git_blob": "13a8a09c5076c318f0fe33a7436b3fee901af7a4"
+    },
+    {
+      "path": "pcs-front/src/core/assets/yunxiaoxing_avatar@3x.png",
+      "git_blob": "da963ee2794f8f28b73c261e8bf723463a8a6fe3"
+    },
+    {
+      "path": "pcs-front/src/core/auth/auth-client.spec.ts",
+      "git_blob": "3fb054848f260cc78cc6ce42ac72d9ea46efe7ff"
+    },
+    {
+      "path": "pcs-front/src/core/auth/auth-client.ts",
+      "git_blob": "21d6e343d5dce386cedaf9491cf2ec9877502902"
+    },
+    {
+      "path": "pcs-front/src/core/auth/auth-events.spec.ts",
+      "git_blob": "cfb06ca5951c2622a997a17095746a0932a298ef"
+    },
+    {
+      "path": "pcs-front/src/core/auth/auth-events.ts",
+      "git_blob": "a8c83b3947857938e921ce41d73e66a71e7db6df"
+    },
+    {
+      "path": "pcs-front/src/core/auth/index.ts",
+      "git_blob": "7fc70d945db91239396562a94db6521ddd56324b"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/.gitkeep",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/ByBizTag/ByBizTag.spec.ts",
+      "git_blob": "b189bb3d03758160832b7d29120c47db8b67669c"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/ByBizTag/ByBizTag.vue",
+      "git_blob": "694c80cbc66ef25ee81d3513184eb3b8a6191a0e"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/ByEmpty/ByEmpty.spec.ts",
+      "git_blob": "6464a55722b92e66199a30e61932e63aad6a7132"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/ByEmpty/ByEmpty.vue",
+      "git_blob": "1db80b0f1b593fdb4c9673361df685358685bdf3"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/ByErrorBoundary.spec.ts",
+      "git_blob": "533dc32a48485a715c78632cbd039afef64864e3"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/ByErrorBoundary.vue",
+      "git_blob": "be924a4a397c9decdb8ef6c83e45367b6fbe5cb7"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/ByIconButton.spec.ts",
+      "git_blob": "82bd281686f52f029202606ae186089fb2bd5c7e"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/ByIconButton.vue",
+      "git_blob": "9f9cdb31b2758c6394f2968492ac4babb8c116c8"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/BySafeImage/BySafeImage.spec.ts",
+      "git_blob": "2476552b580ccd8226158f1cae12bc51d9ed1534"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/BySafeImage/BySafeImage.vue",
+      "git_blob": "41aff1a021c255f4ec5c582198f29558808edfec"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/ByStatusTag/ByStatusTag.spec.ts",
+      "git_blob": "0d7ef2e4c98e6be2f26d29cd248d81ca0aa0cf62"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/ByStatusTag/ByStatusTag.vue",
+      "git_blob": "188542f54e1e4c6966146434003b98f3d64c8a8e"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/DetailField.base.spec.ts",
+      "git_blob": "6565f5f8db48d53703d272eb372d9e0251183f24"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/DetailField.base.vue",
+      "git_blob": "0e67bcd11a142d4cff8dbbdc977de7319bdccd4f"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/SvgIcon.vue",
+      "git_blob": "edec2486ee60c4a9133556dc2fe0ac8bd4b7f6a6"
+    },
+    {
+      "path": "pcs-front/src/core/components/base/index.ts",
+      "git_blob": "4bb8fc633dedd52943aa3db1df1c944f8712bfb1"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/.gitkeep",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/ByCard/ByCard.spec.ts",
+      "git_blob": "0424295e1208bf8a39eb2a204dcd8dbabc6535b4"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/ByCard/ByCard.vue",
+      "git_blob": "3469347e2ae6ce9444cfa13b5cce39bfb601f1cc"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/ByDrawer/ByDrawer.spec.ts",
+      "git_blob": "909027783285ce7dd932d49ed3ad3667c351e1b6"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/ByDrawer/ByDrawer.vue",
+      "git_blob": "bd0b12f33d885cc60e080edb35fad2cc727ab0a1"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/ByModal/ByModal.spec.ts",
+      "git_blob": "4de9a74d913f24f04cd4626a60e067bedc31755a"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/ByModal/ByModal.vue",
+      "git_blob": "cfe07f2f9f245c21418517c0d5ae73b1b9d79024"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/ByTable/ByTable.spec.ts",
+      "git_blob": "10f185cae774b391d33bce110a825082987641d1"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/ByTable/ByTable.vue",
+      "git_blob": "f1365d9772aed367d6c218744fea964d1718989d"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/confirm.spec.ts",
+      "git_blob": "f56c9a1f25eb38b6bd497d058e132b5131d2cb79"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/confirm.ts",
+      "git_blob": "a3bb5c61d876a718a529cce21c592a7362c97cb2"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/index.ts",
+      "git_blob": "3ed9d9aed4983bc6724a442d6f5f4d8ec6647342"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/message.spec.ts",
+      "git_blob": "041e08b5e7f6b5081b9d5385c2808ad97517145e"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/message.ts",
+      "git_blob": "34d1fc4449156549503e08027123b52331733965"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/notify.spec.ts",
+      "git_blob": "67a6f161437330dde5daa6beca2315705e7004e0"
+    },
+    {
+      "path": "pcs-front/src/core/components/feedback/notify.ts",
+      "git_blob": "1dfa6f4beda1459f459d56d8416d54529b8b32bc"
+    },
+    {
+      "path": "pcs-front/src/core/components/form/.gitkeep",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "pcs-front/src/core/components/form/ByForm/ByForm.spec.ts",
+      "git_blob": "a9e9a4057072ad1a1164811b4804a211eb301240"
+    },
+    {
+      "path": "pcs-front/src/core/components/form/ByForm/ByForm.vue",
+      "git_blob": "217fd7718d92fce4e89909d856a4e074c14589be"
+    },
+    {
+      "path": "pcs-front/src/core/components/form/ByUpload/ByUpload.spec.ts",
+      "git_blob": "42118064beefb66ebd0e5b5411406bd5fc3270ae"
+    },
+    {
+      "path": "pcs-front/src/core/components/form/ByUpload/ByUpload.vue",
+      "git_blob": "035369f95cb5ce48f3829e508297a3fe7c7b647a"
+    },
+    {
+      "path": "pcs-front/src/core/components/form/ByUpload/ByUploadFileList.vue",
+      "git_blob": "c817965d92b22cc12cc8adce2680e12bc17e76e9"
+    },
+    {
+      "path": "pcs-front/src/core/components/form/ByUpload/ByUploadImageGrid.vue",
+      "git_blob": "3d0537f5e7a1addc10beae9f34670a1d44f301eb"
+    },
+    {
+      "path": "pcs-front/src/core/components/form/ByUpload/byUploadHelpers.ts",
+      "git_blob": "9a388bed79af65c12d1e630fa0ddab04930a42bb"
+    },
+    {
+      "path": "pcs-front/src/core/components/form/ByUpload/uploadText.ts",
+      "git_blob": "6b4e5128cb1920ce5b8a089810df8b83e815245c"
+    },
+    {
+      "path": "pcs-front/src/core/components/form/index.ts",
+      "git_blob": "f6d0bb7f652fb7e37bf205bb31bcbb11227fb012"
+    },
+    {
+      "path": "pcs-front/src/core/components/index.ts",
+      "git_blob": "fe109bba1d9beaae3792f871b3a9800e68618e0a"
+    },
+    {
+      "path": "pcs-front/src/core/composables/.gitkeep",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "pcs-front/src/core/composables/index.ts",
+      "git_blob": "b928510fba4ecfa70a6fd1cf8a6492e73a2de0a9"
+    },
+    {
+      "path": "pcs-front/src/core/composables/useDailyTip.ts",
+      "git_blob": "0312abe9d51904ff0198ed8f1bbfe4105c52e63e"
+    },
+    {
+      "path": "pcs-front/src/core/composables/useDetail.spec.ts",
+      "git_blob": "fd59d06d9c4fc37b8f2d1acd3a72ecb75c5becdc"
+    },
+    {
+      "path": "pcs-front/src/core/composables/useDetail.ts",
+      "git_blob": "23ea78cf05f110d998717d837736754a5055fed9"
+    },
+    {
+      "path": "pcs-front/src/core/composables/useDevice.spec.ts",
+      "git_blob": "8685bd8e3ffc77dc52230b2e53136eeac6d6f338"
+    },
+    {
+      "path": "pcs-front/src/core/composables/useDevice.ts",
+      "git_blob": "e4817399473fd18187ca61afeead484655a83f3a"
+    },
+    {
+      "path": "pcs-front/src/core/composables/useTableList.spec.ts",
+      "git_blob": "26964d7721c1371365d3a49fe170db120136c3e8"
+    },
+    {
+      "path": "pcs-front/src/core/composables/useTableList.ts",
+      "git_blob": "0ebc3bac9a3fe90e48a6a393433d9618187cf9ec"
+    },
+    {
+      "path": "pcs-front/src/core/config/env.spec.ts",
+      "git_blob": "4f39acf19ad3a57faa4087f87118b9906780f963"
+    },
+    {
+      "path": "pcs-front/src/core/config/env.ts",
+      "git_blob": "157465fda29a63216e40ef4aa99ae8654c8ae747"
+    },
+    {
+      "path": "pcs-front/src/core/config/index.ts",
+      "git_blob": "0d3c0842b92f4cc847966cd73f19570e26feefc0"
+    },
+    {
+      "path": "pcs-front/src/core/config/runtime.spec.ts",
+      "git_blob": "242076f28fc2a1b3f65fbbc96bcd10c4828d5c66"
+    },
+    {
+      "path": "pcs-front/src/core/config/runtime.ts",
+      "git_blob": "38f14676ac427060cf868fd9c1345a6ef41e7a74"
+    },
+    {
+      "path": "pcs-front/src/core/router/index.spec.ts",
+      "git_blob": "89492820090871e6fac99373474529f5c41b452c"
+    },
+    {
+      "path": "pcs-front/src/core/router/index.ts",
+      "git_blob": "bb0993073fbb47833aceac5626ed4f44621a8893"
+    },
+    {
+      "path": "pcs-front/src/core/stores/globalLoading.spec.ts",
+      "git_blob": "cb34dc5d138117698e99cc4bd30e191f770d890e"
+    },
+    {
+      "path": "pcs-front/src/core/stores/globalLoading.ts",
+      "git_blob": "35555a44d4a3054acaa109e84051e1d1b8267b4d"
+    },
+    {
+      "path": "pcs-front/src/core/stores/index.ts",
+      "git_blob": "14d8695838f23023a22e43c7cff3d0cee3b4bd69"
+    },
+    {
+      "path": "pcs-front/src/core/stores/permission.spec.ts",
+      "git_blob": "a5b3edaa6e2dc65513ba0271d3964256dc227dc2"
+    },
+    {
+      "path": "pcs-front/src/core/stores/permission.ts",
+      "git_blob": "1088ca17561bb86f0936cf426b9a6c044baf8ce9"
+    },
+    {
+      "path": "pcs-front/src/core/stores/sider.spec.ts",
+      "git_blob": "70a0789e14968ec741d81b9a7c21d4a588cd7d01"
+    },
+    {
+      "path": "pcs-front/src/core/stores/sider.ts",
+      "git_blob": "d564b235a3b880816a22e6ceacf480f3d675f655"
+    },
+    {
+      "path": "pcs-front/src/core/stores/user.spec.ts",
+      "git_blob": "300c93237f60c8c01ad9d29c009c2cd32698973d"
+    },
+    {
+      "path": "pcs-front/src/core/stores/user.ts",
+      "git_blob": "48b23fb9963696303daa732ec84f0ec990799628"
+    },
+    {
+      "path": "pcs-front/src/core/styles/arco-theme.less",
+      "git_blob": "b81333b0da73e23132f79f0aac7eda9cdf2fdd05"
+    },
+    {
+      "path": "pcs-front/src/core/styles/arco-theme/base.less",
+      "git_blob": "bb27fd82e8f8073003ade6ef677314a1e9d7f3e8"
+    },
+    {
+      "path": "pcs-front/src/core/styles/arco-theme/data.less",
+      "git_blob": "409be55b531191f1c29c14b7bc200975bf691400"
+    },
+    {
+      "path": "pcs-front/src/core/styles/arco-theme/drawer.less",
+      "git_blob": "cac49981aa61acfe47a1c1e2c947c358db83b823"
+    },
+    {
+      "path": "pcs-front/src/core/styles/arco-theme/feedback.less",
+      "git_blob": "c5d64d33da77f2aa8bd3d98408c38cef10ec2251"
+    },
+    {
+      "path": "pcs-front/src/core/styles/arco-theme/form.less",
+      "git_blob": "b8a5a3648a324df525db965b4739d5db9fc7559c"
+    },
+    {
+      "path": "pcs-front/src/core/styles/reset.css",
+      "git_blob": "d0d80e9d55a4a93ce1345f0a92f9664f8ebbdeb6"
+    },
+    {
+      "path": "pcs-front/src/core/styles/tokens.css",
+      "git_blob": "ef5ac1399280747652862f334f32822d7c0975d1"
+    },
+    {
+      "path": "pcs-front/src/core/styles/tokens.ts",
+      "git_blob": "1f53523ce2327f1e35a08b085976f4a495831355"
+    },
+    {
+      "path": "pcs-front/src/core/styles/utilities.css",
+      "git_blob": "a0f7259273e0ac1f18e123908354d62d29e7d1e1"
+    },
+    {
+      "path": "pcs-front/src/core/test-setup.ts",
+      "git_blob": "5c39f1b770537a75005b1c420243a06589255755"
+    },
+    {
+      "path": "pcs-front/src/core/utils/.gitkeep",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "pcs-front/src/core/utils/constants.ts",
+      "git_blob": "8ce9ee20e9121e524a5bc38c25309b8a49e863ed"
+    },
+    {
+      "path": "pcs-front/src/core/utils/csrf.spec.ts",
+      "git_blob": "1875e49528f8d0e8ddfdb2585f347b7a3b4fde01"
+    },
+    {
+      "path": "pcs-front/src/core/utils/csrf.ts",
+      "git_blob": "3e62a64470099767255317a531f3e194dc7a5af3"
+    },
+    {
+      "path": "pcs-front/src/core/utils/format.spec.ts",
+      "git_blob": "3edea190ebaf86a8516ca2cb04d9d19bf3cc24f6"
+    },
+    {
+      "path": "pcs-front/src/core/utils/format.ts",
+      "git_blob": "ad65884646946bb8c94e56f6a3678dd0cf770bf8"
+    },
+    {
+      "path": "pcs-front/src/core/utils/index.ts",
+      "git_blob": "69c45993d2ed53a9f8b3f78ab226928ace2e5be2"
+    },
+    {
+      "path": "pcs-front/src/core/utils/valueFormat.spec.ts",
+      "git_blob": "f643739a3802eeaec2e3c67853b9eb9fd824c5f3"
+    },
+    {
+      "path": "pcs-front/src/core/utils/valueFormat.ts",
+      "git_blob": "ab67e639a68bb9d7035fc41d5171140f4c714d29"
+    },
+    {
+      "path": "pcs-front/src/directives/permission.css",
+      "git_blob": "e467deacbc6c6f7cfcad4769fdb2f3ee673f261c"
+    },
+    {
+      "path": "pcs-front/src/directives/permission.spec.ts",
+      "git_blob": "1ec6e9c9830cebbe5eba8b2877567c2c79c6f667"
+    },
+    {
+      "path": "pcs-front/src/directives/permission.ts",
+      "git_blob": "b675575523822c16d15bf58458f87edc7cc72bc0"
+    },
+    {
+      "path": "pcs-front/src/layout/BasicLayout.spec.ts",
+      "git_blob": "1db6f2317b2069d3238c7190acda037f9017beca"
+    },
+    {
+      "path": "pcs-front/src/layout/BasicLayout.vue",
+      "git_blob": "b825e4126879041b41af5e15dcee51dc35f5422e"
+    },
+    {
+      "path": "pcs-front/src/layout/components/AppBreadcrumb.vue",
+      "git_blob": "988a0508b5ce297bb2ee6ee96a4d43496e448d39"
+    },
+    {
+      "path": "pcs-front/src/layout/components/AppHeader.vue",
+      "git_blob": "5bce05da501b4716740835f5d590791895b8593e"
+    },
+    {
+      "path": "pcs-front/src/layout/components/AppSider.vue",
+      "git_blob": "8a6cefe86d0c624498ed415e7bbab8eb6b3fb62e"
+    },
+    {
+      "path": "pcs-front/src/layout/components/AppSiderSkeleton.vue",
+      "git_blob": "9bb8bbe4a74f9569b213a37064517bb2548675ac"
+    },
+    {
+      "path": "pcs-front/src/layout/components/GlobalLoading.vue",
+      "git_blob": "68521414dd38c779845b031c8df016e65b61ccbc"
+    },
+    {
+      "path": "pcs-front/src/layout/components/PageHeader.vue",
+      "git_blob": "d94accb4e529d53a6b4aa756892d79a30b61b961"
+    },
+    {
+      "path": "pcs-front/src/layout/composables/useRouteNavigationLoading.spec.ts",
+      "git_blob": "987f7bd95a0ca684f9f48a61b9a0f22de76bfd90"
+    },
+    {
+      "path": "pcs-front/src/layout/composables/useRouteNavigationLoading.ts",
+      "git_blob": "fc9ec6961027f5987edc889b8b8e610f20b830ac"
+    },
+    {
+      "path": "pcs-front/src/layout/menu.ts",
+      "git_blob": "c3cb068993dc7d74dda054cd8007764f148d89b9"
+    },
+    {
+      "path": "pcs-front/src/main.ts",
+      "git_blob": "bcda5bb692e3f821493ef2546e0c5673dd21523b"
+    },
+    {
+      "path": "pcs-front/src/mock/auth.ts",
+      "git_blob": "9936bcf2429b86fb93062dfeecc937ef547133a4"
+    },
+    {
+      "path": "pcs-front/src/mock/index.ts",
+      "git_blob": "f5c0a43a68b94cc5a60a000e5087b4e4ac92ba2c"
+    },
+    {
+      "path": "pcs-front/src/mock/lmd-data.ts",
+      "git_blob": "af35fb5577fdff98c712435bf17679c53a7c303a"
+    },
+    {
+      "path": "pcs-front/src/mock/lmd-store.ts",
+      "git_blob": "b3676da4ff5b57dda82e74c9cc3391e6ce8eb377"
+    },
+    {
+      "path": "pcs-front/src/mock/lmd.ts",
+      "git_blob": "9e0381f9467f3b0c928ad0fb0afc3933ac886540"
+    },
+    {
+      "path": "pcs-front/src/mock/service-unit/ordering-rule.ts",
+      "git_blob": "3b079e6918eb33728ffe4dd7edf21ec361337d36"
+    },
+    {
+      "path": "pcs-front/src/mock/service-unit/service-unit.ts",
+      "git_blob": "8268aef33482671bd225b6f48e3abb08a9ce12e5"
+    },
+    {
+      "path": "pcs-front/src/mock/supplier/supplier.ts",
+      "git_blob": "a6e8b3f09fd0ae4bf48ae393a327bcd4c65c1fa3"
+    },
+    {
+      "path": "pcs-front/src/router/routes.spec.ts",
+      "git_blob": "5ebcc7c2ab9c069b3f991234eb73360bf69f1056"
+    },
+    {
+      "path": "pcs-front/src/router/routes.ts",
+      "git_blob": "fa9d149a1d7d71fdb6dc1490befade311a62e0c0"
+    },
+    {
+      "path": "pcs-front/src/shims-svg-icons.d.ts",
+      "git_blob": "f872dadc68d53aec310ab6e78b7198be16d3dafc"
+    },
+    {
+      "path": "pcs-front/src/styles/app.css",
+      "git_blob": "a13c73261593067b2eff8db68d47dc4279b14383"
+    },
+    {
+      "path": "pcs-front/src/utils/html.spec.ts",
+      "git_blob": "d433b945b811e63b944ce829c3b649a33f807aa4"
+    },
+    {
+      "path": "pcs-front/src/utils/html.ts",
+      "git_blob": "c1ef670636f8d51286645be453677c461f8a648e"
+    },
+    {
+      "path": "pcs-front/src/views/components/CodeBlock.vue",
+      "git_blob": "69417290b47bc8f58a82ad5c78b52ab80a0a7959"
+    },
+    {
+      "path": "pcs-front/src/views/components/ComponentsShowcase.vue",
+      "git_blob": "31c665ad549b0d07643ef9ed1c2857ad62e74bd5"
+    },
+    {
+      "path": "pcs-front/src/views/components/PropsDoc.spec.ts",
+      "git_blob": "98f0e3d5e6fe6d007423be00bd011466f93f6a23"
+    },
+    {
+      "path": "pcs-front/src/views/components/PropsDoc.vue",
+      "git_blob": "c9b312ec7ec940a38ea69be9ac23fbf91a578c23"
+    },
+    {
+      "path": "pcs-front/src/views/components/propDoc.spec.ts",
+      "git_blob": "b46a2a1bd062602995f068eeb2fffd40149849d9"
+    },
+    {
+      "path": "pcs-front/src/views/components/propDoc.ts",
+      "git_blob": "b4b381a9ec9e989535f5f5f4b15d11e76b3053b3"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/AlertSection.vue",
+      "git_blob": "aaeefb3a3e6dde3b83d5d493c78097aa601980fe"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/ButtonSection.vue",
+      "git_blob": "7d02a16a385db7e70e3544f0962c26504e478a8e"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/CardSection.vue",
+      "git_blob": "e6341cdde2f34680b8f5f1aff67e9010fc20d556"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/CheckboxSection.vue",
+      "git_blob": "adc7028331b026cd223b40e526df5f5eec5fd6ae"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/DrawerSection.vue",
+      "git_blob": "971a1df955cb6c0ae56c1ce5d4ef67277ec83197"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/FormSection.vue",
+      "git_blob": "bd6ad283e8365c92731fe42db99a54e1ac1e3f60"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/InputSection.vue",
+      "git_blob": "731eb887ab22937fca343789cd63636154b7936c"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/MessageSection.vue",
+      "git_blob": "31af5abbe2a057a17f8bb81929326543894ecd03"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/ModalSection.vue",
+      "git_blob": "e4affd7ef72309496c76d2f9ed81bd4b00ab6e37"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/PopoverSection.vue",
+      "git_blob": "7aca9cd9c0ed115a0b90b2541a7620a3815ac2cd"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/RadioSection.vue",
+      "git_blob": "82c7db24c30b3cb7f089557ce418e49a0542869b"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/RichTextSection.vue",
+      "git_blob": "4eaeb9d16806a525c249a4ad658a3711caba7c79"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/SelectorSection.vue",
+      "git_blob": "737510fbda46b48cb911e67026f6f5ecafe39d0a"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/TableSection.vue",
+      "git_blob": "6867cf2d0d7b0cca3aea29760e6bcd768a443533"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/TagBadgeSection.vue",
+      "git_blob": "b15f7298a2b46662c8ac08cd197429ab7755c94f"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/TooltipSection.vue",
+      "git_blob": "f8af45cdf0f1cf64f4ba69ff088700b5a7a184af"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/UploadSection.vue",
+      "git_blob": "36de5181580d23d813fcd61713644f7f8a135290"
+    },
+    {
+      "path": "pcs-front/src/views/components/sections/section-shared.css",
+      "git_blob": "6bd3742d3c12158e1a9f86a250a68d598fa36180"
+    },
+    {
+      "path": "pcs-front/src/views/demo/components/DetailDrawerContent.biz.spec.ts",
+      "git_blob": "0df54d40d9ecf8fc31bfa67cc22e0ed726c3ce0c"
+    },
+    {
+      "path": "pcs-front/src/views/demo/components/DetailDrawerContent.biz.vue",
+      "git_blob": "cfbab3b9876b41e017eda50980600efb15e9c766"
+    },
+    {
+      "path": "pcs-front/src/views/demo/components/FormFields.biz.vue",
+      "git_blob": "884699e7c54c34fe77ccf71bfb6ce47502a43693"
+    },
+    {
+      "path": "pcs-front/src/views/demo/components/FormFields.spec.ts",
+      "git_blob": "2723172ceb0edaeeea1f685ce476280e93caeb4b"
+    },
+    {
+      "path": "pcs-front/src/views/demo/components/ListAiSuggestions.vue",
+      "git_blob": "6ba2795b893dd25ff5d2b31c518d89cc22298c23"
+    },
+    {
+      "path": "pcs-front/src/views/demo/components/ListEmptyAi.spec.ts",
+      "git_blob": "c23433e71dfc9ecd7c8129c1cb493640a0867880"
+    },
+    {
+      "path": "pcs-front/src/views/demo/components/ListEmptyAi.vue",
+      "git_blob": "eb4f9ed0ac98c82e54d35b9b68c39795e65ebfcb"
+    },
+    {
+      "path": "pcs-front/src/views/demo/components/ListFilterBar.vue",
+      "git_blob": "227fa6b69960f676051ca215b049a8e5affcc4d4"
+    },
+    {
+      "path": "pcs-front/src/views/demo/components/ListStatusCell.vue",
+      "git_blob": "ad6602aee0b1187c646cae895b9c34632701c59c"
+    },
+    {
+      "path": "pcs-front/src/views/demo/composables/useAiBatchAction.spec.ts",
+      "git_blob": "bbb181f114cd4017b2f50985975450fee1a32482"
+    },
+    {
+      "path": "pcs-front/src/views/demo/composables/useAiBatchAction.ts",
+      "git_blob": "6345af83bca61ff11a32a873072ca077ee766a78"
+    },
+    {
+      "path": "pcs-front/src/views/demo/composables/useImport.ts",
+      "git_blob": "b55d9032a6bbc36eb11ed94857d3750c31e971cc"
+    },
+    {
+      "path": "pcs-front/src/views/demo/composables/useListDetailDrawer.ts",
+      "git_blob": "f66e5d7d7c3c4342a48f636a943752d230c5dd95"
+    },
+    {
+      "path": "pcs-front/src/views/demo/composables/useStatusEdit.ts",
+      "git_blob": "ce2c9e616b1a6df8c23d249732d9bf7eaa89b7d4"
+    },
+    {
+      "path": "pcs-front/src/views/demo/composables/useWaybillListPage.ts",
+      "git_blob": "997d6b84a3575d241ab8bf3bf913c7d24ce908b9"
+    },
+    {
+      "path": "pcs-front/src/views/demo/config/dashboardConfig.ts",
+      "git_blob": "6cfa438294864e7f763853ae2338f468e5cbcaa1"
+    },
+    {
+      "path": "pcs-front/src/views/demo/config/detailConfig.ts",
+      "git_blob": "2bdabe67219fbf34b5b6d4d3d68698ec40fd8336"
+    },
+    {
+      "path": "pcs-front/src/views/demo/config/formConfig.ts",
+      "git_blob": "3804d470ab3b8e1752a6c0c4b579aefc56b5cf29"
+    },
+    {
+      "path": "pcs-front/src/views/demo/config/listConfig.ts",
+      "git_blob": "478edfdef8ca28cf8294ea5706ad4354ab442968"
+    },
+    {
+      "path": "pcs-front/src/views/demo/views/DashboardView.vue",
+      "git_blob": "f71b759c27319dc5550b79d2620a64e8d48720de"
+    },
+    {
+      "path": "pcs-front/src/views/demo/views/DetailView.vue",
+      "git_blob": "1b19c0100ac2a3b2dde65dab2b9236cdcc4b81a9"
+    },
+    {
+      "path": "pcs-front/src/views/demo/views/FormView.vue",
+      "git_blob": "aa65ea8b6bfcb863e04c7cbb37799fbcbc5b6659"
+    },
+    {
+      "path": "pcs-front/src/views/demo/views/ListView.vue",
+      "git_blob": "34ff923e353aff745729f45e24bbed7f75568765"
+    },
+    {
+      "path": "pcs-front/src/views/exception/ExceptionView.vue",
+      "git_blob": "71b064479e18931500fdf0473dcbd63c307c69cd"
+    },
+    {
+      "path": "pcs-front/src/views/home/HomeView.vue",
+      "git_blob": "d02c43b4ac0166b963d5190c4a0cb450f959ade9"
+    },
+    {
+      "path": "pcs-front/src/views/login/LoginView.vue",
+      "git_blob": "f36ab0bc42044f4ef62dbc17f706cf71ab6861e0"
+    },
+    {
+      "path": "pcs-front/src/views/login/composables/useAuthCenterLogin.ts",
+      "git_blob": "a5b4a1e21390abc31de5dc19a8afa5680292da76"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/components/MasterDataFilter.biz.vue",
+      "git_blob": "48485716e3793ad7ba4210ccac71762dbf6453f1"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/components/MasterDataForm.biz.vue",
+      "git_blob": "1fdb02332aebd28a27cf862750dc3836165809aa"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/components/MasterDataLookupSelect.biz.vue",
+      "git_blob": "db27c09de64dda0c2cf97bd21094b2578702c693"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/components/MasterDataRelationDrawer.biz.vue",
+      "git_blob": "8bd935e25b5ff6d341f6e46b50448d6241876866"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/composables/useMasterDataLookup.ts",
+      "git_blob": "01032c8cdd012b3cdf6e17f7ee7d416ac6148a21"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/composables/useMasterDataPage.ts",
+      "git_blob": "7bb6976250f4840c0e08fc8eb38134a470783ea4"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/composables/useMasterDataRelation.ts",
+      "git_blob": "713b392f848f03cc23816a12c750b7561c02076d"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/config.ts",
+      "git_blob": "1a2edc04d3022b9f59c71cc82ce020a0afd5af0a"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/relationConfig.ts",
+      "git_blob": "cf9af82c68c345bd3a239184f382eee3d8f50c13"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/views/MasterDataPage.view.vue",
+      "git_blob": "38e922e0007671afe4cb50d298c505ac6980d39d"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/views/MasterDataResourcePanel.view.vue",
+      "git_blob": "19edf01edb2b12bd1c2b6559cacd3dcf76f885d8"
+    },
+    {
+      "path": "pcs-front/src/views/master-data/views/MasterDataWorkspace.view.vue",
+      "git_blob": "c1541887a7fd90f15d2b8454845b671c5c78212d"
+    },
+    {
+      "path": "pcs-front/src/views/product/components/OrderRulePicker.biz.vue",
+      "git_blob": "e9628c18a7f63be4f1e7cbe20380739fd07c4c69"
+    },
+    {
+      "path": "pcs-front/src/views/product/components/OrderingRuleFormModal.biz.vue",
+      "git_blob": "adeb0d90fb87193477cb2258f12229e2541d3a3a"
+    },
+    {
+      "path": "pcs-front/src/views/product/components/ServiceTimeEditor.biz.vue",
+      "git_blob": "3b2c8ad7f6dde4b00559da5b3ab65c2d2ad10388"
+    },
+    {
+      "path": "pcs-front/src/views/product/components/ServiceUnitLimits.biz.vue",
+      "git_blob": "9c541f9ae5d6a3cf98d3a871429dfc4268d92ada"
+    },
+    {
+      "path": "pcs-front/src/views/product/components/SupplierLookupSelect.biz.vue",
+      "git_blob": "dd845bffb718efd6b82af38505bfd4a754f04677"
+    },
+    {
+      "path": "pcs-front/src/views/product/serviceUnitOptions.ts",
+      "git_blob": "7a8b1a70f50583c35f844abf8f6d78f41a98a2a7"
+    },
+    {
+      "path": "pcs-front/src/views/product/view/price/CostPriceCard.view.vue",
+      "git_blob": "76f341ff1886dba34e2214f8021e8a3779fd3094"
+    },
+    {
+      "path": "pcs-front/src/views/product/view/price/FuelSurchargeRule.view.vue",
+      "git_blob": "c06928440e0787c44fbd7a760a5f145923304edd"
+    },
+    {
+      "path": "pcs-front/src/views/product/view/service/OrderingRules.view.vue",
+      "git_blob": "b8ccdf5277034e3188f40b47785cccbb873a5c94"
+    },
+    {
+      "path": "pcs-front/src/views/product/view/service/ServiceCombination.view.vue",
+      "git_blob": "5c94363afbe0c768ffc814336fc80f8e1d3c4c93"
+    },
+    {
+      "path": "pcs-front/src/views/product/view/service/ServiceUnit.view.vue",
+      "git_blob": "8c33d71cdaa06b94d08625baff8ec31d1001d378"
+    },
+    {
+      "path": "pcs-front/src/views/product/view/service/ServiceUnitDetail.view.vue",
+      "git_blob": "d4bb1e9fdbc7bd45f37ea3aba4340ea920ca72bb"
+    },
+    {
+      "path": "pcs-front/src/views/product/view/service/ServiceUnitEdit.view.vue",
+      "git_blob": "ff4ea193d3f3691c26d40dff77f009319dbd70a7"
+    },
+    {
+      "path": "pcs-front/tsconfig.app.json",
+      "git_blob": "8fdfc2af8eb3072fefcee829394db2eb41ac02dc"
+    },
+    {
+      "path": "pcs-front/tsconfig.json",
+      "git_blob": "100cf6a8f2b8b43c3fba052e5241951ecdd7a384"
+    },
+    {
+      "path": "pcs-front/tsconfig.node.json",
+      "git_blob": "c9b2badc953654f6e4ff7778bf4c744282ba0cda"
+    },
+    {
+      "path": "pcs-front/tsconfig.vitest.json",
+      "git_blob": "ff1d8c9d0c7c65e663a2021d59609572fea75d30"
+    },
+    {
+      "path": "pcs-front/vite.config.ts",
+      "git_blob": "e41759e0c34bacaf1b207a65827edd128b7d0d1a"
+    },
+    {
+      "path": "pcs-front/vitest.config.ts",
+      "git_blob": "4a789c8a8eb7f72ea1cb69be2144b01bd48314fa"
+    },
+    {
+      "path": "recipes/README.md",
+      "git_blob": "bf292e190946bfda74060ea32dbdfaf0b3901118"
+    },
+    {
+      "path": "recipes/pcs-front-local/audit-ui-mock-health.mjs",
+      "git_blob": "93b17389052e595365193f36353cecce80cd7150"
+    },
+    {
+      "path": "recipes/pcs-front-local/check-https.mjs",
+      "git_blob": "d245131b360425eb40d78457bfa72c33733d1cdb"
+    },
+    {
+      "path": "recipes/pcs-front-local/generate-local-assets.mjs",
+      "git_blob": "851925cde52a1eea5ae5238f1864f0dfb2d66612"
+    },
+    {
+      "path": "recipes/pcs-front-local/generate-local-pdf.py",
+      "git_blob": "38987ab533400274ac27dd08bd33ba47084700fd"
+    },
+    {
+      "path": "recipes/pcs-front-local/lookup-go-sdk.mjs",
+      "git_blob": "fd46af76417a1046aea9f4e06f09e7294256717b"
+    },
+    {
+      "path": "recipes/pcs-front-local/snapshot-before-sync.py",
+      "git_blob": "89791a172f111876a94a8887c2e66d4bb1050176"
+    },
+    {
+      "path": "recipes/pcs-front-local/start-dev.mjs",
+      "git_blob": "91a41e3775c4b9822f79425fbace2530ec43445f"
+    },
+    {
+      "path": "recipes/pcs-front-local/start-https.mjs",
+      "git_blob": "a8ccba3bc6dba91f118c632b8459c8209079b8f8"
+    },
+    {
+      "path": "recipes/pcs-front-local/verify-stylelint-fix.mjs",
+      "git_blob": "6e7444223c6e59727607cf26a0afac4bd18edf41"
+    },
+    {
+      "path": "recipes/pcs-front-research/build_research_report.py",
+      "git_blob": "6eea61a9d0dc59f8cfcbfe0c0c4bf369c146bc17"
+    },
+    {
+      "path": "recipes/pcs-front-research/extract_sources.py",
+      "git_blob": "4d9217bb8464b9452fdca7952fe7e45876eda20f"
+    },
+    {
+      "path": "recipes/pcs-front-research/preview_server.py",
+      "git_blob": "19ada426eed4208f8a2a47d8543912a03fbf800b"
+    },
+    {
+      "path": "recipes/pcs-front-research/source_facts.py",
+      "git_blob": "2d932484acc9b002ff15775ca9c8c7271795961e"
+    },
+    {
+      "path": "recipes/sn318-checklist/build_checklist.mjs",
+      "git_blob": "53563f0ddaa309ea36bd6cb1d04e4cc5205f425b"
+    },
+    {
+      "path": "recipes/sn318-checklist/revise_boundary_design.py",
+      "git_blob": "caf5ed0f48c8630ae4299cccac53c15700ce617c"
+    },
+    {
+      "path": "recipes/sn318-checklist/revise_requirements_again.py",
+      "git_blob": "a6c79cfed6c7529041c593db8dc6f79986d6ec00"
+    },
+    {
+      "path": "recipes/sn318-checklist/verify_boundary_export.py",
+      "git_blob": "fd0aa4a93ad09e6b35f20733fd59d4b1a14600fa"
+    },
+    {
+      "path": "recipes/sn318-checklist/verify_export.py",
+      "git_blob": "d1810ac79155cf904fae22d0a12c6b0752a01a06"
+    },
+    {
+      "path": "recipes/sn318-site-review/audit_color_recheck.py",
+      "git_blob": "a92852f31738dae431ce374f01b03ca53f7d2a4f"
+    },
+    {
+      "path": "recipes/sn318-site-review/build_color_mapping.mjs",
+      "git_blob": "505e61f92f017c56926e5e308e2519f4849537f9"
+    },
+    {
+      "path": "recipes/sn318-site-review/build_site_review.mjs",
+      "git_blob": "a2bd98bec3806c6a6ef5df166af568a9a4e2b8e4"
+    },
+    {
+      "path": "recipes/sn318-site-review/build_strategy.mjs",
+      "git_blob": "4f94ff8d67ab109f0e18f53b3b0ab46ce5722e2f"
+    },
+    {
+      "path": "recipes/sn318-site-review/compare_strategy_source.py",
+      "git_blob": "e143066670599e6bc8087dfa70a55e8139fdf12c"
+    },
+    {
+      "path": "recipes/sn318-site-review/recheck_color_pages.mjs",
+      "git_blob": "e3c7e31184a5e470fb2e9268b515a9c464992b75"
+    },
+    {
+      "path": "recipes/sn318-site-review/refine_coverage.mjs",
+      "git_blob": "df642dcc35bf894f5fb416180856f9746a99b667"
+    },
+    {
+      "path": "recipes/sn318-site-review/repair_color_mapping.mjs",
+      "git_blob": "bcdfabeb2174b4adbb3aa6cd0c994b84091adc98"
+    },
+    {
+      "path": "recipes/sn318-site-review/verify_color_pages_saved.py",
+      "git_blob": "9fba8d38e942387b15056519f942765ae1271477"
+    },
+    {
+      "path": "recipes/sn318-site-review/verify_color_saved.py",
+      "git_blob": "063bb85302265fa8ee3f542792af1a3f702b14e1"
+    },
+    {
+      "path": "recipes/sn318-site-review/verify_coverage_saved.py",
+      "git_blob": "568f327d3ab17891d3bf8f2e13846cb490f49365"
+    },
+    {
+      "path": "recipes/sn318-site-review/verify_saved.py",
+      "git_blob": "35f260f883f85f27c48f4a624ba5287bfa23c58d"
+    },
+    {
+      "path": "recipes/sn318-site-review/verify_strategy_saved.py",
+      "git_blob": "77c1bb5b62cc8ad8cc188ed2bacac6d179a88510"
+    },
+    {
+      "path": "recipes/sn318-smoke-ui-review/build_review.mjs",
+      "git_blob": "b8d50d76132ea431c745c7e1cd2227b39f775953"
+    },
+    {
+      "path": "recipes/sn318-smoke-ui-review/build_second_review.mjs",
+      "git_blob": "8faf27e550877097d72f61dd3961185b63863cef"
+    },
+    {
+      "path": "recipes/sn318-smoke-ui-review/inspect_inputs.py",
+      "git_blob": "4612fbc33eb762ca8565d4295089508f98817829"
+    },
+    {
+      "path": "recipes/sn318-smoke-ui-review/preview_source.mjs",
+      "git_blob": "96ad67787051bf3a03cd01ec82e2db853ac3e7da"
+    },
+    {
+      "path": "recipes/sn318-smoke-ui-review/probe_second.mjs",
+      "git_blob": "82952180c1eab4c8e4c1bd67c94af5de61d9da0b"
+    },
+    {
+      "path": "recipes/sn318-smoke-ui-review/second_audit.py",
+      "git_blob": "80e48cfb34b6941043d5cb94815c0a2b84a44981"
+    },
+    {
+      "path": "recipes/template-ui-execution-20261013/apply_norm_followup.py",
+      "git_blob": "b34dcedc0590c919e5f19c89bf27e348f8675341"
+    },
+    {
+      "path": "recipes/template-ui-execution-20261013/audit_all_cases.py",
+      "git_blob": "ff5448d8f9b83c35a4225c3ea2cc0ba3fbf93256"
+    },
+    {
+      "path": "recipes/template-ui-execution-20261013/finish_arrangement_revision.py",
+      "git_blob": "4e3bfdc6c1b59e6434319ca7d54aae4e30c62b19"
+    },
+    {
+      "path": "recipes/template-ui-execution-20261013/inspect_norm_media.py",
+      "git_blob": "db207aa635aff3344077badf978f908246c06bb7"
+    },
+    {
+      "path": "recipes/template-ui-execution-20261013/package_delivery.py",
+      "git_blob": "94aaba2bcda24224bd15669d2e50703560933d8b"
+    },
+    {
+      "path": "recipes/template-ui-execution-20261013/package_reference_files.py",
+      "git_blob": "38965ef7697a83a8786803115978ee225f7255ea"
+    },
+    {
+      "path": "recipes/template-ui-execution-20261013/prepare_arrangement_revision.py",
+      "git_blob": "8db43b1c7ad7f0888be0d9eb8de478eb67f877ef"
+    },
+    {
+      "path": "recipes/template-ui-execution-20261013/prepare_execution.py",
+      "git_blob": "093906a293cacb20d47569d9f0a800820b985d7c"
+    },
+    {
+      "path": "recipes/template-ui-execution-20261013/validate_arrangement_revision.py",
+      "git_blob": "a109c5dc622617093575fcee7b86e4582f419e8c"
+    },
+    {
+      "path": "recipes/template-ui-execution-20261013/validate_execution.py",
+      "git_blob": "63ec5d0b1ad63f07c380ab00c11e8784fe5875b6"
+    },
+    {
+      "path": "recipes/template-ui-reaudit-20261014/build_revision.mjs",
+      "git_blob": "f846ea57a923e6ad63b32ed9a2226f96a1109350"
+    },
+    {
+      "path": "recipes/template-ui-reaudit-20261014/finalize_revision.py",
+      "git_blob": "c329af0fc7596c288ab09265fe566f2494f0be59"
+    },
+    {
+      "path": "recipes/template-ui-reaudit-20261014/prepare_revision.py",
+      "git_blob": "141bf59387a8bc76a71915e5cc4d1bacd92e4f3c"
+    },
+    {
+      "path": "recipes/template-ui-reaudit-20261014/prepare_second.py",
+      "git_blob": "f3df95e04e3c34bcb0723a80560dda50e674ca14"
+    },
+    {
+      "path": "recipes/template-ui-reaudit-20261014/prepare_third.py",
+      "git_blob": "be540b32c51c141052ff2831a81cba74a191cfd0"
+    },
+    {
+      "path": "recipes/tpl004-recheck/dom.mjs",
+      "git_blob": "f5050761c2da0baa0c918d2e4f37b7d23e8ed18f"
+    },
+    {
+      "path": "recipes/tpl004-recheck/measure.mjs",
+      "git_blob": "05a712996f2eef82609b0ef310a53236345f7e73"
+    },
+    {
+      "path": "recipes/tpl004-recheck/measure2.mjs",
+      "git_blob": "a80d2cc550524ea269c81917c1d164e66a4ce701"
+    },
+    {
+      "path": "recipes/tpl004-recheck/probe.mjs",
+      "git_blob": "7f2005b608834c0d10c908b00182d6227b63ccec"
+    },
+    {
+      "path": "recipes/ui-actual-audit/build_report.mjs",
+      "git_blob": "d5cf7e85c4d24c6c32f886efb4e811fccc0b41b5"
+    },
+    {
+      "path": "recipes/ui-actual-audit/prepare_report.py",
+      "git_blob": "9b66f58860dd8ec8502f69dabdd65b20ec1b6ca4"
+    },
+    {
+      "path": "recipes/ui-actual-audit/verify_final.py",
+      "git_blob": "5d1201fd7e254a43ce60db1a02408180e3edb015"
+    },
+    {
+      "path": "recipes/ui-audit-advice/build_advice.mjs",
+      "git_blob": "df133665bedc07f960735613c613ab6f06608cef"
+    },
+    {
+      "path": "recipes/ui-audit-advice/inspect_sources.py",
+      "git_blob": "9a605ae044a8541a51ef51a0177483c636feb412"
+    },
+    {
+      "path": "recipes/ui-audit-advice/prepare_advice.py",
+      "git_blob": "0ba3f9b70027da8409f61cd6573328965c16661f"
+    },
+    {
+      "path": "recipes/ui-skill-20261014/finalize_package.py",
+      "git_blob": "7c4e2defc13f2ad46d5b28a69733c283b690458b"
+    },
+    {
+      "path": "recipes/ui-skill-20261014/inspect_inputs.py",
+      "git_blob": "b8b2ab9f8ca39d4949ac7b0577edd41aff8c611f"
+    },
+    {
+      "path": "recipes/ui-skill-20261014/prepare_package.py",
+      "git_blob": "52738c1cefebe7db051edbba5723e69586d97761"
+    },
+    {
+      "path": "recipes/ui-skill-20261014/verify_validator.py",
+      "git_blob": "54c8005e818fa7c7fa35a2f3337c2ab1dda7ae96"
+    },
+    {
+      "path": "recipes/ui-spec-audit-20261012/build_audit_data.py",
+      "git_blob": "dc07af86f7ac444f22b39dbce92a67a62e6df128"
+    },
+    {
+      "path": "recipes/ui-spec-audit-20261012/build_workbook.mjs",
+      "git_blob": "5d4f1455bb364ded742b73a83e346a86d0a0cae5"
+    },
+    {
+      "path": "recipes/ui-spec-audit-20261012/inspect_inputs.py",
+      "git_blob": "3273910f7ba7b6676da1a7d3089d9b7aad26ae8c"
+    },
+    {
+      "path": "recipes/ui-spec-audit-20261012/parse_norm.py",
+      "git_blob": "7367d247a28cbbcbe00a8a57a7574df290d85a90"
+    },
+    {
+      "path": "recipes/ui-spec-audit-20261012/prepare_evidence.py",
+      "git_blob": "8578125175137b56d6361af084bafb620f177db3"
+    },
+    {
+      "path": "recipes/ui-spec-audit-20261012/preview_audit.py",
+      "git_blob": "a3f4414ea8d4d99bad7e7ace72363d9654e567b0"
+    },
+    {
+      "path": "recipes/ui-spec-audit-20261012/verify_outputs.py",
+      "git_blob": "b48a652e03b6d5eedecae560a17c416086f483e9"
+    },
+    {
+      "path": "recipes/ui-w2-audit/build_report.mjs",
+      "git_blob": "465545cf8c62b17facf35c01fe2e41ce5ef6ad79"
+    },
+    {
+      "path": "recipes/ui-w2-audit/prepare_report.py",
+      "git_blob": "d665074aaf9c04a1d7e8f48cb9d144485fabca2f"
+    },
+    {
+      "path": "recipes/ui-w2-audit/verify_final.py",
+      "git_blob": "fadc3d0e64a8c94a94a3605fca873d316ae791b4"
+    },
+    {
+      "path": "recipes/w2-case-reaudit-20261013/build_revision.mjs",
+      "git_blob": "877c64c727d9633eb1a4f667aca2371102a18832"
+    },
+    {
+      "path": "recipes/w2-case-reaudit-20261013/inspect_live.py",
+      "git_blob": "206b17398f04c0107acebc093b755bc291056527"
+    },
+    {
+      "path": "recipes/w2-case-reaudit-20261013/prepare_revision.py",
+      "git_blob": "da637e15ff372cd33a98292f30a5b2150c0e4ec4"
+    },
+    {
+      "path": "recipes/w2-case-reaudit-20261013/verify_revision.py",
+      "git_blob": "72f31c15986229dfbad05c9bbfca0b67dec64d45"
+    },
+    {
+      "path": "recipes/w2-cases-revised-20261014/assemble.py",
+      "git_blob": "bcd197219d6272d73c72e316b753c1d84f869f8b"
+    },
+    {
+      "path": "recipes/w2-cases-revised-20261014/build.mjs",
+      "git_blob": "a4ef674a900653f007f83a17fe7c4d3f28e94f3d"
+    },
+    {
+      "path": "recipes/w2-cases-revised-20261014/finalize.py",
+      "git_blob": "a05ed0ca0b244b68833c3f9346213756649048a7"
+    },
+    {
+      "path": "recipes/w2-cases-revised-20261014/prepare.py",
+      "git_blob": "d737a322720e71a1bbf6559037f98634c9bbf55b"
+    },
+    {
+      "path": "recipes/w2-frontend-cases-20261013/build_cases.mjs",
+      "git_blob": "999d2eb1ef0571543c6cd1df02e215d4e7a81e24"
+    },
+    {
+      "path": "recipes/w2-frontend-cases-20261013/prepare_cases.py",
+      "git_blob": "a5b4a43cb6031a1732489e46fbfe02fe4fd66cc6"
+    },
+    {
+      "path": "recipes/w2-frontend-cases-20261013/verify_cases.py",
+      "git_blob": "a3bb6ae0d2d560846347a0afdf679026dbaae1d7"
+    },
+    {
+      "path": "recipes/w2-master-reaudit-20261014/assemble.py",
+      "git_blob": "b919db8e4055c0442dc3e4dfd2101f1d76a25c54"
+    },
+    {
+      "path": "recipes/w2-master-reaudit-20261014/build.mjs",
+      "git_blob": "9bf4bfb7cc545a8bbabb7d215864ef8061e336d0"
+    },
+    {
+      "path": "recipes/w2-master-reaudit-20261014/finalize.py",
+      "git_blob": "f5bfaf155925fd8500f1509914128fd06d6ee189"
+    },
+    {
+      "path": "recipes/w2-master-reaudit-20261014/prepare.py",
+      "git_blob": "388c446b462649ad8cd12154c54b04c80c185f6b"
+    },
+    {
+      "path": "recipes/w2-master-reaudit-20261014/preserve.py",
+      "git_blob": "6e698fd6465d1e737d24d9435a6af1dd4abda799"
+    },
+    {
+      "path": "recipes/w2-ui-run-20261014/assemble_results.py",
+      "git_blob": "af5e99bab26a1e39edfc99d6be539003e08d5829"
+    },
+    {
+      "path": "recipes/w2-ui-run-20261014/build_work_summary.py",
+      "git_blob": "389f083196a4dd910b8fea8ef87bf72413e280d3"
+    },
+    {
+      "path": "recipes/w2-ui-run-20261014/build_workbook.mjs",
+      "git_blob": "2a44dc514722c68f953974d0a316b4dc054f7d10"
+    },
+    {
+      "path": "recipes/w2-ui-run-20261014/compare_workbooks.py",
+      "git_blob": "281af71af0efa3b03b65965385ad6926d266f3b9"
+    },
+    {
+      "path": "recipes/w2-ui-run-20261014/finalize_delivery.py",
+      "git_blob": "3bf66eca676e73c1d1e0f5f8985e247e1c2d0d62"
+    },
+    {
+      "path": "recipes/w2-ui-run-20261014/parse_sources.py",
+      "git_blob": "4f36cfdc463aa1af26c4bdb1f6e6a702c20f2307"
+    },
+    {
+      "path": "recipes/w2-ui-run-20261014/prepare_inputs.py",
+      "git_blob": "461813ac7c4c1aca1109ae067cce64d02b658c8d"
+    },
+    {
+      "path": "recipes/w2-ui-run-20261014/render_work_summary.py",
+      "git_blob": "5685d324670a46077e99d613a30278e82f6d5ccd"
+    },
+    {
+      "path": "recipes/w2-ui-run-20261014/validate_work_summary.py",
+      "git_blob": "c78ae80079abdf8e39645e6dc3c1df819830052a"
+    },
+    {
+      "path": "recipes/w2-week-20261012/build_revision.mjs",
+      "git_blob": "26a650b0fe916a453adbebb7f88fef5df409b8ac"
+    },
+    {
+      "path": "recipes/w2-week-20261012/inspect_inputs.py",
+      "git_blob": "9c9fd4a2c71269d9ccbe89ce4d23e1733628730b"
+    },
+    {
+      "path": "recipes/w2-week-20261012/prepare_revision.py",
+      "git_blob": "75949bd8de095773a16a48303c4a46d41759a775"
+    },
+    {
+      "path": "recipes/w2-week-20261012/preview_source.mjs",
+      "git_blob": "abb8bf425a0aafcdb6b4f7feccc423e8f0640cd2"
+    },
+    {
+      "path": "recipes/w2-week-20261012/verify_revision.py",
+      "git_blob": "4306850c33842877151119583b52b9285eb5cc93"
+    },
+    {
+      "path": "recipes/w2-weekly-plan-20261014/compare_workbooks.py",
+      "git_blob": "66102c83b57c062414b8acb5f791ac13babf02d6"
+    },
+    {
+      "path": "recipes/w2-weekly-plan-20261014/create_plan.py",
+      "git_blob": "260be22dcae7dc806f14d6058c0d00dec4b7fffe"
+    },
+    {
+      "path": "recipes/w2-weekly-plan-20261014/list_package.py",
+      "git_blob": "42c5c5a2d7606d8056ac0fcfad82676555fbe9cc"
+    },
+    {
+      "path": "recipes/w2-weekly-plan-20261014/package_handoff.py",
+      "git_blob": "3a12c3451a28e8ef6b3698da56833f618c20919a"
+    },
+    {
+      "path": "recipes/w2-weekly-plan-20261014/simplify_plan.py",
+      "git_blob": "a2f289bbbfa4a59cf378a1c95297e84f91ca197b"
+    },
+    {
+      "path": "recipes/w2-weekly-plan-20261014/verify_plan.py",
+      "git_blob": "3d9de73cf3700f640cc8e61bbb5d400466d5f701"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/build.mjs",
+      "git_blob": "14d122c22d64246a8ff86009e98567e8d4793905"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/build_rewritten.mjs",
+      "git_blob": "238eb1bfcfab9a9b99995a4688e40ba9656b94d1"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/extract.py",
+      "git_blob": "3a90e0c31036aa09848c54cc3f6f11f3da86e2fc"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/html_report.py",
+      "git_blob": "2a88bbf66b4e7e383000955e174153b058e4e30e"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/inspect_reference.py",
+      "git_blob": "dfce19204ea75c552a5c8beff5de15409dcbec42"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/norm_extract.py",
+      "git_blob": "1c8c6673fb326cd4a925d2cc90c4f6443c37149d"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/prepare.py",
+      "git_blob": "f0eca8749395fa07db0f89552f4c8918784d6ee7"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/reaudit_read.py",
+      "git_blob": "101a6be3772c4564aefba18f996f2fb4c9f0dcbd"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/reaudit_refinement.py",
+      "git_blob": "f4789bd90491bb75f5284f72c636956efe47a119"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/rewrite_cases.py",
+      "git_blob": "cbfb79d7ba6e3e5e1dc62baf2bdc0b7d0d7993ca"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/validate.py",
+      "git_blob": "b2d12e9bfb21f3dc0714d287ee8d6cdd868b5299"
+    },
+    {
+      "path": "recipes/weekly-local-20261013/validate_rewritten.py",
+      "git_blob": "d4828f4f356d78a403995d38b6849d86d30d325a"
+    },
+    {
+      "path": "skills/sn318-ui-audit/SKILL.md",
+      "git_blob": "342656347ed0cf01f65ec52353ab5262b322d4ba"
+    },
+    {
+      "path": "skills/sn318-ui-audit/agents/openai.yaml",
+      "git_blob": "bdb63d948588fba1fcfea866551f07233ee36ef0"
+    },
+    {
+      "path": "skills/sn318-ui-audit/assets/run-template.json",
+      "git_blob": "ed219625c5ea5ad81774fb50011d3fc1933f2c14"
+    },
+    {
+      "path": "skills/sn318-ui-audit/assets/w2-baseline.json",
+      "git_blob": "e899fa54aa72dee054e3488c0a35d6cdf5ba9dcc"
+    },
+    {
+      "path": "skills/sn318-ui-audit/references/audit-protocol.md",
+      "git_blob": "1f20802b7d0988ad3f4b602eb9b3af7e124871fd"
+    },
+    {
+      "path": "skills/sn318-ui-audit/references/deliverables.md",
+      "git_blob": "d75ae57ccb399de324b45aa7b5572fd328290179"
+    },
+    {
+      "path": "skills/sn318-ui-audit/references/schedule.md",
+      "git_blob": "b1a45c35de438c0e11cc33bf29468b1108c0b2b3"
+    },
+    {
+      "path": "skills/sn318-ui-audit/references/sources-and-baseline.md",
+      "git_blob": "776406829b70512c54356ff814cdd75c1a09dbb0"
+    },
+    {
+      "path": "skills/sn318-ui-audit/scripts/validate_run.py",
+      "git_blob": "e308c0daf8a10c2edd3e0b33c5b4150d60789632"
+    },
+    {
+      "path": "tools/audit_publication.py",
+      "git_blob": "9d78b6dfdbf85d6b06de3920a9de17cbc7c66150"
+    }
+  ]
+}

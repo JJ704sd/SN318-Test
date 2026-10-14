@@ -200,8 +200,8 @@
 
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue'
-import { ByTable, ByCard, ByModal, ByDrawer, ByBizTag, ByEmpty, ByUpload, SvgIcon } from '@baiyun/template-core/components'
-import { formatDateTime } from '@baiyun/template-core/utils'
+import { ByTable, ByCard, ByModal, ByDrawer, ByBizTag, ByEmpty, ByUpload, SvgIcon } from '@core/components'
+import { formatDateTime } from '@core/utils'
 import { useWaybillListPage } from '../composables/useWaybillListPage'
 import type { WaybillListItem } from '@/api/demo'
 import { STATUS_OPTIONS, STATUS_LABEL, getStatusType, columns, LIST_TABLE_SCROLL_WIDTH } from '../config/listConfig'
@@ -266,12 +266,12 @@ const {
 // 异步加载，关闭则不下载、不挂载；模板以 aiEmbeddedOn 门控
 const AiNlFilter = aiEmbeddedOn
   ? defineAsyncComponent(() =>
-      import('@baiyun/template-core/ai/embedded').then((m) => m.AiNlFilter),
+      import('@core/ai/embedded').then((m) => m.AiNlFilter),
     )
   : null
 const AiActionBar = aiEmbeddedOn
   ? defineAsyncComponent(() =>
-      import('@baiyun/template-core/ai/embedded').then((m) => m.AiActionBar),
+      import('@core/ai/embedded').then((m) => m.AiActionBar),
     )
   : null
 const ListAiSuggestions = aiEmbeddedOn

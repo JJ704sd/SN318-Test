@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 64" fill="none">
+  <!-- 加载失败：感叹号圆标 + 底影（与空状态插画体系一致）-->
+  <ellipse cx="44" cy="57" rx="30" ry="4" fill="var(--color-bg-surface)" />
+  <circle
+    cx="44"
+    cy="30"
+    r="16"
+    fill="var(--color-bg-card)"
+    stroke="var(--color-border)"
+    stroke-width="1.5"
+  />
+  <path
+    d="M44 22v12"
+    stroke="var(--color-text-secondary)"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <circle cx="44" cy="40" r="1.8" fill="var(--color-text-secondary)" />
+</svg>

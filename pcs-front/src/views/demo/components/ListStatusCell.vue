@@ -21,8 +21,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { ByStatusTag } from '@baiyun/template-core/components'
-import type { StatusType } from '@baiyun/template-core/components'
+import { ByStatusTag } from '@core/components'
+import type { StatusType } from '@core/components'
 import type { WaybillStatus } from '@/api/demo'
 
 /**

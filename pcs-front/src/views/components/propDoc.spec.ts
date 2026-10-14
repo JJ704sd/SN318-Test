@@ -22,7 +22,7 @@ import {
   type PropDocGroup,
 } from './propDoc'
 
-vi.mock('@baiyun/template-core/components', () => ({
+vi.mock('@core/components', () => ({
   ByCard: {
     name: 'ByCard',
     props: ['title', 'variant'],

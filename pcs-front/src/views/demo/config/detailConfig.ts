@@ -1,5 +1,5 @@
-import type { StatusType } from '@baiyun/template-core/components'
-import type { BizType } from '@baiyun/template-core/tokens'
+import type { StatusType } from '@core/components'
+import type { BizType } from '@core/styles/tokens'
 import type { WaybillStatus } from '@/api/demo'
 
 export const STATUS_LABEL: Record<WaybillStatus, string> = {

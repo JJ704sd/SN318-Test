@@ -24,44 +24,12 @@
 
       <div class="app-header__brand">
         <img class="app-header__logo" :src="TYKJ_LOGO" alt="" aria-hidden="true" />
-        <span class="app-header__title">百运前台通用模板</span>
+        <span class="app-header__title">SN318系统</span>
       </div>
     </div>
 
-    <!-- 右区：搜索 + 通知 + 用户 -->
+    <!-- 右区：用户 -->
     <div class="app-header__right">
-      <a-input-search
-        v-if="isDesktop || searchExpanded"
-        v-model="searchKeyword"
-        class="app-header__search"
-        placeholder="搜索"
-        allow-clear
-      />
-      <ByIconButton
-        v-else-if="isTablet"
-        tooltip="搜索"
-        :tooltip-props="HOVER_DELAY_PROPS"
-        @click="searchExpanded = true"
-      >
-        <icon-search />
-      </ByIconButton>
-
-      <ByIconButton tooltip="通知" :tooltip-props="HOVER_DELAY_PROPS">
-        <icon-notification />
-      </ByIconButton>
-
-      <a-dropdown v-if="isMobile" trigger="click">
-        <ByIconButton tooltip="更多" :tooltip-props="HOVER_DELAY_PROPS">
-          <icon-more />
-        </ByIconButton>
-        <template #content>
-          <a-doption @click="searchExpanded = true">
-            <template #icon><icon-search /></template>
-            搜索
-          </a-doption>
-        </template>
-      </a-dropdown>
-
       <a-dropdown trigger="click" content-class="app-header__user-menu">
         <div class="app-header__user">
           <a-avatar :size="28" class="app-header__avatar">
@@ -86,14 +54,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject, ref } from 'vue'
+import { computed, inject } from 'vue'
 import { useRouter } from 'vue-router'
 import TYKJ_LOGO from '@/assets/logo_tykj.svg'
-import { useSiderStore, useUserStore } from '@baiyun/template-core/stores'
-import { useDevice } from '@baiyun/template-core/composables'
-import { ByIconButton } from '@baiyun/template-core/components'
-import { env } from '@baiyun/template-core/config'
-import { broadcastAuthEvent, login, logout } from '@baiyun/template-core/auth'
+import { useSiderStore, useUserStore } from '@core/stores'
+import { useDevice } from '@core/composables'
+import { ByIconButton } from '@core/components'
+import { env } from '@core/config'
+import { broadcastAuthEvent, logout } from '@core/auth'
 import { AUTH_COORDINATOR_KEY } from '@/bootstrap/auth'
 
 const siderStore = useSiderStore()
@@ -110,12 +78,7 @@ function requireAuthCoordinator() {
 const authCoordinator = requireAuthCoordinator()
 
 const isDesktop = computed(() => device.value === 'desktop')
-const isTablet = computed(() => device.value === 'tablet')
 const isMobile = computed(() => device.value === 'mobile')
-
-const searchKeyword = ref('')
-// Tablet 搜索图标点击后展开输入框；Mobile 从「更多」菜单进入
-const searchExpanded = ref(false)
 
 // 顶栏图标按钮 tooltip 延迟（规范 §04：100-200ms，防快速划过频繁弹出）
 const HOVER_DELAY_PROPS = { mouseEnterDelay: 150, mouseLeaveDelay: 100 }
@@ -127,8 +90,7 @@ const username = computed(
 // 退出当前应用：调 logout('application') -> 清权限态/用户态/CSRF cookie -> 跳统一登录页。
 // try/finally 保证 BFF logout 失败时前端态仍清空，避免 UI 残留"已登录"假象。
 // 广播 logout 事件通知其他标签页同步清前端态（避免 B 标签页 UI 残留 / 数据错乱）。
-// 真实模式跳 login('/', true) 强制重新认证：避免 SSO 仍有效自动登录回原账号。
-// mock 模式跳前端 /login 路由（mockLogin 表单）。
+// 跳登录页并要求权限中台重新认证：登录页会打开权限中台浮层。
 async function onLogout() {
   try {
     await logout('application')
@@ -136,11 +98,10 @@ async function onLogout() {
     authCoordinator.clearSession()
     broadcastAuthEvent('logout')
   }
-  if (env.useMockAuth) {
-    await router.push('/login')
-  } else {
-    login('/', true)
-  }
+  await router.push({
+    path: '/login',
+    query: { redirect: '/system-config/master-data', force: '1' },
+  })
 }
 
 // 退出统一登录：真实模式调 logout('sso') -> BFF 返回 sso_redirect -> 整页跳 AuthCenter 全站登出页。
@@ -211,11 +172,6 @@ async function onLogoutSso() {
 
   /* Box Model */
   gap: var(--spacing-sm);
-}
-
-.app-header__search {
-  /* Box Model */
-  width: 220px;
 }
 
 .app-header__user {

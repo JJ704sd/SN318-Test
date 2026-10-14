@@ -55,10 +55,10 @@ import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import type { FileItem } from '@arco-design/web-vue'
 import PageHeader from '@/layout/components/PageHeader.vue'
-import { ByForm, successMsg } from '@baiyun/template-core/components'
-import { useDevice } from '@baiyun/template-core/composables'
+import { ByForm, successMsg } from '@core/components'
+import { useDevice } from '@core/composables'
 import { submitForm, type WaybillFormData, type WaybillAttachment } from '@/api/demo'
-import { useSiderStore } from '@baiyun/template-core/stores'
+import { useSiderStore } from '@core/stores'
 import FormFields from '../components/FormFields.biz.vue'
 import {
   BIZ_TYPE_OPTIONS,

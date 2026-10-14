@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 64" fill="none">
+  <!-- 列表无数据：文档卡片 + 底影（SN318 empty-state-components.html）-->
+  <ellipse cx="44" cy="57" rx="30" ry="4" fill="var(--color-bg-surface)" />
+  <path
+    d="M18 14h52a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4Z"
+    fill="var(--color-bg-card)"
+    stroke="var(--color-border)"
+    stroke-width="1.5"
+  />
+  <path
+    d="M14 34h16l4 6h20l4-6h16"
+    fill="none"
+    stroke="var(--color-border)"
+    stroke-width="1.5"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M26 24h20M26 28h12"
+    stroke="var(--color-border)"
+    stroke-width="1.5"
+    stroke-linecap="round"
+  />
+</svg>

@@ -72,6 +72,27 @@ describe('routes 结构（精简计划阶段2：薄层清理后）', () => {
     expect(typeof auth).toBe('object')
     expect(auth.resourceId).toContain('demo_list')
 
+    await r.push('/pcs/master-data/country')
+    expect(r.currentRoute.value.name).toBe('master-data-workspace')
+    expect(r.currentRoute.value.query.resource).toBe('country')
+
+    await r.push('/pcs/master-data/exchange-rate')
+    expect(r.currentRoute.value.name).toBe('master-data-workspace')
+    expect(r.currentRoute.value.query.resource).toBe('exchange_rate')
+
+    await r.push('/pcs/master-data')
+    expect(r.currentRoute.value.name).toBe('master-data-workspace')
+    expect(r.currentRoute.value.meta.auth).toEqual({ resourceId: 'menu:pcs.front.base_data' })
+    expect(breadcrumbTitles(r)).toEqual(['系统配置', '基础配置'])
+
+    await r.push('/system-config/master-data')
+    expect(r.currentRoute.value.name).toBe('master-data-workspace')
+    expect(breadcrumbTitles(r)).toEqual(['系统配置', '基础配置'])
+
+    await r.push({ name: 'master-data-workspace', query: { group: 'finance', resource: 'exchange_rate' } })
+    expect(r.currentRoute.value.name).toBe('master-data-workspace')
+    expect(r.currentRoute.value.query.resource).toBe('exchange_rate')
+
     await r.push('/404')
     expect(r.currentRoute.value.name).toBe('exception-404')
     expect(r.currentRoute.value.meta.auth).toBe('public')
@@ -83,13 +104,16 @@ describe('routes 结构（精简计划阶段2：薄层清理后）', () => {
     expect(r.currentRoute.value.name).toBe('exception-404')
   })
 
-  it('/ → 重定向 home，携带菜单 icon 与资源级权限', async () => {
+  it('/ → 展示登录页，业务路径仍保留菜单 icon 与资源级权限', async () => {
     const r = makeRouter()
     await r.push('/')
-    expect(r.currentRoute.value.name).toBe('home')
+    expect(r.currentRoute.value.name).toBe('login')
+    expect(r.currentRoute.value.meta.auth).toBe('public')
+
+    await r.push('/system-config/master-data')
     expect(r.currentRoute.value.meta.icon).toBeTruthy()
     const auth = r.currentRoute.value.meta.auth as { resourceId?: string }
-    expect(auth.resourceId).toContain('home')
+    expect(auth.resourceId).toBe('menu:pcs.front.base_data')
   }, 60_000)
 
   it('/demo/list/form 懒加载运单表单，activeMenu 指向列表', async () => {

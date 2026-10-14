@@ -49,7 +49,7 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { ByCard, ByForm } from '@baiyun/template-core/components'
+import { ByCard, ByForm } from '@core/components'
 import CodeBlock from '../CodeBlock.vue'
 import PropsDoc from '../PropsDoc.vue'
 import { FORM_PROP_GROUPS } from '../propDoc'

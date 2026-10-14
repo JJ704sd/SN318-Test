@@ -36,9 +36,9 @@
 </template>
 
 <script setup lang="ts">
-import { AiTag } from '@baiyun/template-core/ai'
-import { ByEmpty } from '@baiyun/template-core/components'
-import type { AiSuggestion } from '@baiyun/template-core/ai'
+import { AiTag } from '@core/ai'
+import { ByEmpty } from '@core/components'
+import type { AiSuggestion } from '@core/ai'
 
 /**
  * 列表页 AI 批量建议面板（实施方案任务 5.3 / 规范 §10 嵌入式 AI、§02.2 原则三）。

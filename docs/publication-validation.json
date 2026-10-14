@@ -1,7 +1,7 @@
 {
-  "date": "2026-10-12",
-  "frontend_files": 127,
-  "recipe_files": 49,
+  "date": "2026-10-14",
+  "frontend_files": 360,
+  "recipe_files": 124,
   "people_anonymized": 5,
   "workbooks": [
     {
@@ -110,24 +110,105 @@
       "structure_preserved": true
     },
     {
+      "path": "artifacts/w2-tasks/20261013/PCS_W2前端测试用例_按任务节奏细化.xlsx",
+      "formulas": 101,
+      "images_removed": 0,
+      "changed_xml_parts": 2,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/w2-tasks/20261013/PCS_W2前端测试用例_飞书与页面复核修订.xlsx",
+      "formulas": 109,
+      "images_removed": 20,
+      "changed_xml_parts": 6,
+      "structure_preserved": true
+    },
+    {
       "path": "artifacts/w2-tasks/SN318_W2测试用例修订与本周任务.xlsx",
       "formulas": 1184,
       "images_removed": 7,
       "changed_xml_parts": 12,
       "structure_preserved": true
+    },
+    {
+      "path": "artifacts/weekly-ui/PCS_W2前端测试用例_飞书与页面复核修订.xlsx",
+      "formulas": 109,
+      "images_removed": 20,
+      "changed_xml_parts": 7,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/weekly-ui/SN318_W2_UI与交互测试用例_按工单用例风格重写.xlsx",
+      "formulas": 0,
+      "images_removed": 0,
+      "changed_xml_parts": 5,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/weekly-ui/SN318_W2_UI与交互用例及修改清单.xlsx",
+      "formulas": 4,
+      "images_removed": 0,
+      "changed_xml_parts": 3,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/template-reaudit/SN318_W2_UI与交互测试用例_40条实测复核修订_20261014.xlsx",
+      "formulas": 0,
+      "images_removed": 0,
+      "changed_xml_parts": 5,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/template-reaudit/二次复核/SN318_W2_UI与交互测试用例_40条二次复核修正版_20261014.xlsx",
+      "formulas": 0,
+      "images_removed": 0,
+      "changed_xml_parts": 5,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/template-reaudit/受阻16条核实/SN318_W2_UI与交互测试用例_16条受阻核实_含人工二次复核.xlsx",
+      "formulas": 0,
+      "images_removed": 0,
+      "changed_xml_parts": 5,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/ui-audit-20261014/20261014-master-data-reaudit/SN318_W2_主数据用例复核_20261014_dev_fd786de_dirty-8cdf1453.xlsx",
+      "formulas": 6,
+      "images_removed": 0,
+      "changed_xml_parts": 5,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/ui-audit-20261014/20261014-ui-audit/SN318_W2_UI与交互_20261014_dev_b2efcdb_dirty-5c6bc530.xlsx",
+      "formulas": 0,
+      "images_removed": 0,
+      "changed_xml_parts": 5,
+      "structure_preserved": true
+    },
+    {
+      "path": "artifacts/ui-audit-20261014/20261014-ui-cases-revised/SN318_W2_UI与交互测试用例_20261014_fd786de_整改跟进版.xlsx",
+      "formulas": 33,
+      "images_removed": 0,
+      "changed_xml_parts": 5,
+      "structure_preserved": true
     }
   ],
   "originals_modified": false,
   "verification": {
-    "staged_files": 201,
+    "source_files_hashed": 556,
+    "original_files_changed": 0,
     "known_private_values_found": 0,
-    "python_syntax_checked": 33,
-    "javascript_syntax_checked": 22,
-    "frontend_build": "passed with existing local dependencies",
-    "bff_build": "passed with existing local dependencies",
-    "private_frontend_files_changed": 0,
-    "original_workbooks_changed": 0,
-    "concurrent_work_directory_updates": 4,
-    "workbook_preview_imports": 16
+    "python_syntax_checked": 90,
+    "javascript_syntax_checked": 43,
+    "frontend_build": "passed using existing local dependencies",
+    "bff_build": "failed: TS2339, BffService.getSessionAccessToken is absent in the current auth SDK type",
+    "bff_failure_scope": "the identical call exists at line 118 in the preserved original source; no business fix made",
+    "npm_check_secrets": "passed, 348 frontend source files",
+    "workbook_imports": 27,
+    "production_preview": "login page rendered in browser; authentication not submitted",
+    "fresh_dependency_install": "not run; local auth SDK is outside publication scope",
+    "unit_tests": "not run",
+    "business_integration_tests": "not run"
   }
 }

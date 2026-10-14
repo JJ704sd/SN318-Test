@@ -19,9 +19,22 @@
           <component :is="node.icon" v-if="node.icon" />
         </template>
         <template #title>{{ node.title }}</template>
-        <a-menu-item v-for="child in node.children" :key="child.path" class="app-sider-menu__child-item">
-          {{ child.title }}
-        </a-menu-item>
+        <template v-for="child in node.children" :key="child.path">
+          <a-sub-menu v-if="child.children?.length" :key="child.path">
+            <template #title>{{ child.title }}</template>
+            <a-menu-item
+              v-for="leaf in child.children"
+              :key="leaf.path"
+              class="app-sider-menu__grandchild-item"
+            >
+              {{ leaf.title }}
+            </a-menu-item>
+          </a-sub-menu>
+
+          <a-menu-item v-else :key="child.path" class="app-sider-menu__child-item">
+            {{ child.title }}
+          </a-menu-item>
+        </template>
       </a-sub-menu>
 
       <a-menu-item v-else-if="!collapsed" :key="node.path">
@@ -56,8 +69,8 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { usePermissionStore, useSiderStore } from '@baiyun/template-core/stores'
-import { useDevice } from '@baiyun/template-core/composables'
+import { usePermissionStore, useSiderStore } from '@core/stores'
+import { useDevice } from '@core/composables'
 import { buildMenuTree, findMenuAncestors, type MenuNode } from '@/layout/menu'
 import AppSiderSkeleton from './AppSiderSkeleton.vue'
 
@@ -161,6 +174,11 @@ function onMenuItemClick(key: string) {
   /* 二级菜单不显示图标，补齐缩进后与一级菜单文字左缘对齐。 */
   .app-sider-menu:not(.arco-menu-collapsed) :deep(.app-sider-menu__child-item) {
     padding-left: calc(var(--layout-sider-menu-padding-x) * 2);
+  }
+
+  /* 三级菜单在二级基础上再加一档缩进 */
+  .app-sider-menu:not(.arco-menu-collapsed) :deep(.app-sider-menu__grandchild-item) {
+    padding-left: calc(var(--layout-sider-menu-padding-x) * 3);
   }
 }
 

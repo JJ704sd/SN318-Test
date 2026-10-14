@@ -1,0 +1,652 @@
+@import (once) './base.less';
+
+/* ============================================================
+ * 五·补、Popover：对齐规范 §气泡卡片 / 样式规范表
+ *   白底 #FFFFFF / 描边 1px #DDDDDD / 圆角 8px / 内边距 16px /
+ *   阴影 0 4px 16px rgba(0,0,0,0.12) / 最大宽 320px（超出自动换行）；
+ *   点击触发；可承载按钮/链接/表单/列表；点击外部或关闭按钮关闭；
+ *   不限行数（建议一屏内）；Mobile 适用；箭头指向触发元素；
+ *   与触发间距 8px（组件 popup-offset）。
+ * ============================================================ */
+
+.arco-popover-popup-content {
+  box-sizing: border-box;
+  max-width: 320px;
+  padding: var(--spacing-md); /* 16px */
+
+  color: var(--color-text-body); /* #4B5564 */
+  font-size: var(--font-size-base); /* 14px */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background-color: var(--color-bg-card); /* #FFFFFF */
+  border: var(--border-default); /* 1px solid #DDDDDD */
+  border-radius: var(--border-radius-default); /* 8px */
+  box-shadow: var(--shadow-popover); /* 0 4px 16px rgba(0,0,0,0.12) */
+}
+
+.arco-popover-title {
+  font-size: var(--font-size-base); /* 14px */
+  font-weight: var(--font-weight-medium); /* 500 */
+  color: var(--color-text-title); /* #1A2130 */
+}
+
+.arco-popover-title + .arco-popover-content {
+  margin-top: var(--spacing-sm); /* 8px，标题与正文间距 */
+}
+
+.arco-popover-popup-arrow {
+  background-color: var(--color-bg-card);
+  border: var(--border-default); /* 箭头描边与气泡一致 #DDDDDD */
+}
+
+/* ============================================================
+ * 五、Tooltip：对齐规范 §5.14 气泡提示
+ *   底 #1A2130 / 字 #FFFFFF / 12px·400 / 圆角 4px / 内边距 6×12 / 最大宽 240px；
+ *   纯文字、hover 触发、移出延迟关闭；最多 3 行；Mobile 不适用；
+ *   箭头指向触发元素（下方仅压圆角，避免被全局 8px 圆角化）。
+ * ============================================================ */
+
+.arco-tooltip-content {
+  /* Positioning */
+  display: -webkit-box;
+
+  /* Box Model */
+  box-sizing: border-box;
+  max-width: 240px;
+  padding: 6px 12px; /* 规范内边距；无 6/12 间距 Token，按设计稿落地 */
+
+  /* Typographic */
+  font-size: var(--font-size-xs); /* 12px */
+  font-weight: var(--font-weight-regular); /* 400 */
+  line-height: var(--line-height-xs); /* 1.4 */
+  color: var(--color-text-on-overlay); /* #FFFFFF */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* 规范：最多 3 行文字 */
+
+  /* Visual */
+  background-color: var(--color-text-title); /* #1A2130 */
+  border-radius: var(--border-radius-checkbox); /* 4px */
+
+  /* Misc */
+  overflow: hidden;
+}
+
+.arco-tooltip-popup-arrow {
+  background-color: var(--color-text-title); /* 与气泡同色 */
+}
+
+/* Tooltip / Popover 箭头：禁用全局圆角 Token 影响，保持尖锐三角 */
+.arco-tooltip-arrow,
+.arco-popover-arrow,
+.arco-tooltip .arco-tooltip-arrow,
+.arco-popover .arco-popover-arrow,
+[role='tooltip'] .arco-arrow,
+[role='tooltip'] [class*='arrow'],
+.arco-tooltip [class*='arrow'],
+.arco-popover [class*='arrow'] {
+  border-radius: 0 !important;
+}
+
+.arco-tooltip-arrow::before,
+.arco-popover-arrow::before,
+.arco-tooltip-arrow::after,
+.arco-popover-arrow::after,
+.arco-tooltip [class*='arrow']::before,
+.arco-popover [class*='arrow']::before,
+.arco-tooltip [class*='arrow']::after,
+.arco-popover [class*='arrow']::after {
+  border-radius: 0 !important;
+}
+
+/* ============================================================
+ * 六、Arco 原生图片预览安全区（arco-image-preview）
+ *   预览内容距视口边缘：Desktop 48 / Tablet 32 / Mobile 16；
+ *   关闭按钮距视口边缘：Desktop 24 / Tablet 20 / Mobile 16；
+ *   图片超出安全区时等比缩放（object-fit contain / max 100%）。
+ * ============================================================ */
+.arco-image-preview-img-container {
+  box-sizing: border-box;
+  padding: var(--preview-safe-area-desktop); /* 48px */
+}
+
+.arco-image-preview-close-btn {
+  top: var(--preview-close-offset-desktop) !important; /* 24px */
+  right: var(--preview-close-offset-desktop) !important;
+}
+
+@media (max-width: 1279px) {
+  .arco-image-preview-img-container {
+    padding: var(--preview-safe-area-tablet); /* 32px */
+  }
+
+  .arco-image-preview-close-btn {
+    top: var(--preview-close-offset-tablet) !important; /* 20px */
+    right: var(--preview-close-offset-tablet) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .arco-image-preview-img-container {
+    padding: var(--preview-safe-area-mobile); /* 16px */
+  }
+
+  .arco-image-preview-close-btn {
+    top: var(--preview-close-offset-mobile) !important; /* 16px */
+    right: var(--preview-close-offset-mobile) !important;
+  }
+}
+
+/* ============================================================
+ * 弹窗 Modal（规范 §5.10）
+ *   默认宽 480 / 大弹窗 640；最大高度 80% 视口（80vh，1080 屏约 864px）；
+ *   圆角 16px；标题 16px/500；内容区内边距 24px；
+ *   遮罩 rgba(0,0,0,0.45)；底栏右对齐（取消左、确认右）且固定不随内容滚；
+ *   高度超出时：标题区 + 底部操作区固定，仅中间内容区独立滚动。
+ * 状态规范：
+ *   打开：遮罩淡入 + 弹窗缩放出现，200ms ease-out；
+ *   关闭：遮罩淡出 + 弹窗缩放消失，150ms ease-in；
+ *   加载：确认按钮 loading，遮罩不可点关（由 ByModal confirmLoading 控制）。
+ * ============================================================ */
+
+.arco-modal-mask {
+  background-color: var(--overlay-modal); /* rgba(0,0,0,0.45) */
+}
+
+/* 打开：遮罩淡入 200ms ease-out */
+.fade-modal-enter-active,
+.fade-modal-appear-active {
+  transition: opacity var(--duration-modal-in) var(--ease-modal-in) !important;
+}
+
+/* 关闭：遮罩淡出 150ms ease-in */
+.fade-modal-leave-active {
+  transition: opacity var(--duration-modal-out) var(--ease-modal-out) !important;
+}
+
+/* 打开：弹窗缩放出现 200ms ease-out */
+.zoom-modal-enter-active,
+.zoom-modal-appear-active {
+  transition:
+    opacity var(--duration-modal-in) var(--ease-modal-in),
+    transform var(--duration-modal-in) var(--ease-modal-in) !important;
+}
+
+/* 关闭：弹窗缩放消失 150ms ease-in */
+.zoom-modal-leave-active {
+  transition:
+    opacity var(--duration-modal-out) var(--ease-modal-out),
+    transform var(--duration-modal-out) var(--ease-modal-out) !important;
+}
+
+.arco-modal {
+  /* 保持 inline-flex：配合 wrapper ::after + vertical-align 垂直居中（勿用 block flex，会顶到上方）*/
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+  vertical-align: middle;
+
+  top: 0;
+
+  /* 规范：最大高度 80% 视口（例：1080 屏 → 864px）*/
+  max-height: var(--modal-max-height); /* 80vh */
+
+  border-radius: var(--border-radius-modal); /* 16px */
+
+  background: var(--color-bg-card);
+  /* 规范阴影：0 8px 24px rgba(0,0,0,0.16) */
+  box-shadow: var(--shadow-modal);
+}
+
+.arco-modal-header {
+  display: flex;
+  flex: none;
+  flex-shrink: 0;
+  align-items: center;
+
+  box-sizing: border-box;
+  height: var(--modal-header-min-height); /* 56px */
+  margin-bottom: 0;
+  padding: 0 var(--spacing-lg); /* 水平 24px */
+  border-bottom: var(--border-divider);
+}
+
+.arco-modal-title {
+  flex: 1;
+  min-width: 0;
+  color: var(--color-text-title);
+  font-size: var(--font-size-h2); /* 16px */
+  font-weight: var(--font-weight-medium); /* 500 */
+  line-height: var(--line-height-h2);
+  text-align: left;
+}
+
+/* 标题左对齐（覆盖 Arco 默认居中）；自带关闭按钮时占满标题区宽度 */
+.arco-modal-header .arco-modal-title {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* 中间内容区：内边距 24px；超出时独立滚动（头尾通过 flex 固定）*/
+.arco-modal-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  /* 显式上限，避免仅靠 max-height 的 flex 容器时 body 撑破不滚动 */
+  max-height: calc(
+    var(--modal-max-height) - var(--modal-header-min-height) - var(--modal-footer-min-height)
+  );
+  padding: var(--spacing-lg); /* 24px */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* 底部操作区：右对齐；取消在左、确认在右；固定不随内容滚动 */
+.arco-modal-footer {
+  display: flex;
+  flex: none;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-sm); /* 8px */
+
+  box-sizing: border-box;
+  min-height: var(--modal-footer-min-height); /* 64px */
+  margin-top: 0;
+  padding: var(--spacing-md) var(--spacing-lg); /* 16px 24px */
+  border-top: var(--border-divider);
+
+  background: var(--color-bg-card);
+}
+
+.arco-modal-footer .arco-btn {
+  min-width: 80px;
+}
+
+/* ByModal Mobile 全屏：透传 class 落在 .arco-modal-container 上，
+ * 需经后代选择器命中内部 .arco-modal（行内 width 须 !important 覆盖） */
+.arco-modal-container.by-modal--fullscreen .arco-modal {
+  display: flex;
+  width: 100% !important;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  border-radius: 0;
+  vertical-align: top;
+}
+
+.arco-modal-container.by-modal--fullscreen .arco-modal-body {
+  max-height: none;
+}
+
+/* ByModal Mobile 默认弹框：底部 Sheet；large/form-double 仍走全屏规则。 */
+.arco-modal-container.by-modal--sheet .arco-modal-wrapper {
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.arco-modal-container.by-modal--sheet .arco-modal {
+  display: flex;
+  width: 100% !important;
+  max-width: 100%;
+  margin: 0;
+  border-radius: var(--border-radius-modal) var(--border-radius-modal) 0 0;
+  vertical-align: bottom;
+}
+
+/* ============================================================
+ * 九、消息提示：Toast(Message) / Alert / Notification
+ *   对齐 message-components.html / 规范 §05 消息提示
+ * ============================================================ */
+
+/* ---- Toast · Message：浅底 + 主色 30% 描边 + 主色圆底白符号 + 主色字 + shadow-md；3s ---- */
+.arco-message-list {
+  z-index: var(--z-toast);
+}
+
+.arco-message {
+  gap: var(--spacing-sm); /* 8px */
+
+  box-sizing: border-box;
+  min-height: var(--toast-min-height); /* 40px */
+  margin-bottom: var(--spacing-md);
+  padding: 10px var(--spacing-md); /* 10px 16px */
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-default); /* 8px */
+  box-shadow: var(--shadow-md);
+}
+
+.arco-message-icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 0;
+  font-size: var(--toast-icon-size); /* 18px */
+  line-height: 1;
+}
+
+/* 主色圆底 + 白符号（规范 §消息提示 Toast）*/
+.by-toast-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: var(--toast-icon-size); /* 18px */
+  height: var(--toast-icon-size);
+  border-radius: 50%;
+
+  color: var(--color-text-on-overlay); /* #FFFFFF */
+  font-size: var(--font-size-xs); /* 12px，符号小于圆底 */
+  line-height: 1;
+}
+
+.by-toast-icon .arco-icon {
+  color: inherit;
+}
+
+.by-toast-icon--success {
+  background-color: var(--color-success);
+}
+
+.by-toast-icon--warning {
+  background-color: var(--color-warning);
+}
+
+.by-toast-icon--error {
+  background-color: var(--color-error);
+}
+
+.by-toast-icon--info {
+  background-color: var(--color-info);
+}
+
+.arco-message-content {
+  font-size: var(--font-size-base); /* 14px */
+  line-height: var(--line-height-base);
+}
+
+.arco-message-success {
+  border-color: var(--color-success-toast-border);
+
+  color: var(--color-success);
+
+  background-color: var(--color-success-bg);
+}
+
+.arco-message-success .arco-message-content {
+  color: var(--color-success);
+}
+
+.arco-message-warning {
+  border-color: var(--color-warning-toast-border);
+
+  color: var(--color-warning);
+
+  background-color: var(--color-warning-bg);
+}
+
+.arco-message-warning .arco-message-content {
+  color: var(--color-warning);
+}
+
+.arco-message-error {
+  border-color: var(--color-error-toast-border);
+
+  color: var(--color-error);
+
+  background-color: var(--color-error-bg);
+}
+
+.arco-message-error .arco-message-content {
+  color: var(--color-error);
+}
+
+.arco-message-info {
+  border-color: var(--color-info-toast-border);
+
+  color: var(--color-info);
+
+  background-color: var(--color-info-bg);
+}
+
+.arco-message-info .arco-message-content {
+  color: var(--color-info);
+}
+
+/* ---- Alert：页面级内联；浅底无描边；标题 + 说明 + 可关闭 ---- */
+.arco-alert {
+  align-items: flex-start;
+  gap: 10px;
+
+  padding: 12px var(--spacing-md); /* 12px 16px */
+  border: none;
+  border-radius: var(--border-radius-default);
+}
+
+.arco-alert-with-title {
+  padding: 12px var(--spacing-md);
+}
+
+.arco-alert-icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 0;
+  margin-top: 1px;
+  font-size: var(--toast-icon-size); /* 18px */
+  line-height: 1;
+}
+
+.arco-alert-icon svg {
+  font-size: inherit;
+  vertical-align: 0;
+}
+
+.arco-alert-with-title .arco-alert-icon svg {
+  font-size: inherit;
+  vertical-align: 0;
+}
+
+.arco-alert-title {
+  margin-bottom: 2px;
+
+  color: var(--color-text-title);
+  font-size: var(--font-size-base); /* 14px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+}
+
+.arco-alert-content {
+  color: var(--color-text-body);
+  font-size: var(--font-size-sm); /* 13px */
+  line-height: var(--line-height-sm);
+}
+
+.arco-alert-success,
+.arco-alert-success.arco-alert-with-title {
+  background-color: var(--color-success-bg);
+}
+
+.arco-alert-success .arco-alert-icon svg {
+  color: var(--color-success);
+}
+
+.arco-alert-warning,
+.arco-alert-warning.arco-alert-with-title {
+  background-color: var(--color-warning-bg);
+}
+
+.arco-alert-warning .arco-alert-icon svg {
+  color: var(--color-warning);
+}
+
+.arco-alert-error,
+.arco-alert-error.arco-alert-with-title {
+  background-color: var(--color-error-bg);
+}
+
+.arco-alert-error .arco-alert-icon svg {
+  color: var(--color-error);
+}
+
+.arco-alert-info,
+.arco-alert-info.arco-alert-with-title {
+  background-color: var(--color-info-bg);
+}
+
+.arco-alert-info .arco-alert-icon svg {
+  color: var(--color-info);
+}
+
+.arco-alert-success .arco-alert-title,
+.arco-alert-warning .arco-alert-title,
+.arco-alert-error .arco-alert-title,
+.arco-alert-info .arco-alert-title {
+  color: var(--color-text-title);
+}
+
+.arco-alert-success.arco-alert-with-title .arco-alert-content,
+.arco-alert-warning.arco-alert-with-title .arco-alert-content,
+.arco-alert-error.arco-alert-with-title .arco-alert-content,
+.arco-alert-info.arco-alert-with-title .arco-alert-content {
+  color: var(--color-text-body);
+}
+
+/* ---- Notification：右上角白底卡片 + shadow-md；无语义底色/描边；图标主色圆底白符号 ---- */
+.arco-notification-list {
+  z-index: var(--z-toast);
+}
+
+.arco-notification-list-top-right {
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+}
+
+.arco-notification {
+  gap: 10px;
+
+  width: var(--notify-width);
+  padding: 14px var(--spacing-md); /* 14px 16px */
+  border: none;
+  border-radius: var(--border-radius-default);
+  box-shadow: var(--shadow-md);
+
+  background-color: var(--color-bg-card); /* #FFFFFF */
+}
+
+.arco-notification:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.arco-notification-icon {
+  margin-top: 1px;
+  font-size: var(--notify-icon-size); /* 20px */
+  line-height: 1;
+}
+
+/* 主色圆底白符号（Notification 图标 20px）*/
+.by-notify-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: var(--notify-icon-size); /* 20px */
+  height: var(--notify-icon-size);
+  border-radius: 50%;
+
+  color: var(--color-text-on-overlay);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.by-notify-icon .arco-icon {
+  color: inherit;
+}
+
+.by-notify-icon--success {
+  background-color: var(--color-success);
+}
+
+.by-notify-icon--warning {
+  background-color: var(--color-warning);
+}
+
+.by-notify-icon--error {
+  background-color: var(--color-error);
+}
+
+.by-notify-icon--info {
+  background-color: var(--color-info);
+}
+
+.arco-notification-left {
+  padding-right: 0;
+}
+
+.arco-notification-title {
+  color: var(--color-text-title);
+  font-size: var(--font-size-base); /* 14px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+}
+
+.arco-notification-title + .arco-notification-content {
+  margin-top: var(--spacing-xs); /* 4px */
+}
+
+.arco-notification-content {
+  margin-bottom: 0;
+
+  color: var(--color-text-body);
+  font-size: var(--font-size-sm); /* 13px */
+  line-height: var(--line-height-sm);
+}
+
+.arco-notification-info,
+.arco-notification-success,
+.arco-notification-warning,
+.arco-notification-error {
+  border: none;
+
+  background-color: var(--color-bg-card);
+}
+
+.arco-notification-info .arco-notification-title,
+.arco-notification-success .arco-notification-title,
+.arco-notification-warning .arco-notification-title,
+.arco-notification-error .arco-notification-title {
+  color: var(--color-text-title);
+}
+
+.arco-notification-info .arco-notification-content,
+.arco-notification-success .arco-notification-content,
+.arco-notification-warning .arco-notification-content,
+.arco-notification-error .arco-notification-content {
+  color: var(--color-text-body);
+}
+
+.arco-notification-footer {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.by-notify__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm); /* 8px */
+}
+
+.arco-notification-close-btn {
+  top: 14px;
+  right: 14px;
+
+  color: var(--color-text-secondary);
+}

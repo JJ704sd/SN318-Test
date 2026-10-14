@@ -13,10 +13,10 @@ import {
   IconRelation,
   IconSend,
 } from '@arco-design/web-vue/es/icon'
-import { DATA_VIZ_COLORS } from '@baiyun/template-core/tokens'
-import { formatMoney } from '@baiyun/template-core/utils'
-import type { ByTableColumn } from '@baiyun/template-core/components'
-import type { BizType } from '@baiyun/template-core/tokens'
+import { DATA_VIZ_COLORS } from '@core/styles/tokens'
+import { formatMoney } from '@core/utils'
+import type { ByTableColumn } from '@core/components'
+import type { BizType } from '@core/styles/tokens'
 import type { DashboardDistItem, DashboardStats } from '@/api/demo'
 import { BIZ_TYPE_OPTIONS } from './listConfig'
 

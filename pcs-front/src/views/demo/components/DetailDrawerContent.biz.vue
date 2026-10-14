@@ -99,9 +99,9 @@
 
 <script setup lang="ts">
 import { computed, defineAsyncComponent } from 'vue'
-import { ByCard, ByStatusTag, ByBizTag, DetailField } from '@baiyun/template-core/components'
-import { formatMoney, formatWeight, formatDateTime, EMPTY_TEXT } from '@baiyun/template-core/utils'
-import { env } from '@baiyun/template-core/config'
+import { ByCard, ByStatusTag, ByBizTag, DetailField } from '@core/components'
+import { formatMoney, formatWeight, formatDateTime, EMPTY_TEXT } from '@core/utils'
+import { env } from '@core/config'
 import type { WaybillDrawerDetail, WaybillDrawerWarning } from '@/api/demo'
 import { STATUS_LABEL, STATUS_TYPE_MAP } from '../config/detailConfig'
 
@@ -125,7 +125,7 @@ const summaryContext = computed<Record<string, string>>(() => ({
 const aiEmbeddedOn = env.aiEnabled && env.aiEmbeddedEnabled
 const AiSummaryCard = aiEmbeddedOn
   ? defineAsyncComponent(() =>
-      import('@baiyun/template-core/ai/embedded').then((m) => m.AiSummaryCard),
+      import('@core/ai/embedded').then((m) => m.AiSummaryCard),
     )
   : null
 

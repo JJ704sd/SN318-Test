@@ -46,8 +46,8 @@ export default defineConfigWithVueTs(
         {
           patterns: [
             {
-              group: ['@baiyun/template-core/dist/*', '@baiyun/template-core/src/*'],
-              message: '请从包顶层 @baiyun/template-core import，不要使用内部路径。',
+              group: ['@baiyun/template-core', '@baiyun/template-core/*'],
+              message: '核心层已内联至 src/core，请使用 @core/<领域子路径>，禁止再引入 @baiyun/template-core。',
             },
           ],
         },

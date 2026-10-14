@@ -87,4 +87,49 @@ describe('useRouteNavigationLoading', () => {
     handleRouteError?.()
     expect(isRouteNavigationLoading.value).toBe(false)
   })
+
+  it('同一路由只切换 query 时不显示页面级骨架', async () => {
+    const { isRouteNavigationLoading, registerRouteNavigationLoading } =
+      await loadNavigationLoading()
+
+    type NavigationRoute = {
+      fullPath: string
+      path: string
+      name: string
+    }
+    type NavigationHook = (to: NavigationRoute, from?: NavigationRoute) => unknown
+    let beforeNavigation: NavigationHook | undefined
+    let afterNavigation: NavigationHook | undefined
+    const router = {
+      beforeEach(hook: NavigationHook) {
+        beforeNavigation = hook
+        return () => undefined
+      },
+      afterEach(hook: NavigationHook) {
+        afterNavigation = hook
+        return () => undefined
+      },
+      onError() {
+        return () => undefined
+      },
+    }
+
+    registerRouteNavigationLoading(router as never)
+
+    const from = {
+      fullPath: '/master-data?resource=country',
+      path: '/master-data',
+      name: 'master-data-workspace',
+    }
+    const to = {
+      fullPath: '/master-data?resource=province',
+      path: '/master-data',
+      name: 'master-data-workspace',
+    }
+
+    beforeNavigation?.(to, from)
+    afterNavigation?.(to, from)
+
+    expect(isRouteNavigationLoading.value).toBe(false)
+  })
 })

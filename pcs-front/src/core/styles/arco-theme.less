@@ -1,0 +1,11 @@
+/* 聚合兼容入口（1.x）：base 的 body 变量映射保持顶层；其余组件主题统一增加 body 作用域，
+ * 使按需后加载的 Arco 原生样式无法以同等优先级覆盖项目主题。
+ * 新代码仍可按需显式 import 具体分片（如 styles/arco-theme/form.less）。 */
+@import (once) './arco-theme/base.less';
+
+body {
+  @import (once) './arco-theme/form.less';
+  @import (once) './arco-theme/data.less';
+  @import (once) './arco-theme/feedback.less';
+  @import (once) './arco-theme/drawer.less';
+}

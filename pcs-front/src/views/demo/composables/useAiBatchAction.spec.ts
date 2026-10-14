@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import type { AiSuggestion } from '@baiyun/template-core/ai'
+import type { AiSuggestion } from '@core/ai'
 import { useAiBatchAction } from './useAiBatchAction'
 
 const envMock = vi.hoisted(() => ({ aiEnabled: false, aiEmbeddedEnabled: false }))
@@ -8,7 +8,7 @@ const storeMocks = vi.hoisted(() => ({
   useAiStore: vi.fn<() => FakeAiStore>(),
 }))
 
-vi.mock('@baiyun/template-core/config', () => ({
+vi.mock('@core/config', () => ({
   env: {
     get aiEnabled() {
       return envMock.aiEnabled
@@ -19,7 +19,7 @@ vi.mock('@baiyun/template-core/config', () => ({
   },
 }))
 
-vi.mock('@baiyun/template-core/ai', () => ({
+vi.mock('@core/ai', () => ({
   useAiStore: storeMocks.useAiStore,
 }))
 

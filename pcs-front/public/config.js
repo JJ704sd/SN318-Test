@@ -1,6 +1,6 @@
 {
   "dev": {
-    "apiBaseUrl": "http://dev-api.example.com",
+    "apiBaseUrl": "/",
     "apiFileUrl": "",
     "apiGatewayUrl": "",
     "apiTimeout": 15000,
@@ -11,16 +11,17 @@
     "aiIdleTimeout": 30000,
     "aiStatusMinDuration": 0,
     "llmEndpoint": "",
-    "aiEnabled": true,
-    "aiAssistantEnabled": true,
+    "aiEnabled": false,
+    "aiAssistantEnabled": false,
     "aiEmbeddedEnabled": false,
-    "permissionSystemCode": "frontend_demo",
+    "permissionSystemCode": "pcs.front",
     "permissionVersion": "test",
-    "useMockAuth": false,
-    "bffHost": "https://localhost:9001"
+    "useMockAuth": true,
+    "useMockData": true,
+    "bffHost": "/pcs"
   },
   "test": {
-    "apiBaseUrl": "http://test-api.example.com",
+    "apiBaseUrl": "/",
     "apiFileUrl": "",
     "apiGatewayUrl": "",
     "apiTimeout": 15000,
@@ -31,32 +32,32 @@
     "aiIdleTimeout": 30000,
     "aiStatusMinDuration": 0,
     "llmEndpoint": "",
-    "aiEnabled": true,
-    "aiAssistantEnabled": true,
+    "aiEnabled": false,
+    "aiAssistantEnabled": false,
     "aiEmbeddedEnabled": false,
-    "permissionSystemCode": "frontend_demo",
+    "permissionSystemCode": "pcs.front",
     "permissionVersion": "test",
     "useMockAuth": false,
-    "bffHost": ""
+    "bffHost": "/pcs"
   },
   "prod": {
-    "apiBaseUrl": "https://api.example.com",
+    "apiBaseUrl": "/",
     "apiFileUrl": "",
     "apiGatewayUrl": "",
     "apiTimeout": 15000,
     "aiProvider": "llm",
-    "aiBaseUrl": "https://ai.example.com",
+    "aiBaseUrl": "/pcs/api/ai",
     "aiStreamPath": "/ai/stream",
     "aiFirstByteTimeout": 20000,
     "aiIdleTimeout": 30000,
     "aiStatusMinDuration": 0,
-    "llmEndpoint": "https://llm.example.com/chat",
-    "aiEnabled": true,
-    "aiAssistantEnabled": true,
+    "llmEndpoint": "/pcs/api/ai/chat",
+    "aiEnabled": false,
+    "aiAssistantEnabled": false,
     "aiEmbeddedEnabled": false,
     "permissionSystemCode": "",
     "permissionVersion": "",
     "useMockAuth": false,
-    "bffHost": "https://bff.example.com"
+    "bffHost": "/pcs"
   }
 }

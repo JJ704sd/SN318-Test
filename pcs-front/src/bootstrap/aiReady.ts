@@ -11,7 +11,7 @@
  *     生产环境绝不静默实例化 MockAiAdapter（fail-safe）。
  * - getConfig() 未加载时视为未启用：异常路径不注册任何 AI。
  */
-import { env, getConfig } from '@baiyun/template-core/config'
+import { env, getConfig } from '@core/config'
 
 export type AiReadyStatus = 'pending' | 'ready' | 'disabled' | 'error'
 
@@ -32,7 +32,7 @@ export function ensureAiReady(): Promise<AiReadyResult> {
       }
       if (env.aiProvider === 'mock') {
         const { configureAiStatusTiming, registerAiService, MockAiAdapter } = await import(
-          '@baiyun/template-core/ai'
+          '@core/ai'
         )
         configureAiStatusTiming({
           minDuration: getConfig()?.aiStatusMinDuration,

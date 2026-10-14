@@ -1,0 +1,105 @@
+@import (once) './base.less';
+
+/* ============================================================
+ * 十、抽屉 Drawer：对齐 drawer-components.html / 规范 §05
+ *   右侧贴边、高度 100vh；默认 480 / 宽 640；圆角 0；
+ *   头 56 / 内容可滚 / 底 64 固定；遮罩 0.45；阴影 shadow-drawer；
+ *   打开 250ms ease-out，关闭 200ms ease-in。
+ * ============================================================ */
+
+.arco-drawer-mask {
+  background-color: var(--overlay-drawer);
+}
+
+.arco-drawer {
+  overflow: hidden;
+
+  background-color: var(--color-bg-card); /* #FFFFFF，覆盖 Arco bg-3 灰底 */
+  border-radius: 0;
+  box-shadow: var(--shadow-drawer);
+}
+
+.arco-drawer-header {
+  flex: none;
+
+  box-sizing: border-box;
+  height: auto;
+  min-height: var(--drawer-header-min-height); /* 56px */
+  margin-bottom: 0;
+  padding: 0 var(--spacing-lg); /* 0 24px */
+  border-bottom: var(--border-divider);
+}
+
+.arco-drawer-header .arco-drawer-title {
+  display: flex;
+  flex: 1;
+  align-items: center;
+
+  min-width: 0;
+  margin-right: 0;
+
+  color: var(--color-text-title);
+  font-size: var(--font-size-h2); /* 16px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-h2);
+}
+
+.arco-drawer-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: var(--spacing-lg); /* 24px */
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  color: var(--color-text-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  background-color: var(--color-bg-card);
+}
+
+.arco-drawer-footer {
+  display: flex;
+  flex: none;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+
+  box-sizing: border-box;
+  min-height: var(--drawer-footer-min-height); /* 64px */
+  margin-top: 0;
+  padding: var(--spacing-md) var(--spacing-lg); /* 16px 24px */
+  border-top: var(--border-divider);
+
+  background-color: var(--color-bg-card);
+  text-align: right;
+}
+
+.arco-drawer-footer > .arco-btn {
+  margin-left: 0;
+}
+
+/* 打开 / 关闭动效 */
+.slide-left-drawer-enter-active,
+.slide-right-drawer-enter-active {
+  transition: transform var(--duration-drawer-in) var(--ease-drawer-in);
+}
+
+.slide-left-drawer-leave-active,
+.slide-right-drawer-leave-active {
+  transition: transform var(--duration-drawer-out) var(--ease-drawer-out);
+}
+
+.fade-drawer-enter-active {
+  transition: opacity var(--duration-drawer-in) var(--ease-drawer-in);
+}
+
+.fade-drawer-leave-active {
+  transition: opacity var(--duration-drawer-out) var(--ease-drawer-out);
+}
+
+/* ByDrawer Mobile 全屏：透传 class 落在 .arco-drawer-container 上，
+ * 需经后代选择器命中内部 .arco-drawer（行内 width 须 !important 覆盖） */
+.arco-drawer-container.by-drawer--fullscreen .arco-drawer {
+  width: 100% !important;
+  max-width: 100%;
+}

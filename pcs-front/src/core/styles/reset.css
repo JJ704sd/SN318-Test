@@ -1,0 +1,147 @@
+/**
+ * 全局基线：Reset + 排印 + 页面/容器底色（实施方案任务 1.3 / 1.4）
+ * 所有数值引用 tokens.css 的 Token，禁止写死 hex / px。
+ * 【加载顺序】tokens.css → reset.css → arco.css → arco-theme.less（见 main.ts）。
+ */
+
+/* ============================================================
+ * 一、Reset：盒模型归一 + 清零默认边距 + 字重归 400
+ *   规范禁用 600/700，元素默认字重一律 regular，标题单独提到 medium(500)。
+ * ============================================================ */
+*,
+*::before,
+*::after {
+  /* Box Model */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* Typographic */
+  font-weight: var(--font-weight-regular);
+}
+
+/* ============================================================
+ * 二、排印基线（规范 §3.2 字体表 / 任务 1.3）
+ *   字体栈：PingFang SC（macOS/iOS）→ Microsoft YaHei（Windows）→ 系统兜底。
+ *   正文 14px / 行高 1.6 / 正文色 #4B5564。
+ * ============================================================ */
+html {
+  /* Typographic */
+  font-size: var(--font-size-base); /* 14px，作为 rem 基准 */
+}
+
+body {
+  /* Box Model */
+  min-height: 100vh;
+
+  /* Typographic */
+  font-family:
+    'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--font-size-base); /* 14px */
+  line-height: var(--line-height-base); /* 1.6 */
+  color: var(--color-text-body); /* #4B5564 */
+
+  /* Visual */
+  background-color: var(--color-bg-page); /* #EFF2F7 页面底色 */
+
+  /* Misc */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 标题：字号分档，字重统一 medium(500)，禁止 600/700；颜色为标题色 #1A2130 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Typographic */
+  font-weight: var(--font-weight-medium); /* 500 */
+  color: var(--color-text-title); /* #1A2130 */
+}
+
+h1 {
+  /* Typographic */
+  font-size: var(--font-size-h1); /* 20px */
+  line-height: var(--line-height-h1); /* 1.4 */
+}
+
+h2 {
+  /* Typographic */
+  font-size: var(--font-size-h2); /* 16px */
+  line-height: var(--line-height-h2); /* 1.5 */
+}
+
+h3,
+h4,
+h5,
+h6 {
+  /* Typographic */
+  font-size: var(--font-size-h3); /* 14px */
+  line-height: var(--line-height-h3); /* 1.6 */
+}
+
+/* 加粗语义标签：规范禁 700，b/strong 收敛到 medium(500) */
+b,
+strong {
+  /* Typographic */
+  font-weight: var(--font-weight-medium); /* 500 */
+}
+
+/* 链接：主色，去下划线，状态过渡 100ms linear */
+a {
+  /* Typographic */
+  color: var(--color-primary);
+  text-decoration: none;
+
+  /* Misc */
+  transition: color var(--duration-state) var(--ease-state);
+}
+
+a:hover {
+  /* Typographic */
+  color: var(--color-primary-hover);
+}
+
+/* ============================================================
+ * 三、页面/容器基线（规范 §页面布局 / 任务 1.4）
+ *   页面底色 #EFF2F7（已在 body 设置）；#app 占满视口作为布局根。
+ *   卡片/浮层用 --color-bg-card(#FFFFFF)，分组/表头用 --color-bg-surface(#F7F7F7)，
+ *   由各组件/工具类按需引用，此处仅定根容器，不预设卡片样式。
+ * ============================================================ */
+#app {
+  /* Box Model */
+  min-height: 100vh;
+}
+
+/* 媒体元素默认块级、宽度自适应，避免行内空隙 */
+img,
+svg,
+video,
+canvas {
+  /* Positioning */
+  display: block;
+
+  /* Box Model */
+  max-width: 100%;
+}
+
+/* 表单控件继承字体，避免浏览器默认样式破坏排印一致性 */
+button,
+input,
+select,
+textarea {
+  /* Typographic */
+  font: inherit;
+  color: inherit;
+}
+
+/* 列表去默认项目符号（业务列表按需自行恢复） */
+ul,
+ol {
+  /* Typographic */
+  list-style: none;
+}

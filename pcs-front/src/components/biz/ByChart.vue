@@ -14,7 +14,7 @@ import {
 } from 'echarts/components'
 import { CanvasRenderer } from 'echarts/renderers'
 import type { EChartsOption } from 'echarts'
-import { DATA_VIZ_COLORS } from '@baiyun/template-core/tokens'
+import { DATA_VIZ_COLORS } from '@core/styles/tokens'
 
 echarts.use([
   BarChart,

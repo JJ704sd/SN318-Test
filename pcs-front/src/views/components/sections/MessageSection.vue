@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { ByCard, successMsg, warningMsg, errorMsg, infoMsg, notify, confirmAction } from '@baiyun/template-core/components'
+import { ByCard, successMsg, warningMsg, errorMsg, infoMsg, notify, confirmAction } from '@core/components'
 import CodeBlock from '../CodeBlock.vue'
 import PropsDoc from '../PropsDoc.vue'
 import { MESSAGE_PROP_GROUPS } from '../propDoc'

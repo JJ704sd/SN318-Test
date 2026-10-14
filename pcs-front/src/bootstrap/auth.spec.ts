@@ -20,7 +20,6 @@ const mocks = vi.hoisted(() => {
     env: { useMockAuth: true },
     getSession: vi.fn<() => Promise<unknown>>(),
     getFrontendProfile: vi.fn<(force?: boolean) => Promise<unknown>>(),
-    login: vi.fn<(returnTo?: string, force?: boolean) => void>(),
     setCsrfToken: vi.fn<(token: string) => void>(),
     clearCsrfToken: vi.fn<() => void>(),
     broadcastAuthEvent: vi.fn<(type: 'logout' | 'session-expired') => void>(),
@@ -46,19 +45,18 @@ const mocks = vi.hoisted(() => {
   }
 })
 
-vi.mock('@baiyun/template-core/auth', () => ({
+vi.mock('@core/auth', () => ({
   BffError: mocks.MockBffError,
   broadcastAuthEvent: mocks.broadcastAuthEvent,
   clearCsrfToken: mocks.clearCsrfToken,
   getFrontendProfile: mocks.getFrontendProfile,
   getSession: mocks.getSession,
-  login: mocks.login,
   setCsrfToken: mocks.setCsrfToken,
   subscribeAuthEvents: mocks.subscribeAuthEvents,
 }))
 
-vi.mock('@baiyun/template-core/config', () => ({ env: mocks.env }))
-vi.mock('@baiyun/template-core/stores', () => ({
+vi.mock('@core/config', () => ({ env: mocks.env }))
+vi.mock('@core/stores', () => ({
   useUserStore: () => mocks.userStore,
   usePermissionStore: () => mocks.permissionStore,
 }))
@@ -173,19 +171,19 @@ describe('auth bootstrap coordinator', () => {
     expect(mocks.permissionStore.setLoading).toHaveBeenLastCalledWith(false)
   })
 
-  it('Mock 返回前端路由，真实登录在并发触发时只启动一次', () => {
+  it('未认证时统一返回登录页，重复触发只保留第一次回跳地址', () => {
     const mockCoordinator = createAuthCoordinator({} as Pinia)
     expect(mockCoordinator.routeAccess.handleUnauthenticated('/private')).toEqual({
       path: '/login',
       query: { redirect: '/private' },
     })
 
-    mocks.env.useMockAuth = false
     const realCoordinator = createAuthCoordinator({} as Pinia)
-    expect(realCoordinator.routeAccess.handleUnauthenticated('/a')).toBe(false)
+    expect(realCoordinator.routeAccess.handleUnauthenticated('/a')).toEqual({
+      path: '/login',
+      query: { redirect: '/a' },
+    })
     expect(realCoordinator.routeAccess.handleUnauthenticated('/b')).toBe(false)
-    expect(mocks.login).toHaveBeenCalledOnce()
-    expect(mocks.login).toHaveBeenCalledWith('/a')
   })
 
   it('并发 API 401 只清理并跳转一次', () => {
@@ -282,12 +280,13 @@ describe('auth bootstrap coordinator', () => {
   })
 })
 
-  it('redirectUnauthenticated 真实认证模式下不 push（登录走 BFF）', () => {
-    mocks.env.useMockAuth = false
+  it('redirectUnauthenticated 统一跳登录页并保留回跳路径', () => {
     const router = { push: vi.fn<(t: unknown) => unknown>() }
     const coordinator = createAuthCoordinator({} as Pinia)
     coordinator.redirectUnauthenticated(router as unknown as Router, '/x')
-    expect(mocks.login).toHaveBeenCalledWith('/x')
-    expect(router.push).not.toHaveBeenCalled()
+    expect(router.push).toHaveBeenCalledWith({
+      path: '/login',
+      query: { redirect: '/x' },
+    })
   })
 })

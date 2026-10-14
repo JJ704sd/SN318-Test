@@ -39,7 +39,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ByCard } from '@baiyun/template-core/components'
+import { ByCard } from '@core/components'
 import CodeBlock from '../CodeBlock.vue'
 import PropsDoc from '../PropsDoc.vue'
 import { RADIO_PROP_GROUPS } from '../propDoc'

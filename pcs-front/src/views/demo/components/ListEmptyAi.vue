@@ -37,8 +37,8 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { useAiService, AiTag, AiThinkingDots } from '@baiyun/template-core/ai'
-import type { AiSuggestion } from '@baiyun/template-core/ai'
+import { useAiService, AiTag, AiThinkingDots } from '@core/ai'
+import type { AiSuggestion } from '@core/ai'
 
 /**
  * 列表空态 AI 建议组件（任务 5.3A / 规范 §02.2 空状态、原则五只读型建议）。

@@ -85,7 +85,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ByCard, successMsg } from '@baiyun/template-core/components'
+import { ByCard, successMsg } from '@core/components'
 import CodeBlock from '../CodeBlock.vue'
 import PropsDoc from '../PropsDoc.vue'
 import { POPOVER_PROP_GROUPS } from '../propDoc'

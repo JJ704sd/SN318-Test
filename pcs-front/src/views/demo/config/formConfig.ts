@@ -1,5 +1,5 @@
 import type { FieldRule } from '@arco-design/web-vue'
-import type { BizType } from '@baiyun/template-core/tokens'
+import type { BizType } from '@core/styles/tokens'
 import type { WaybillFormData } from '@/api/demo'
 
 /** 业务类型下拉选项（与 listConfig 的口径一致）。 */

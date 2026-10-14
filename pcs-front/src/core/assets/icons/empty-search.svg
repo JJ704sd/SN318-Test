@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 64" fill="none">
+  <!-- 搜索/筛选无结果：放大镜 + 中心叉（SN318 empty-state-components.html）-->
+  <ellipse cx="44" cy="57" rx="30" ry="4" fill="var(--color-bg-surface)" />
+  <circle
+    cx="40"
+    cy="28"
+    r="16"
+    fill="var(--color-bg-card)"
+    stroke="var(--color-border)"
+    stroke-width="1.5"
+  />
+  <path
+    d="M51.5 39.5 60 48"
+    stroke="var(--color-border)"
+    stroke-width="2.2"
+    stroke-linecap="round"
+  />
+  <path
+    d="M34 28h12M40 22v12"
+    stroke="var(--color-border)"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    transform="rotate(45 40 28)"
+  />
+</svg>

@@ -1,6 +1,6 @@
 import type { Component } from 'vue'
-import type { AuthPolicy } from '@baiyun/template-core/router'
-import { usePermissionStore } from '@baiyun/template-core/stores'
+import type { AuthPolicy } from '@core/router'
+import { usePermissionStore } from '@core/stores'
 import type { RouteRecordRaw } from 'vue-router'
 import { routes } from '@/router/routes'
 

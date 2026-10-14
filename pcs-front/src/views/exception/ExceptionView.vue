@@ -27,7 +27,7 @@ import {
   IconWifi,
   IconCloud,
 } from '@arco-design/web-vue/es/icon'
-import { env } from '@baiyun/template-core/config'
+import { env } from '@core/config'
 
 type ExceptionType =
   | '404'
@@ -79,15 +79,15 @@ const resolvedType = computed<ExceptionType>(
 
 const config = computed(() => CONFIG_MAP[resolvedType.value])
 
-/** 重新登录：mock 模式跳前端 /login，真实模式整页跳 /auth/login。
- *  动态 import 避免与 auth-client 的静态循环依赖。 */
+/** 重新登录：统一回到登录页，由页面打开权限中台登录浮层。 */
 async function relogin(): Promise<void> {
-  if (env.useMockAuth) {
-    await router.push('/login')
-    return
-  }
-  const { login } = await import('@baiyun/template-core/auth')
-  login(`${window.location.pathname}${window.location.search}${window.location.hash}`)
+  await router.push({
+    path: '/login',
+    query: {
+      redirect: `${window.location.pathname}${window.location.search}${window.location.hash}`,
+      force: env.useMockAuth ? undefined : '1',
+    },
+  })
 }
 
 async function runAction(handler: ActionHandler) {

@@ -12,7 +12,9 @@
         :max-count="5"
         :upload-handler="mockUploadHandler"
       />
-      <p class="section__hint">文件列表项三态：上传中（进度条）/ 成功（绿色对勾）/ 失败（红色叉 + 错误原因 + 重试）。</p>
+      <p class="section__hint">
+        文件列表项三态：上传中（进度条）/ 成功（绿色对勾）/ 失败（红色叉 + 错误原因 + 重试）。
+      </p>
     </ByCard>
 
     <ByCard title="拖拽形态（Dragger）" class="section__card">
@@ -39,7 +41,9 @@
       />
     </ByCard>
 
-    <a-alert type="warning" show-icon>显式提交（非选中即传）；类型与大小上限必须提前说明；上传中可取消，失败可重试；删除已提交附件需二次确认。</a-alert>
+    <a-alert type="warning" show-icon
+      >显式提交（非选中即传）；类型与大小上限必须提前说明；上传中可取消，失败可重试；删除已提交附件需二次确认。</a-alert
+    >
 
     <PropsDoc :groups="UPLOAD_PROP_GROUPS" />
 
@@ -50,8 +54,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { FileItem } from '@arco-design/web-vue'
-import { ByCard, ByUpload } from '@baiyun/template-core/components'
-import type { UploadHandler, UploadResult } from '@baiyun/template-core/components'
+import { ByCard, ByUpload } from '@core/components'
+import type { UploadHandler, UploadResult } from '@core/components'
 import CodeBlock from '../CodeBlock.vue'
 import PropsDoc from '../PropsDoc.vue'
 import { UPLOAD_PROP_GROUPS } from '../propDoc'
@@ -94,7 +98,7 @@ const buttonFiles = ref<FileItem[]>([
     uid: 'done-1',
     name: '报关单.xlsx',
     status: 'done',
-    url: 'https://example.com/declaration.xlsx',
+    url: '/local-samples/declaration.xlsx',
   },
   {
     uid: 'error-1',
@@ -109,7 +113,7 @@ const draggerFiles = ref<FileItem[]>([
     uid: 'done-2',
     name: '批量面单.pdf',
     status: 'done',
-    url: 'https://example.com/batch.pdf',
+    url: '/local-samples/batch.pdf',
   },
 ])
 
@@ -175,5 +179,4 @@ const code = `<!-- 按钮形态 + 文件列表 -->
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
 }
-
 </style>

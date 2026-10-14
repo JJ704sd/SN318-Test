@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest'
 import PropsDoc from './PropsDoc.vue'
 import type { PropDocGroup } from './propDoc'
 
-vi.mock('@baiyun/template-core/components', () => ({
+vi.mock('@core/components', () => ({
   ByCard: {
     name: 'ByCard',
     props: ['title', 'variant'],

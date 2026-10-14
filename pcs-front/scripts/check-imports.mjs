@@ -1,8 +1,7 @@
 /**
  * 导入卫生回归检查（package.json: check:imports）：
- * 1. 禁止 import 根入口 '@baiyun/template-core'（根入口 deprecated 全量聚合，会把 AI 与全局资源带进主包）；
- * 2. 禁止 '@baiyun/template-core/dist|src' 深路径；
- * 3. 禁止 @arco-design/web-vue 主包全量默认导入与全局注册（app.use(ArcoVue)）及全量 arco.css。
+ * 1. 禁止再引入 '@baiyun/template-core'（核心层已内联至 src/core，统一用 '@core/<领域子路径>'）；
+ * 2. 禁止 @arco-design/web-vue 主包全量默认导入与全局注册（app.use(ArcoVue)）及全量 arco.css。
  *
  * 扫描 src 下 .ts/.vue/.js/.mjs 的 import 语句；注释行不计。
  */
@@ -37,10 +36,8 @@ function checkFile(file) {
     const m = line.match(/from\s+['"]([^'"]+)['"]/)
     if (!m) return
     const spec = m[1]
-    if (spec === '@baiyun/template-core') {
-      offenders.push(`${file}:${index + 1} 禁止 import 根入口 '@baiyun/template-core'（请按领域子路径导入）`)
-    } else if (spec.startsWith('@baiyun/template-core/dist') || spec.startsWith('@baiyun/template-core/src')) {
-      offenders.push(`${file}:${index + 1} 禁止深路径 import '${spec}'（请用正式领域子路径）`)
+    if (spec === '@baiyun/template-core' || spec.startsWith('@baiyun/template-core/')) {
+      offenders.push(`${file}:${index + 1} 禁止 import '${spec}'（核心层已内联至 src/core，请用 @core/<领域子路径>）`)
     } else if (spec === '@arco-design/web-vue') {
       // 主包具名/类型导入（组件按需、类型）合法；仅全量默认导入即全局注册源，单独在下方捕获
     }
@@ -65,4 +62,4 @@ if (offenders.length) {
   for (const o of offenders) console.error(`  - ${o}`)
   process.exit(1)
 }
-console.log(`[check:imports] OK：${fileCount} 个源码文件无根入口/深路径/Arco 全量导入`)
+console.log(`[check:imports] OK：${fileCount} 个源码文件无 template-core 残留导入/Arco 全量导入`)

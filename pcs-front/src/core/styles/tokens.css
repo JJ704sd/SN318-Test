@@ -1,0 +1,324 @@
+/**
+ * Design Token 字典 → CSS 变量（规范 §十三 / 实施方案附录 A）
+ * 全项目唯一数值来源。数值零改动、零遗漏。
+ * 【原生】= 规范 §13 直出；【派生】= 值可追溯到规范其他章节或工程约定（见各组注释）。
+ * 修改任何数值须同步 src/styles/tokens.ts（任务 1.6）。
+ */
+:root {
+  /* 主色阶 */
+  --color-primary-50: #ebf3fd;
+  --color-primary-100: #d1e4fb;
+  --color-primary-200: #a9d3ff;
+  --color-primary-400: #5b9cf5;
+  --color-primary: #046efc;
+  --color-primary-hover: #035ed4;
+  --color-primary-active: #0242a8;
+
+  /* 语义色 */
+  --color-success-bg: #e6f5ee;
+  --color-success: #18a058;
+  --color-success-hover: #158c4a;
+  --color-success-active: #107038;
+  --color-success-border: rgba(24, 160, 88, 0.2); /* 【派生】语义 Tag 描边：字色 20% 透明度（规范 §Tag）*/
+  --color-success-toast-border: rgba(24, 160, 88, 0.3); /* 【派生】Toast 描边：主色 30%（规范 §消息提示）*/
+  --color-warning-bg: #fff7e6;
+  --color-warning: #e87d13;
+  --color-warning-hover: #d07011;
+  --color-warning-active: #b8620f;
+  --color-warning-border: rgba(232, 125, 19, 0.2);
+  --color-warning-toast-border: rgba(232, 125, 19, 0.3);
+  --color-error-bg: #fdecec;
+  --color-error: #e24b4a;
+  --color-error-hover: #d43f3e;
+  --color-error-active: #be3838;
+  --color-error-border: rgba(226, 75, 74, 0.2);
+  --color-error-toast-border: rgba(226, 75, 74, 0.3);
+  --color-info-bg: #ebf3fd;
+  --color-info: #046efc;
+  --color-info-hover: #035ed4;
+  --color-info-active: #0242a8;
+  --color-info-border: rgba(4, 110, 252, 0.2);
+  --color-info-toast-border: rgba(4, 110, 252, 0.3);
+  --color-neutral-tag-border: rgba(75, 85, 100, 0.2); /* 【派生】中性 Tag 描边：#4B5564 @ 20% */
+
+  /* 【派生】Toast / Notification 尺寸（规范 §消息提示示例）*/
+  --toast-min-height: 40px;
+  --toast-icon-size: 18px;
+  --notify-width: 340px;
+  --notify-icon-size: 20px;
+
+  /* AI 紫色系 */
+  --color-ai: #7b4ff6;
+  --color-ai-light: #eeedfe;
+  --color-ai-flow-cyan: #0a8c8c; /* 【派生】蓝紫青流光第三段青色（规范 §02.2 原则四「蓝/紫/青渐变流光」）；值同 §3.1 海运色 #0A8C8C，但语义独立为 AI 流光，命名解耦业务标识色 */
+  --gradient-ai-flow: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-ai),
+    var(--color-ai-flow-cyan)
+  ); /* 【派生】AI 进行态流光边框渐变（蓝→紫→青，规范 §02.2 原则四）；供思考/生成/执行/服务器超时容器沿边流动，收敛态不用 */
+  /* 业务标识色 */
+  --color-biz-express-bg: #ebf3fd;
+  --color-biz-express: #046efc;
+  --color-biz-air-bg: #edeaff;
+  --color-biz-air: #5b4fcf;
+  --color-biz-fba-bg: #fff0e6;
+  --color-biz-fba: #d4610a;
+  --color-biz-line-bg: #fdeef0;
+  --color-biz-line: #c4364a;
+  --color-biz-sea-bg: #e6f6f6;
+  --color-biz-sea: #0a8c8c;
+  --color-biz-pickup-bg: #edeaff;
+  --color-biz-pickup: #5b4fcf;
+  --color-biz-inquiry-bg: #fff0e6;
+  --color-biz-inquiry: #d4610a;
+
+  /* 中性色 */
+  --color-text-title: #1a2130;
+  --color-text-body: #4b5564;
+  --color-text-secondary: #9da3ae;
+  --color-text-placeholder: #c0c4cc; /* 占位字符（输入框 placeholder）*/
+  --color-border: #dddddd;
+  --color-divider: #ebebeb;
+  --color-bg-page: #eff2f7;
+  --color-bg-card: #ffffff;
+  --color-bg-surface: #f7f7f7;
+  --color-bg-active: #dddddd; /* 【派生】按下态背景色（图标按钮等 :active 反馈，值同 --color-border 但语义为背景）*/
+  --color-btn-secondary-hover: #f7f7f7; /* 【派生】次要按钮 hover 底色（与 --color-bg-surface 统一）*/
+  --color-bg-disabled: #f7f7f7; /* 禁用态背景：与 --color-bg-surface 统一（input / checkbox / selector） */
+  --color-text-on-overlay: #ffffff; /* 【派生】深色遮罩（预览浮层/删除角标等）上的纯白文字与图标色，§13 未单列 Token 名，此处派生落地避免散落 #fff */
+
+  /* 表格行交互底色【派生】：规范 §5.8；hover #EBF3FD；选中底 #D1E4FB */
+  --color-table-row-hover: #ebf3fd; /* = primary-50，行 hover */
+  --color-table-row-selected: #d1e4fb; /* = primary-100，行选中底 */
+  /* 【派生】表格行高：规范 §5.8 行高 48px，§13 未单列 */
+  --table-row-height: 48px;
+
+  /* 描边组合（引用上方颜色 Token）*/
+  --border-default: 1px solid var(--color-border); /* 默认 #DDDDDD */
+  --border-hover: 1px solid var(--color-text-secondary); /* 悬浮 #9DA3AE 描边加深 */
+  --border-focus: 1px solid var(--color-primary); /* 聚焦 #046EFC */
+  --border-error: 1px solid var(--color-error); /* 错误 #E24B4A（输入框 error 态）*/
+  --border-divider: 1px solid var(--color-divider); /* 表格行分割线（仅底部）*/
+
+  /* 字体 */
+  --font-size-h1: 20px;
+  --font-size-h2: 16px;
+  --font-size-h3: 14px;
+  --font-size-base: 14px;
+  --font-size-sm: 13px;
+  --font-size-xs: 12px;
+  --font-size-tag-sm: 10px; /* 派生：小尺寸 Tag 字号（规范 §Tag 尺寸表 small=10px，§13 未单列）*/
+  --tag-height-default: 22px; /* 【派生】Tag 默认高度（规范 §Tag 尺寸表）*/
+  --tag-height-sm: 18px; /* 【派生】Tag 小尺寸高度 */
+  --tag-padding-x-default: var(--spacing-sm); /* 8px，规范 §Tag 默认水平内边距 */
+  --tag-padding-x-sm: 6px; /* 【派生】Tag 小尺寸水平内边距（规范 §Tag = 6px，§13 未单列）*/
+  --font-size-exception-title: 18px; /* 【派生】整页异常页标题字号（规范 §07 异常页 18px/500/#1A2130，§13 未单列，此处派生落地）*/
+  --font-weight-regular: 400;
+  --font-weight-medium: 500; /* 禁止 600/700 */
+
+  /* 行高【派生】：值来自规范 §3.2 字体表的"行高"列（h1 1.4/h2 1.5/h3、base 1.6/sm 1.5/xs 1.4），§13 未单列 Token 名，此处按字号档位派生落地 */
+  --line-height-h1: 1.4;
+  --line-height-h2: 1.5;
+  --line-height-h3: 1.6;
+  --line-height-base: 1.6;
+  --line-height-sm: 1.5;
+  --line-height-xs: 1.4;
+
+  /* 间距（4px 基准）*/
+  --spacing-unit: 4px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* 圆角 */
+  --border-radius-checkbox: 4px; /* 【派生】多选框图标圆角：规范 §多选框=方形 4px，§13 圆角表仅列 8/12/16，此处派生落地避免写死 */
+  --border-radius-select-option: 6px; /* 【派生】Select 弹层选项高亮圆角：设计稿选中项 6px，§13 未单列 */
+  --border-radius-default: 8px; /* Tag 圆角同此（规范 §Tag = 8px）*/
+  --border-radius-card: 12px;
+  /* 【派生】卡片三端尺寸：Desktop 内边距/间距 24/16；Tablet 16/12；Mobile 12/8。
+     卡片壳引用 --card-padding，承载并列/堆叠卡片的容器引用 --card-gap。 */
+  --card-padding: 24px;
+  --card-gap: var(--spacing-md);
+  /* 【派生】入口卡片图标与文案间距：示例 gap 14px */
+  --card-entry-gap: 14px;
+  /* 【派生】入口卡片左侧图标容器：示例 40×40 */
+  --size-card-entry-icon: 40px;
+  /* 【派生】入口卡片名称字号：示例 15px */
+  --font-size-card-entry: 15px;
+  --border-radius-modal: 16px;
+  /* 【派生】弹窗尺寸：规范 §5.10；最大高度 80% 视口（80vh，1080→864px）*/
+  --modal-header-min-height: 56px;
+  --modal-footer-min-height: 64px;
+  --modal-max-height: 80vh;
+  --modal-width-default: 480px;
+  --modal-width-large: 640px;
+
+  /* 【派生】抽屉尺寸：规范 §05 Drawer；默认 480 / 宽 640；头 56 / 底 64；直角贴边 */
+  --drawer-width-default: 480px;
+  --drawer-width-large: 640px;
+  --drawer-header-min-height: 56px;
+  --drawer-footer-min-height: 64px;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 3px rgba(26, 33, 48, 0.06);
+  --shadow-md: 0 4px 10px rgba(26, 33, 48, 0.08);
+  --shadow-lg: 0 12px 32px rgba(26, 33, 48, 0.14);
+  --shadow-card-hover: 0 6px 16px rgba(26, 33, 48, 0.1);
+  /* 【派生】弹窗阴影：规范 §05 Modal 示例 0 8px 24px rgba(0,0,0,0.16)，与 shadow-lg 不同 */
+  --shadow-modal: 0 8px 24px rgba(0, 0, 0, 0.16);
+  /* 【派生】抽屉阴影：规范 §05 Drawer 示例同 Modal 0 8px 24px rgba(0,0,0,0.16) */
+  --shadow-drawer: 0 8px 24px rgba(0, 0, 0, 0.16);
+  /* 【派生】Popover 阴影：规范 §气泡卡片 = 0 4px 16px rgba(0,0,0,0.12)，与 --shadow-md 不同，单独落地 */
+  --shadow-popover: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(4, 110, 252, 0.15); /* 【派生】输入框聚焦外圈光晕：值来自规范 §输入框 focus 态 box-shadow，§13 阴影表未单列，此处派生 */
+
+  /* 遮罩 */
+  --overlay-modal: rgba(0, 0, 0, 0.45);
+  --overlay-drawer: rgba(0, 0, 0, 0.45);
+  --overlay-loading-full: rgba(255, 255, 255, 0.8);
+  --overlay-loading-local: rgba(255, 255, 255, 0.6);
+  --overlay-guide: rgba(0, 0, 0, 0.55);
+
+  /* 图片/附件预览安全区（预览内容不得贴边）*/
+  --preview-safe-area-desktop: 48px;
+  --preview-safe-area-tablet: 32px;
+  --preview-safe-area-mobile: 16px;
+  --preview-close-offset-desktop: 24px;
+  --preview-close-offset-tablet: 20px;
+  --preview-close-offset-mobile: 16px;
+
+  /* 图标尺寸【派生】：值来自规范 §3.7 图标规范三档（行内/操作按钮/装饰），§13 未单列 Token 名，此处固化为三档避免散落硬编码；size 默认走 1em 继承文字色，需固定档位时取以下 Token */
+  --icon-size-inline: 16px; /* 行内图标（文字旁、图标按钮内、Tag 内）*/
+  --icon-size-action: 20px; /* 操作按钮图标（工具栏、独立操作图标）*/
+  --icon-size-decorative: 24px; /* 装饰性图标（空态插画、引导、大号状态图标）*/
+  --exception-icon-size: 120px; /* 【派生】整页异常页插画/图标（规范 §07 异常页 120），§13 未单列，此处派生落地供任务 3.11 引用 */
+  --spinner-size-md: 32px; /* 【派生】加载旋转图标默认尺寸（GlobalLoading / 局部 loading），§13 未单列，此处派生避免散落裸值 */
+  --ai-avatar-size-sm: 32px; /* 【派生】运小星头像小档（列表行内等），§13 未单列，供 AiAvatar 任务 4.6 引用 */
+  --ai-avatar-size-md: 48px; /* 【派生】运小星头像默认档，对应悬浮入口规格（规范 §11.2） */
+  --ai-avatar-size-lg: 64px; /* 【派生】运小星头像大档（对话面板品牌区等） */
+  /* 【派生】空状态插画尺寸：规范 §5.8 空状态展示图约 64px，§13 未单列 */
+  --icon-size-empty: 64px; /* 空状态插画高度（宽见 --icon-size-empty-width）*/
+  --icon-size-empty-width: 88px; /* SN318 空状态插画 88×64 */
+  /* PageHeader 三档高度【派生】：值来自规范 §06 页头三档（full/standard/compact），§13 未单列 Token 名，此处派生落地供任务 3.10 稳定引用 */
+  --page-header-height-full: 120px; /* 完整页头（含面包屑 + 标题 + 描述 + 操作区）*/
+  --page-header-height-standard: 94px; /* 标准页头（面包屑 + 标题 + 操作区）*/
+  --page-header-height-compact: 68px; /* 紧凑页头（标题 + 操作区）*/
+
+  /* 顶栏高度【派生】：值来自规范 §4.5 Header 三端（Desktop 56 / Tablet·Mobile 48），响应式变量，供顶栏/内容区/运小星面板高度（任务 3.4/4.10）统一引用 */
+  --layout-header-height: 56px; /* ≤1279px 媒体查询下改 48px */
+  /* 侧栏宽度【派生】：规范 §4.5 Desktop 展开 220 / 折叠 56；供顶栏折叠按钮与菜单图标对齐、内容区避让共用 */
+  --layout-sider-width: 220px;
+  --layout-sider-collapsed-width: 56px;
+  /* 【派生】图标按钮默认边长（ByIconButton default=32）；顶栏折叠按钮与侧栏图标对齐时引用 */
+  --size-icon-btn: 32px;
+  /* 【派生】Arco a-menu vertical：.arco-menu-inner 四向 16（§13 spacing-md）+ 菜单项水平 12；§13 阶梯无对应档，就地派生 */
+  --layout-sider-menu-inner-padding-x: 16px;
+  --layout-sider-menu-padding-x: 12px;
+
+  /* 运小星对话面板宽度【派生】：值来自规范 §11.5（Desktop 400 / Tablet 360 / Mobile 全屏），响应式变量。
+     供面板自身宽度（任务 4.10）与悬浮球打开态左移量（任务 4.11）统一引用，避免宽度魔数散落两处 */
+  --ai-panel-width: 400px; /* ≤1279px 媒体查询下改 360px；≤767px 全屏由组件 .ai-panel--mobile 接管 */
+
+  /* 内容区内边距【派生】：值来自规范 §4 三端（Desktop 24 / Tablet 16 / Mobile 12），响应式变量。
+     Desktop=--spacing-lg、Tablet=--spacing-md；Mobile 12px 在 §13 spacing 阶梯（4/8/16/24/32/48）中无对应档，此处就地派生落地，避免散落裸值。 */
+  --layout-content-padding: var(--spacing-lg); /* ≤1279px→16px、≤767px→12px，见文件末尾媒体查询 */
+
+  /* 栅格列间距【派生】：值来自规范 §04 栅格（总列数 24 / gutter 16），§13 未单列 Token 名，此处派生落地供阶段 5 `a-row :gutter` 统一引用，禁止散落裸值 16 */
+  --grid-gutter: 16px;
+
+  /* 动效【派生】（时长 + 缓动，值来自规范 §07 动效；§13 未单列 Token 名；布局尺寸变化不做过渡）*/
+  --duration-modal-in: 200ms;
+  --ease-modal-in: ease-out; /* 弹窗/遮罩打开：淡入 + 缩放，规范 §5.10 状态表 */
+  --duration-modal-out: 150ms;
+  --ease-modal-out: ease-in; /* 弹窗/遮罩关闭：淡出 + 缩放，规范 §5.10 状态表 */
+  --duration-drawer-in: 250ms;
+  --ease-drawer-in: ease-out; /* 抽屉打开（规范 §05 抽屉动效）*/
+  --duration-drawer-out: 200ms;
+  --ease-drawer-out: ease-in; /* 抽屉关闭（规范 §05 抽屉动效）*/
+  --duration-page: 300ms;
+  --ease-page: ease-in-out; /* 页面过渡 */
+  --duration-state: 100ms;
+  --ease-state: linear; /* hover/表单/行 状态切换 */
+  --duration-cursor-blink: 1s; /* 【派生】AI 流式末尾光标闪烁周期（规范 §07 动效 / §11.4 对话气泡「末尾光标闪烁」），§13 未单列，此处派生落地供任务 4.10/4.12 引用 */
+  --duration-ai-pulse: 1.2s; /* 【派生】AI 思考中三点脉冲周期（规范 §02.2 原则四「三点脉冲」），§13 未单列，供任务 4.12 AiThinkingDots */
+  --ease-ai-pulse: ease-in-out; /* 【派生】三点脉冲缓动：进出对称的呼吸感，供 AiThinkingDots */
+  --duration-ai-ping: 1.6s; /* 【派生】AI 请求中信号波纹向外扩散周期（规范 §02.2 原则四「灰色信号波纹 Ping」），§13 未单列，供任务 4.12 AiPingWave */
+  --ease-ai-ping: ease-out; /* 【派生】信号波纹缓动：先快后慢的外扩感，供 AiPingWave */
+  --duration-ai-flow: 3s; /* 【派生】AI 进行态流光边框沿边流动周期（规范 §02.2 原则四「蓝紫流光边框」），§13 未单列，供任务 4.12 AiActiveContainer */
+  --duration-ai-execution-flow: 2.2s; /* 【派生】对话式执行中边框流动周期 */
+  /* 【派生】卡片交互动效：规范 §05 卡片示例 180ms / cubic-bezier(0.22,1,0.36,1) */
+  --duration-card: 180ms;
+  --ease-card: cubic-bezier(0.22, 1, 0.36, 1);
+  /* z-index 层级（禁止业务代码写 9999）*/
+  --z-base: 0;
+  --z-table-sticky: 10;
+  --z-sticky-bar: 20;
+  --z-header: 100;
+  --z-sidebar: 110;
+  --z-sidebar-flyout: 300;
+  --z-dropdown: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  --z-ai-entry: 800;
+  --z-ai-panel: 900;
+  --z-drawer-mask: 1200;
+  --z-drawer: 1210;
+  --z-modal-mask: 1400;
+  --z-modal: 1410;
+  --z-toast: 1800;
+  --z-global-loading: 2000;
+
+  /* 登录页【派生】：值来自 SN318 登录页模板（标准型面板 400 / 宽版 640）；§13 未单列，此处派生落地 */
+  --login-panel-width: 400px;
+  --login-panel-width-wide: 640px;
+  --login-panel-padding: var(--spacing-xl); /* 32px；登录面板规范两种尺寸通用，不随断点降档 */
+  --login-control-height: 40px; /* 大档输入/按钮；≤767px 改 44px */
+  --login-brand-logo-size: 36px;
+  --login-brand-gap: 10px; /* 品牌区 logo 与文案间距 */
+  --login-input-padding-x: 12px; /* 输入框水平内边距（§13 阶梯无 12，就地派生） */
+  --login-label-gap: 6px; /* label 与控件间距 */
+  --login-qr-size: 200px; /* 宽版扫码区二维码边长 */
+  --login-size-switch-width: 160px; /* 模板预览：面板尺寸切换器宽度 */
+  --login-size-switch-option-height: 32px; /* 尺寸选项行高，与表单控件小档对齐 */
+  --font-size-login-welcome: 24px; /* 欢迎标题，超出 §13 字号阶梯，就地派生 */
+  --login-bg-overlay: rgba(4, 7, 14, 0.34);
+  --login-bg-fallback: #05070e;
+  --login-bg-vignette: rgba(2, 4, 10, 0.55);
+  --login-bg-top-shade: rgba(2, 4, 10, 0.3);
+  --login-bg-mid-shade: rgba(2, 4, 10, 0.1);
+  --color-error-alert-border: #f6c3c3; /* 登录接口级错误条描边 */
+  --shadow-focus-error: 0 0 0 3px rgba(226, 75, 74, 0.15);
+  --duration-login-panel: 320ms;
+  --duration-login-spin: 700ms; /* 登录页 submit 按钮 loading 旋转周期 */
+  --duration-login-spin-reduced: 1400ms; /* prefers-reduced-motion 下的放缓周期 */
+  --z-login-bg: 0;
+  --z-login-overlay: 1;
+  --z-login-panel: 10;
+  --z-login-size-switch: 20;
+}
+
+/* 布局响应式覆盖（规范 §4 / §4.5）：Tablet（768–1279）与 Mobile（≤767）逐档降档。
+   顶栏高度供顶栏自身 / 内容区避让 padding-top / 运小星面板（任务 4.10）统一引用；
+   内容区内边距供 BasicLayout 内容区引用。 */
+@media (max-width: 1279px) {
+  :root {
+    --layout-header-height: 48px;
+    --layout-content-padding: var(--spacing-md); /* Tablet 16 */
+    --ai-panel-width: 360px; /* Tablet 面板收窄（§11.5） */
+    --card-padding: var(--spacing-md); /* Tablet 16 */
+    --card-gap: 12px; /* Tablet 12，间距阶梯未单列 */
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --layout-content-padding: 12px; /* Mobile 12（§13 阶梯无 12，就地派生） */
+    --login-control-height: 44px; /* Mobile 触控档 */
+    --card-padding: 12px; /* Mobile 12 */
+    --card-gap: var(--spacing-sm); /* Mobile 8 */
+  }
+}

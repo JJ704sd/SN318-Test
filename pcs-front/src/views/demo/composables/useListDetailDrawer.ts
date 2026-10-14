@@ -1,6 +1,6 @@
 import { computed, ref } from 'vue'
-import { successMsg } from '@baiyun/template-core/components'
-import { useDetail } from '@baiyun/template-core/composables'
+import { successMsg } from '@core/components'
+import { useDetail } from '@core/composables'
 import {
   getDrawerDetail,
   type WaybillListItem,

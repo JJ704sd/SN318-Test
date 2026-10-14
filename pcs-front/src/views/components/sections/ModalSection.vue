@@ -50,7 +50,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ByCard, ByModal, successMsg } from '@baiyun/template-core/components'
+import { ByCard, ByModal, successMsg } from '@core/components'
 import CodeBlock from '../CodeBlock.vue'
 import PropsDoc from '../PropsDoc.vue'
 import { MODAL_PROP_GROUPS } from '../propDoc'

@@ -48,6 +48,8 @@ __screenshots__/
 
 # temp screenshots
 *.png
+!src/core/assets/bg_ai.png
+!src/core/assets/yunxiaoxing_avatar@3x.png
 
 # login page background: versioned exception to *.png
 !src/assets/login_page.png
@@ -55,6 +57,9 @@ __screenshots__/
 # superpowers plugin runtime artifacts
 .superpowers/
 docs/superpowers/
+
+# personal docs
+docs/personal/
 
 # product/backup archives
 *-dev.zip

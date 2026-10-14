@@ -1,14 +1,17 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
-  "exclude": ["src/**/__tests__/*"],
+  "exclude": ["src/**/__tests__/*", "src/core/**/*.spec.ts"],
   "compilerOptions": {
     // Extra safety for array and object lookups, but may have false positives.
     "noUncheckedIndexedAccess": true,
 
     // Path mapping for cleaner imports.
+    // @core：内联核心层（src/core，原 @baiyun/template-core），按领域子路径导入。
+    // core 的 co-located spec 沿用原包口径不参与 vue-tsc（仅 vitest 运行）。
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@core/*": ["./src/core/*"]
     },
 
     // `vue-tsc --build` produces a .tsbuildinfo file for incremental type-checking.

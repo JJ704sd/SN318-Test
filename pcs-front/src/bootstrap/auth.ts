@@ -7,13 +7,11 @@ import {
   clearCsrfToken,
   getFrontendProfile,
   getSession,
-  login,
   setCsrfToken,
   subscribeAuthEvents,
-} from '@baiyun/template-core/auth'
-import { env } from '@baiyun/template-core/config'
-import type { RouteAccessDependencies } from '@baiyun/template-core/router'
-import { usePermissionStore, useUserStore } from '@baiyun/template-core/stores'
+} from '@core/auth'
+import type { RouteAccessDependencies } from '@core/router'
+import { usePermissionStore, useUserStore } from '@core/stores'
 
 type AuthenticatedRouteSession = Parameters<RouteAccessDependencies['syncSession']>[0]
 
@@ -77,9 +75,7 @@ export function createAuthCoordinator(pinia: Pinia) {
   function handleUnauthenticated(returnTo: string): RouteLocationRaw | false {
     if (unauthenticatedHandlingStarted) return false
     unauthenticatedHandlingStarted = true
-    if (env.useMockAuth) return { path: '/login', query: { redirect: returnTo } }
-    login(returnTo)
-    return false
+    return { path: '/login', query: { redirect: returnTo } }
   }
 
   const routeAccess: RouteAccessDependencies = {

@@ -2,12 +2,12 @@ import { mount, flushPromises } from '@vue/test-utils'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { Button as AButton } from '@arco-design/web-vue'
 import ListEmptyAi from './ListEmptyAi.vue'
-import type { AiSuggestion } from '@baiyun/template-core/ai'
+import type { AiSuggestion } from '@core/ai'
 
 const mockRequestSuggestions = vi.fn<() => Promise<AiSuggestion[]>>()
-vi.mock('@baiyun/template-core/ai', async () => {
-  const actual = await vi.importActual<typeof import('@baiyun/template-core/ai')>(
-    '@baiyun/template-core/ai',
+vi.mock('@core/ai', async () => {
+  const actual = await vi.importActual<typeof import('@core/ai')>(
+    '@core/ai',
   )
   return {
     ...actual,

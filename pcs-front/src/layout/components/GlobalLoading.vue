@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { useGlobalLoadingStore } from '@baiyun/template-core/stores'
+import { useGlobalLoadingStore } from '@core/stores'
 
 const globalLoadingStore = useGlobalLoadingStore()
 

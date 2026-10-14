@@ -74,8 +74,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ByTable, ByCard, ByStatusTag, ByEmpty } from '@baiyun/template-core/components'
-import type { ByTableColumn } from '@baiyun/template-core/components'
+import { ByTable, ByCard, ByStatusTag, ByEmpty } from '@core/components'
+import type { ByTableColumn } from '@core/components'
 import CodeBlock from '../CodeBlock.vue'
 import PropsDoc from '../PropsDoc.vue'
 import { TABLE_PROP_GROUPS } from '../propDoc'

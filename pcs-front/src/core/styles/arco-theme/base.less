@@ -1,0 +1,64 @@
+/**
+ * Arco Design Vue 2.58 主题覆盖层（规范 §十三 / 实施方案任务 1.2）
+ * 唯一职责：把 Arco 内置 CSS 变量映射到本项目 Token（tokens.css）。
+ * 数值一律引用 Token，禁止在此写死 hex / px（tokens.css、本文件已在 stylelint ignoreFiles 内，
+ *   但仍坚持"数值源自 Token"原则，仅少量裸 RGB 三通道值为 Arco 机制强制要求）。
+ *
+ * 【Arco 颜色机制】主色/语义色变量存的是"裸 RGB 三通道值"（如 --arcoblue-6: 22,93,255），
+ *   经 rgb()/rgba() 包裹使用。故品牌色覆盖必须提供三通道数字，无法直接引用 Token 的 hex。
+ *   三通道值与 tokens.css 的 hex 一一对应，改色须同步两处：
+ *     #046EFC = 4,110,252 ；#035ED4 = 3,94,212 ；#0242A8 = 2,66,168
+ *
+ * 【加载顺序】本文件必须在 arco.css 之后引入（见 main.ts），否则覆盖不生效。
+ *
+ * 【作用域】必须写在 `body` 选择器上，不能写 `:root`（= html）。
+ *   arco.css 把这批变量直接声明在 body 上（body { --border-radius-small: 2px; ... }），
+ *   CSS 自定义属性的解析规则是：元素自身有声明就不再向上找祖先，不管谁的 specificity
+ *   更高或谁加载在后面。写在 :root 上等于永远传不到 body 及其所有子元素（#app 全树），
+ *   覆盖形同虚设。故这里必须同样落在 body 上，用同选择器 + 后加载顺序压过 arco.css。
+ * ============================================================ */
+
+/* ============================================================
+ * 一、品牌主色映射：--arcoblue-* 三通道 → #046EFC 色系
+ *   Arco 主色链：--arcoblue-N → --primary-N → 组件 rgb(var(--primary-N))
+ *   仅需覆盖 arcoblue 三档：默认(6)、hover 参照(5)、active 参照(7)。
+ *   注：Arco 默认 hover 取 -5(变浅)、active 取 -7(变深)，与规范"hover/active 均变深"方向不一致，
+ *       故色阶只保证"主色正确"，hover/active 的"变深"由后文组件级补丁精确控制。
+ * ============================================================ */
+body {
+  /* 主色三通道（对应 #046EFC / hover #035ED4 / active #0242A8）*/
+  --arcoblue-5: 91, 156, 245; /* = #5B9CF5，primary-400，浅档兜底 */
+  --arcoblue-6: 4, 110, 252; /* = #046EFC，主色 */
+  --arcoblue-7: 3, 94, 212; /* = #035ED4，深档兜底 */
+
+  /* 语义色三通道（对应规范 success/warning/error 主值）*/
+  --green-6: 24, 160, 88; /* = #18A058，success */
+  --orange-6: 232, 125, 19; /* = #E87D13，warning */
+  --red-6: 226, 75, 74; /* = #E24B4A，error */
+
+  /* 圆角：Arco small/medium → 规范默认 8px（表单/按钮统一走 default）*/
+  --border-radius-small: var(--border-radius-default); /* 8px */
+  --border-radius-medium: var(--border-radius-default); /* 8px */
+
+  /* 文字色：Arco text-1/2/3/4 → 规范中性色四档 */
+  --color-text-1: var(--color-text-title); /* #1A2130 标题 */
+  --color-text-2: var(--color-text-body); /* #4B5564 正文 */
+  --color-text-3: var(--color-text-placeholder); /* #C0C4CC 占位（Arco placeholder 走 text-3）*/
+  --color-text-4: var(--color-text-secondary); /* #9DA3AE 次要/禁用文字 */
+
+  /* 边框色：Arco 在 body 声明 --color-border 为 #E5E6EB，须在此覆盖为规范 #DDDDDD
+   * （tokens.css 写在 :root，无法压过 body 同名声明；覆盖后可安全用 var(--color-border)）*/
+  --color-border: #dddddd;
+  --color-border-2: var(--color-border);
+
+  /* 页面/卡片底色 */
+  --color-bg-1: var(--color-bg-card); /* 卡片/浮层白底 */
+  --color-bg-2: var(--color-bg-card);
+  --color-bg-3: var(--color-bg-surface); /* 分组/表头灰底 */
+
+  /* Tooltip 底色：规范 §5.14 #1A2130（覆盖 Arco 默认 #1D2129）*/
+  --color-tooltip-bg: var(--color-text-title);
+
+  /* 弹窗遮罩：规范 rgba(0,0,0,0.45)，映射 Arco --color-mask-bg */
+  --color-mask-bg: var(--overlay-modal);
+}

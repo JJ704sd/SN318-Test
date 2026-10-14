@@ -6,7 +6,10 @@
       <RichText :content="safeContent" />
     </ByCard>
 
-    <ByCard title="恶意内容净化（脚本 / 事件 / 内联样式 / 危险协议被自动剥离）" class="section__card">
+    <ByCard
+      title="恶意内容净化（脚本 / 事件 / 内联样式 / 危险协议被自动剥离）"
+      class="section__card"
+    >
       <RichText :content="maliciousContent" />
     </ByCard>
 
@@ -21,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { ByCard } from '@baiyun/template-core/components'
+import { ByCard } from '@core/components'
 import RichText from '@/components/base/RichText.base.vue'
 import CodeBlock from '../CodeBlock.vue'
 import PropsDoc from '../PropsDoc.vue'
@@ -29,7 +32,7 @@ import { RICH_TEXT_PROP_GROUPS } from '../propDoc'
 
 const safeContent = `
   <h3>富文本标题</h3>
-  <p>这是<b>加粗</b>、<em>斜体</em>与<a href="https://example.com" target="_blank">新窗口链接</a>。</p>
+  <p>这是<b>加粗</b>、<em>斜体</em>与<a href="/demo/components" target="_blank">新窗口链接</a>。</p>
   <ul>
     <li>列表项一</li>
     <li>列表项二</li>

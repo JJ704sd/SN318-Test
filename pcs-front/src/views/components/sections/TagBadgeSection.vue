@@ -71,7 +71,7 @@
 </template>
 
 <script setup lang="ts">
-import { ByCard, ByStatusTag, ByBizTag } from '@baiyun/template-core/components'
+import { ByCard, ByStatusTag, ByBizTag } from '@core/components'
 import CodeBlock from '../CodeBlock.vue'
 import PropsDoc from '../PropsDoc.vue'
 import { TAG_BADGE_PROP_GROUPS } from '../propDoc'

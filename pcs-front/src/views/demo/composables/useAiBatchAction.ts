@@ -1,7 +1,7 @@
 import { computed, ref, shallowRef, watch, type ComputedRef, type Ref } from 'vue'
-import { env } from '@baiyun/template-core/config'
-import { successMsg } from '@baiyun/template-core/components'
-import type { AiSuggestion, useAiStore as _useAiStore } from '@baiyun/template-core/ai'
+import { env } from '@core/config'
+import { successMsg } from '@core/components'
+import type { AiSuggestion, useAiStore as _useAiStore } from '@core/ai'
 
 // 仅类型导入 useAiStore（构建后完全擦除，不把 AI runtime 带进列表路由 chunk，B-04 零静态依赖）。
 // 运行时经 ensureStore() 惰性动态 import('/ai') 获取，AI（总开关/内嵌）关闭时不加载任何 AI 代码。
@@ -75,7 +75,7 @@ export function useAiBatchAction<T>(
   async function ensureStore(): Promise<AiStore | null> {
     if (aiStore.value) return aiStore.value
     if (!loadingPromise) {
-      loadingPromise = import('@baiyun/template-core/ai').then(({ useAiStore }) =>
+      loadingPromise = import('@core/ai').then(({ useAiStore }) =>
         useAiStore(),
       )
     }

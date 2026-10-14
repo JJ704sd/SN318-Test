@@ -79,7 +79,7 @@
 </template>
 
 <script setup lang="ts">
-import { ByCard, ByIconButton } from '@baiyun/template-core/components'
+import { ByCard, ByIconButton } from '@core/components'
 import CodeBlock from '../CodeBlock.vue'
 import PropsDoc from '../PropsDoc.vue'
 import { BUTTON_PROP_GROUPS } from '../propDoc'

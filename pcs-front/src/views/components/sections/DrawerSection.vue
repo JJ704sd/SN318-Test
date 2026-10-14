@@ -49,7 +49,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ByCard, ByDrawer, successMsg } from '@baiyun/template-core/components'
+import { ByCard, ByDrawer, successMsg } from '@core/components'
 import CodeBlock from '../CodeBlock.vue'
 import PropsDoc from '../PropsDoc.vue'
 import { DRAWER_PROP_GROUPS } from '../propDoc'

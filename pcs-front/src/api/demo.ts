@@ -6,7 +6,7 @@
  * mock 与真实接口共用同一套 TS 类型；真实后端切换点见各函数内注释。
  */
 
-import type { BizType } from '@baiyun/template-core/tokens'
+import type { BizType } from '@core/styles/tokens'
 import * as mock from '@/mock'
 
 /** 运单状态（物流域状态，非 UI 语义色；展示时由视图映射到 ByStatusTag 的 StatusType）。 */

@@ -1,5 +1,5 @@
 import { computed, readonly, ref } from 'vue'
-import type { Router } from 'vue-router'
+import type { RouteLocationNormalized, Router } from 'vue-router'
 
 export const MIN_ROUTE_NAVIGATION_LOADING_MS = 100
 
@@ -54,13 +54,23 @@ export function finishRouteNavigationLoading(routeKey: string) {
   }, remaining)
 }
 
+/** 同一路由只改变 query/hash 时属于页面内切换，交给业务区域展示局部 loading。 */
+function isQueryOnlyNavigation(
+  to: Pick<RouteLocationNormalized, 'name' | 'path'>,
+  from: Pick<RouteLocationNormalized, 'name' | 'path'> | undefined,
+): boolean {
+  return Boolean(from && to.name != null && to.name === from.name && to.path === from.path)
+}
+
 export function registerRouteNavigationLoading(
   router: Pick<Router, 'beforeEach' | 'afterEach' | 'onError'>,
 ) {
-  router.beforeEach((to) => {
+  router.beforeEach((to, from) => {
+    if (isQueryOnlyNavigation(to, from)) return
     startRouteNavigationLoading(to.fullPath)
   })
-  router.afterEach((to) => {
+  router.afterEach((to, from) => {
+    if (isQueryOnlyNavigation(to, from)) return
     finishRouteNavigationLoading(to.fullPath)
   })
   router.onError(() => {

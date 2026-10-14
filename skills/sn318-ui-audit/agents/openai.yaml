@@ -1,0 +1,4 @@
+interface:
+  display_name: "SN318 前端 UI 审查与交互测试"
+  short_description: "按交付排期实测本地 dev 页面，输出用例、UI 修改清单、截图证据并持续复测"
+  default_prompt: "使用 $sn318-ui-audit，按本周排期和实际交付，对本地 dev 已可访问页面开展 UI 规范审查与交互测试，输出用例、修改清单和证据，保留原记录及人工意见。"

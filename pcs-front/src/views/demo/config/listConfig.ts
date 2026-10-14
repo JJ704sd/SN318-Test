@@ -1,5 +1,5 @@
-import type { ByTableColumn, StatusType } from '@baiyun/template-core/components'
-import type { BizType } from '@baiyun/template-core/tokens'
+import type { ByTableColumn, StatusType } from '@core/components'
+import type { BizType } from '@core/styles/tokens'
 import type { WaybillStatus } from '@/api/demo'
 
 export const BIZ_TYPE_OPTIONS: Array<{ label: string; value: BizType }> = [

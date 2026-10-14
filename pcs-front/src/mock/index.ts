@@ -2,7 +2,7 @@
  * 页面模板层假数据（实施方案任务 5.1；规范 §09 数据展示）
  *
  * 与 @/api/demo.ts 共用同一套 TS 类型；只负责生成假数据 + 模拟网络延迟，
- * 不碰 axios/http（请求底座见 @baiyun/template-core 的 http）。真实后端接入后本文件即可整体移除。
+ * 不碰 axios/http（请求底座见 @core 的 http）。真实后端接入后本文件即可整体移除。
  */
 
 import type {

@@ -13,7 +13,7 @@ interface PermissionStoreMock {
   canAny: ReturnType<typeof vi.fn>
 }
 
-vi.mock('@baiyun/template-core/stores', () => ({
+vi.mock('@core/stores', () => ({
   usePermissionStore: mocks.usePermissionStore,
 }))
 

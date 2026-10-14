@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import type { FileItem } from '@arco-design/web-vue'
-import { successMsg, errorMsg } from '@baiyun/template-core/components'
+import { successMsg, errorMsg } from '@core/components'
 
 /** 导入弹窗状态机：选文件 → 确认 → 刷新列表。onDone 由数据拥有方注入（通常是列表 fetch）。 */
 export function useImport(onDone: () => Promise<void> | void) {

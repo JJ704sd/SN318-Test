@@ -13,14 +13,14 @@ const mocks = vi.hoisted(() => ({
   useDevice: vi.fn<() => unknown>(),
 }))
 
-vi.mock('@baiyun/template-core/stores', () => ({
+vi.mock('@core/stores', () => ({
   useSiderStore: mocks.useSiderStore,
 }))
 
-vi.mock('@baiyun/template-core/composables', () => ({
+vi.mock('@core/composables', () => ({
   useDevice: mocks.useDevice,
 }))
-vi.mock('@baiyun/template-core/components', () => ({
+vi.mock('@core/components', () => ({
   ByDrawer: { template: '<div />' },
 }))
 

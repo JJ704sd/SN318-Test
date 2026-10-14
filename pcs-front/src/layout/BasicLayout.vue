@@ -82,7 +82,7 @@
     </ByDrawer>
 
     <!-- 运小星悬浮入口 + 对话浮层：按 AI 总开关 & 助手子开关动态挂载（S4-G），
-         任一开关关闭时不加载任何 AI 代码/图片（经 @baiyun/template-core/ai/assistant 按需） -->
+         任一开关关闭时不加载任何 AI 代码/图片（经 @core/ai/assistant 按需） -->
     <component :is="assistant?.trigger" v-if="assistant" :unread-count="1" />
     <component :is="assistant?.panel" v-if="assistant" />
   </a-layout>
@@ -90,10 +90,10 @@
 
 <script setup lang="ts">
 import { computed, defineAsyncComponent, ref, watch, type Component } from 'vue'
-import { useSiderStore } from '@baiyun/template-core/stores'
-import { env } from '@baiyun/template-core/config'
-import { useDevice } from '@baiyun/template-core/composables'
-import { ByDrawer } from '@baiyun/template-core/components'
+import { useSiderStore } from '@core/stores'
+import { env } from '@core/config'
+import { useDevice } from '@core/composables'
+import { ByDrawer } from '@core/components'
 import { ensureAiReady, type AiReadyResult } from '@/bootstrap/aiReady'
 import AppHeader from './components/AppHeader.vue'
 import AppSider from './components/AppSider.vue'
@@ -125,10 +125,10 @@ const assistant = computed<{ trigger: Component; panel: Component } | null>(() =
   if (!env.aiAssistantEnabled) return null
   return {
     trigger: defineAsyncComponent(() =>
-      import('@baiyun/template-core/ai/assistant').then((m) => m.AiAssistantTrigger),
+      import('@core/ai/assistant').then((m) => m.AiAssistantTrigger),
     ),
     panel: defineAsyncComponent(() =>
-      import('@baiyun/template-core/ai/assistant').then((m) => m.AiAssistantPanel),
+      import('@core/ai/assistant').then((m) => m.AiAssistantPanel),
     ),
   }
 })

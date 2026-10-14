@@ -9,66 +9,51 @@
     />
     <div class="login-page__overlay" aria-hidden="true" />
 
-    <section
-      class="login-panel"
-      :class="{ 'login-panel--wide': panelSize === 'wide' }"
-      aria-label="登录"
-    >
-      <div
-        v-if="panelSize === 'wide'"
-        class="login-panel__mode-tabs"
-        role="tablist"
-        aria-label="登录方式"
-      >
-        <button
-          type="button"
-          class="login-panel__mode-tab"
-          :class="{ 'is-active': mobileMode === 'account' }"
-          role="tab"
-          :aria-selected="mobileMode === 'account'"
-          @click="mobileMode = 'account'"
-        >
-          账号登录
-        </button>
-        <button
-          type="button"
-          class="login-panel__mode-tab"
-          :class="{ 'is-active': mobileMode === 'qr' }"
-          role="tab"
-          :aria-selected="mobileMode === 'qr'"
-          @click="mobileMode = 'qr'"
-        >
-          扫码登录
-        </button>
-      </div>
-
-      <div class="login-panel__body" :class="{ [`is-mobile-${mobileMode}`]: panelSize === 'wide' }">
-        <aside v-if="panelSize === 'wide'" class="login-panel__qr">
-          <LoginQrScan />
-        </aside>
-        <div v-if="panelSize === 'wide'" class="login-panel__divider" aria-hidden="true" />
-        <div class="login-panel__main">
-          <LoginAccountPanel />
+    <section class="login-panel" aria-labelledby="login-title">
+      <div class="login-panel__brand">
+        <img class="login-panel__logo" :src="LOGIN_LOGO" alt="" aria-hidden="true" />
+        <div class="login-panel__brand-copy">
+          <strong>百运科技</strong>
+          <span>内部管理系统 SN318</span>
         </div>
       </div>
-    </section>
 
-    <LoginSizeSwitch v-model="panelSize" />
+      <h1 id="login-title" class="login-panel__title">欢迎登录</h1>
+      <p class="login-panel__description">物流运营工作台 · 登录后进入基础配置</p>
+
+      <div class="login-panel__actions">
+        <button
+          type="button"
+          class="login-panel__submit"
+          :disabled="!canOpenLogin"
+          @click="handleAutoLogin"
+        >
+          <icon-loading v-if="loading && activeMode === 'auto'" :size="16" />
+          <span>{{ loading && activeMode === 'auto' ? '正在自动登录…' : '自动登录' }}</span>
+        </button>
+        <button
+          type="button"
+          class="login-panel__manual"
+          :disabled="!canOpenLogin"
+          @click="handleManualLogin"
+        >
+          <icon-loading v-if="loading && activeMode === 'manual'" :size="16" />
+          <span>{{ loading && activeMode === 'manual' ? '正在打开统一登录…' : '手动登录' }}</span>
+        </button>
+      </div>
+
+      <p class="login-panel__hint">自动登录使用认证中心已有账号；手动登录可切换账号</p>
+      <p v-if="errorMessage" class="login-panel__error" role="alert">{{ errorMessage }}</p>
+    </section>
   </main>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-import LoginAccountPanel from './components/LoginAccountPanel.biz.vue'
-import LoginQrScan from './components/LoginQrScan.biz.vue'
-import LoginSizeSwitch, { type LoginPanelSize } from './components/LoginSizeSwitch.base.vue'
+import LOGIN_LOGO from '@/assets/logo_login.svg'
+import { useAuthCenterLogin } from './composables/useAuthCenterLogin'
 
-const panelSize = ref<LoginPanelSize>('standard')
-const mobileMode = ref<'account' | 'qr'>('account')
-
-watch(panelSize, () => {
-  mobileMode.value = 'account'
-})
+const { loading, activeMode, errorMessage, canOpenLogin, handleAutoLogin, handleManualLogin } =
+  useAuthCenterLogin()
 </script>
 
 <style scoped>
@@ -137,42 +122,185 @@ watch(panelSize, () => {
   animation: login-panel-in var(--duration-login-panel) var(--ease-card);
 }
 
-.login-panel--wide {
-  width: var(--login-panel-width-wide);
-}
-
-.login-panel__mode-tabs {
+.login-panel__brand {
   /* Positioning */
-  display: none;
+  display: flex;
+  align-items: center;
+
+  /* Box Model */
+  gap: var(--login-brand-gap);
+  margin-bottom: var(--spacing-lg);
 }
 
-.login-panel__body {
+.login-panel__logo {
   /* Positioning */
   display: block;
+  flex: none;
+
+  /* Box Model */
+  width: var(--login-brand-logo-size);
+  height: var(--login-brand-logo-size);
+  border-radius: var(--border-radius-default);
+
+  /* Misc */
+  object-fit: contain;
 }
 
-.login-panel--wide .login-panel__body {
+.login-panel__brand-copy {
   /* Positioning */
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
 
-  /* Box Model */
-  gap: 0 var(--spacing-lg);
+  /* Typographic */
+  line-height: var(--line-height-h2);
 }
 
-.login-panel__divider {
+.login-panel__brand-copy strong {
+  /* Typographic */
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-title);
+}
+
+.login-panel__brand-copy span {
+  /* Typographic */
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.login-panel__title {
   /* Box Model */
-  width: 1px;
-  margin: var(--spacing-sm) 0;
+  margin: 0 0 var(--spacing-xs);
+
+  /* Typographic */
+  font-size: var(--font-size-login-welcome);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.35;
+  color: var(--color-text-title);
+}
+
+.login-panel__description {
+  /* Box Model */
+  margin: 0 0 var(--spacing-lg);
+
+  /* Typographic */
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.login-panel__actions {
+  /* Positioning */
+  display: flex;
+  flex-direction: column;
+
+  /* Box Model */
+  gap: var(--spacing-sm);
+}
+
+.login-panel__submit {
+  /* Positioning */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Box Model */
+  width: 100%;
+  min-height: var(--login-control-height);
+  gap: var(--spacing-xs);
+  padding: 0 var(--spacing-md);
+  border: 0;
+  border-radius: var(--border-radius-default);
+
+  /* Typographic */
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-on-overlay);
 
   /* Visual */
-  background: var(--color-divider);
+  background: var(--color-primary);
+
+  /* Misc */
+  cursor: pointer;
+  transition: background-color var(--duration-state) var(--ease-state),
+    box-shadow var(--duration-state) var(--ease-state);
 }
 
-.login-panel__qr,
-.login-panel__main {
-  min-width: 0;
+.login-panel__manual {
+  /* Positioning */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Box Model */
+  width: 100%;
+  min-height: var(--login-control-height);
+  gap: var(--spacing-xs);
+  padding: 0 var(--spacing-md);
+  border: var(--border-default);
+  border-radius: var(--border-radius-default);
+
+  /* Typographic */
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-body);
+
+  /* Visual */
+  background: var(--color-bg-card);
+
+  /* Misc */
+  cursor: pointer;
+  transition: background-color var(--duration-state) var(--ease-state),
+    border-color var(--duration-state) var(--ease-state),
+    box-shadow var(--duration-state) var(--ease-state);
+}
+
+.login-panel__submit:focus-visible,
+.login-panel__manual:focus-visible {
+  /* Visual */
+  box-shadow: var(--shadow-focus);
+  outline: none;
+}
+
+.login-panel__submit:disabled,
+.login-panel__manual:disabled {
+  /* Visual */
+  opacity: 0.7;
+
+  /* Misc */
+  cursor: wait;
+}
+
+.login-panel__submit:hover:not(:disabled) {
+  /* Visual */
+  background: var(--color-primary-hover);
+}
+
+.login-panel__manual:hover:not(:disabled) {
+  /* Visual */
+  border-color: var(--color-text-secondary);
+  background: var(--color-bg-surface);
+}
+
+.login-panel__hint {
+  /* Box Model */
+  margin: var(--spacing-md) 0 0;
+
+  /* Typographic */
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.login-panel__error {
+  /* Box Model */
+  margin: var(--spacing-sm) 0 0;
+
+  /* Typographic */
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  color: var(--color-error);
+  text-align: center;
 }
 
 @keyframes login-panel-in {
@@ -202,70 +330,6 @@ watch(panelSize, () => {
 
   .login-panel {
     width: 100%;
-  }
-
-  .login-panel--wide .login-panel__mode-tabs {
-    /* Positioning */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    /* Box Model */
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-xs);
-    border-radius: var(--border-radius-default);
-    gap: var(--spacing-xs);
-
-    /* Visual */
-    background: var(--color-bg-surface);
-  }
-
-  .login-panel__mode-tab {
-    /* Positioning */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    /* Box Model */
-    height: var(--login-control-height);
-    border: 0;
-    border-radius: var(--border-radius-default);
-
-    /* Typographic */
-    font-size: var(--font-size-base);
-    color: var(--color-text-body);
-
-    /* Visual */
-    background: transparent;
-
-    /* Misc */
-    cursor: pointer;
-  }
-
-  .login-panel__mode-tab.is-active {
-    /* Typographic */
-    color: var(--color-primary);
-    font-weight: var(--font-weight-medium);
-
-    /* Visual */
-    background: var(--color-bg-card);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .login-panel--wide .login-panel__body {
-    /* Positioning */
-    display: block;
-  }
-
-  .login-panel--wide .login-panel__divider {
-    display: none;
-  }
-
-  .login-panel--wide .login-panel__body.is-mobile-account .login-panel__qr {
-    display: none;
-  }
-
-  .login-panel--wide .login-panel__body.is-mobile-qr .login-panel__main {
-    display: none;
   }
 }
 

@@ -1,0 +1,141 @@
+@import (once) './base.less';
+
+/* ============================================================
+ * 表格 Table（规范 §5.8）
+ *   行高 48px；表头 #F7F7F7 / 字重 500；分割线仅底边 #EBEBEB；
+ *   默认白底；hover #EBF3FD（仅未勾选行）；选中 #D1E4FB + 左侧 2px #046EFC 标识条（勾选后 hover 不变色）；
+ *   操作列固定最右、文字按钮间距 16px；数字/金额/重量右对齐，其余左对齐。
+ * ============================================================ */
+
+/* 表格宽度跟随容器撑满（列表页全宽，不按内容收缩）*/
+.arco-table,
+.arco-table-container,
+.arco-table-element {
+  width: 100%;
+}
+
+/* 覆盖 Arco 默认 width:auto，避免表格缩成内容宽 */
+.arco-table-container .arco-table-content {
+  width: 100%;
+}
+
+.arco-table-th {
+  height: var(--table-row-height); /* 48px */
+  background-color: var(--color-bg-surface); /* #F7F7F7 */
+  border-bottom: var(--border-divider); /* 1px solid #EBEBEB */
+  color: var(--color-text-title);
+  font-weight: var(--font-weight-medium); /* 500 */
+}
+
+/* reset.css 的 * { font-weight: 400 } 会直接命中 th 内层元素（覆盖继承），
+ * 表头文字实际渲染在 .arco-table-cell > .arco-table-th-title 里，
+ * 两层都需单独声明字重，否则表头文字渲染为 regular */
+.arco-table-th .arco-table-cell,
+.arco-table-th .arco-table-cell .arco-table-th-title {
+  font-weight: var(--font-weight-medium); /* 500 */
+}
+
+.arco-table-td {
+  height: var(--table-row-height); /* 48px */
+  color: var(--color-text-title);
+  background-color: var(--color-bg-card); /* #FFFFFF 默认 */
+  border-bottom: var(--border-divider); /* 仅底部分割线（含末行，作为表格底边）*/
+
+  /* 列表行 hover 使用全局状态过渡时长：100ms linear */
+  transition: background-color var(--duration-state) var(--ease-state);
+}
+
+/* 表格加载：图标 32px，固定在表头底部 120px 处，避免随表格内容垂直居中 */
+.by-table__desktop .arco-spin-loading > .arco-spin-mask > .arco-spin-mask-icon {
+  top: calc(var(--table-row-height) + 120px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.by-table__desktop .arco-spin-icon {
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  color: var(--color-primary);
+}
+
+/* 空状态行：不受 48px 行高约束；内边距由 ByEmpty 自身承担 */
+.arco-table-tr-empty > .arco-table-td {
+  height: auto;
+  padding: 0;
+  background-color: var(--color-bg-card);
+}
+
+/* hover：#EBF3FD；仅未勾选行（勾选后 hover 不变色）；空状态行不响应 */
+.arco-table-tr:not(.arco-table-tr-empty):not(.arco-table-tr-checked):hover .arco-table-td {
+  background-color: var(--color-table-row-hover); /* #EBF3FD */
+}
+
+/* 覆盖 Arco `.arco-table-hover` 高优先级 hover（含冻结列 ::before），勾选行除外 */
+.arco-table-hover:not(.arco-table-dragging)
+  .arco-table-tr:not(.arco-table-tr-empty):not(.arco-table-tr-summary):not(
+    .arco-table-tr-checked
+  ):hover
+  .arco-table-td:not(.arco-table-col-fixed-left):not(.arco-table-col-fixed-right) {
+  background-color: var(--color-table-row-hover); /* #EBF3FD */
+}
+
+.arco-table-hover:not(.arco-table-dragging)
+  .arco-table-tr:not(.arco-table-tr-empty):not(.arco-table-tr-summary):not(
+    .arco-table-tr-checked
+  ):hover
+  .arco-table-td.arco-table-col-fixed-left::before,
+.arco-table-hover:not(.arco-table-dragging)
+  .arco-table-tr:not(.arco-table-tr-empty):not(.arco-table-tr-summary):not(
+    .arco-table-tr-checked
+  ):hover
+  .arco-table-td.arco-table-col-fixed-right::before {
+  background-color: var(--color-table-row-hover); /* #EBF3FD */
+}
+
+/*
+ * 冻结列使用 ::before 承载背景色。提前生成伪元素并继承单元格底色，
+ * 避免 hover 时才创建伪元素导致起始帧晚于普通单元格。
+ */
+.arco-table-td.arco-table-col-fixed-left::before,
+.arco-table-td.arco-table-col-fixed-right::before {
+  content: '';
+  background-color: inherit;
+  transition: background-color var(--duration-state) var(--ease-state);
+}
+
+/* 选中：底 #D1E4FB；hover 保持同色（覆盖 Arco 高优先级 hover，含冻结列）*/
+.arco-table-tr.arco-table-tr-checked .arco-table-td,
+.arco-table-hover:not(.arco-table-dragging)
+  .arco-table-tr.arco-table-tr-checked:not(.arco-table-tr-empty):not(
+    .arco-table-tr-summary
+  ):hover
+  .arco-table-td:not(.arco-table-col-fixed-left):not(.arco-table-col-fixed-right) {
+  background-color: var(--color-table-row-selected); /* #D1E4FB */
+}
+
+.arco-table-hover:not(.arco-table-dragging)
+  .arco-table-tr.arco-table-tr-checked:not(.arco-table-tr-empty):not(
+    .arco-table-tr-summary
+  ):hover
+  .arco-table-td.arco-table-col-fixed-left::before,
+.arco-table-hover:not(.arco-table-dragging)
+  .arco-table-tr.arco-table-tr-checked:not(.arco-table-tr-empty):not(
+    .arco-table-tr-summary
+  ):hover
+  .arco-table-td.arco-table-col-fixed-right::before {
+  background-color: var(--color-table-row-selected); /* #D1E4FB */
+}
+
+/* 操作列：文字按钮间距 16px，列内左对齐 */
+.by-table-ops {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: var(--spacing-md); /* 16px */
+}
+
+.by-table-ops .arco-btn-text {
+  padding: 0;
+}

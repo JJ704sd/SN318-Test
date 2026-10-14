@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { ByCard } from '@baiyun/template-core/components'
+import { ByCard } from '@core/components'
 import type { PropDocGroup } from './propDoc'
 
 withDefaults(

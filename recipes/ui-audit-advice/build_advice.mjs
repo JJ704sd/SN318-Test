@@ -103,7 +103,7 @@ const contextRows = [
  ['来源','SN318产品需求','文档读取；revision_id=8340；用于功能范围及项目特有口径。','本次读取成功','https://example.invalid/source/662ffe8557'],
  ['来源','SN318 UI Review','view revision=642；22条来源记录；21条有效记录对应case，1空行不生成case。','本次读取成功','https://example.invalid/source/e04459bb0b'],
  ['来源','原UI用例','使用颜色层级对应_复查修正版中的UI01—UI42作为编号和范围。','原文件未改动','SN318_提测前冒烟与UI规范_颜色层级对应_复查修正.xlsx'],
- ['来源','引用聊天','读取了引用聊天的近期请求、五色映射及网站历史观察。','历史观察需在本批复核','thread://smoke-ui?hostId=local'],
+ ['来源','引用聊天','读取了引用聊天的近期请求、五色映射及网站历史观察。','历史观察需在本批复核','https://example.invalid/local-reference'],
 ];
 const context = grid('走查口径','UI 走查口径与验收依据',
   '本批执行信息填写在D列；基线冲突先明确，再验收。修改清单中的黄色区域为执行输入。',

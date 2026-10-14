@@ -41,7 +41,7 @@
 
 <script setup lang="ts">
 // utilities.css 仅供组件展示页工具类使用，随本页懒加载注入，不进主包
-import '@baiyun/template-core/styles/utilities.css'
+import '@core/styles/utilities.css'
 import PageHeader from '@/layout/components/PageHeader.vue'
 import ButtonSection from './sections/ButtonSection.vue'
 import InputSection from './sections/InputSection.vue'
